@@ -98,9 +98,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  offset: {x: 0, y: 3, z: -5}
   zoom_in_param: 1.25
   zoom_out_param: 1.25
+  is_active: 0
+  rotateDeltaX: 1
+  rotateDeltaY: 3
+  distance: 5
+  minDistance: 0
+  maxDistance: 20
+  myRotationX: 30
+  myRotationY: 0
+  minAngleX: 10
+  maxAngleX: 90
+  damping: 10
+  mode: 0
 --- !u!1 &3129235376038093256
 GameObject:
   m_ObjectHideFlags: 0
@@ -199,9 +210,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  offset: {x: 0, y: 10, z: 0}
   zoom_in_param: 1.25
   zoom_out_param: 1.25
+  is_active: 0
+  rotateDeltaX: 1
+  rotateDeltaY: 3
+  distance: 5
+  minDistance: 0
+  maxDistance: 20
+  myRotationX: 30
+  myRotationY: 0
+  minAngleX: 10
+  maxAngleX: 90
+  damping: 10
+  mode: 1
 --- !u!1 &3129235376194788131
 GameObject:
   m_ObjectHideFlags: 0
@@ -254,3 +276,4 @@ MonoBehaviour:
   shotcuts:
   - 1
   - 2
+  change: 1

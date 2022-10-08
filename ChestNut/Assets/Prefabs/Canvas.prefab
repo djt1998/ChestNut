@@ -66,8 +66,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Movement: W A S D   \nCameraSwitch: 1 2 \nZoom In/Out/O: +/-/0  \nPause:
-    P"
+  m_text: "Movement: W A S D\nCameraRotate: I J K L\nCameraSwitch: 1 2 \nZoom In/Out/O:
+    +/-/0  \nPause: P"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 8b29aaa3eec7468097ff07adfcf29ac9, type: 2}
