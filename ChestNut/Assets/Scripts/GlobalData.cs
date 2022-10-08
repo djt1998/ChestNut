@@ -7,7 +7,7 @@ public static class GlobalData
 {
     // readonly
     public static readonly string SESSION_ID;
-    public static readonly string VERSION = "Chestnet_version_1_3_0";
+    public static readonly string VERSION = "Chestnet_version_1_2_1";
     public static readonly int MAX_LEVEL = 5;
     // public static readonly int MAX_NUM_CHECKPOINT_PER_LEVEL = 4;
     // public static readonly string URL = "https://docs.google.com/forms/d/e/1FAIpQLSePz3EsxIRK0KUICpWOA31I30ossPnruJ_Zai7Nz78bydreAA/formResponse";
