@@ -1,0 +1,77 @@
+﻿Level 4 Map Documentation
+
+
+High-Level Idea: 
+* To explore the possibility of the third dimension, in level 4 we added two more elevations: upper and lower.  
+* Three elevations have different features. 
+* The upper elevation is a set of cooler elements that increase the size of our ball. It contains falling icy grounds, cold areas, and blue cubes 
+* The lower elevation is a set of warmer elements that decrease the size of our ball. It contains hot areas and hot cubes. In addition, it has the element wind that can blow our ball up. 
+* The middle elevation contains all of our puzzles. Players need to use the properties of upper and lower grounds to solve the puzzle of middle ground.  It contains gates and bridges and the final flag.
+
+
+Overview Design
+  
+
+
+
+CheckPoints
+9 checkpoints in total
+Puzzle 0
+# Checkpoints: 2
+
+
+CP0:
+Start playing
+
+
+CP1:
+Player Size: Small
+Player eat all red cubes at Lower Elevation and return back to middle level
+
+
+Puzzle 1
+# Checkpoints: 4 
+
+
+CP2: 
+Player Size: Big
+Player successfully passed Puzzle 0 (Player eat cold cubes at Higher Elevation and return back to middle level)
+
+
+CP3:
+Player Size: Big
+Player at Upper Elevation and interact with mechanics that make itself bigger in size
+
+
+CP4:
+Player Size: Small 
+Player at Lower Elevation and interact with mechanics that make itself smaller in size
+
+
+CP5: 
+PlayerSize: Big 
+At this checkpoint, Player has to be big to push through the heavy blocks 
+
+
+CP6: 
+PlayerSize: Small
+At this checkpoint, Player has to be small and have already obtained a key in previous checkpoints to open the door. 
+Puzzle 2
+
+
+# Checkpoints: 2
+
+
+CP7:
+Player Size: Big
+Player gets big enough at Higher Elevation and pass the heavy stone at middle level
+
+
+CP8:
+Player Size: Small
+Player gets small enough at Lower Elevation and arrives at the GOAL!
+
+
+
+
+Implementation
