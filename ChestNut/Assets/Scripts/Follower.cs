@@ -10,6 +10,7 @@ public class Follower : MonoBehaviour
     public float zoom_out_param = 1.25f;
 
     public float zoom_out_max = 20f;
+    public bool is_active = false;  // is in use
     
     private Vector3 orignal_offset;
     private Player p;
@@ -27,7 +28,6 @@ public class Follower : MonoBehaviour
     void FixedUpdate()
     {
         myTime = myTime + Time.deltaTime;
-
         while (offset.magnitude < p.getRadius()) {
             offset = new Vector3(offset.x * zoom_out_param, offset.y * zoom_out_param, offset.z * zoom_out_param);
         }
@@ -42,19 +42,23 @@ public class Follower : MonoBehaviour
         }
         else if (Input.GetKey("l") && myTime > nextRotate) {    // rotate right
             myTime = 0.0f;
-            offset = Quaternion.AngleAxis(90, Vector3.up) * offset;
+            offset = Quaternion.Euler(0, 90, 0) * offset;
             var rot = transform.rotation.eulerAngles;
             rot.y += 90;
             transform.rotation = Quaternion.Euler(rot);
-            p.force_direction_shift(45f);
+            if (is_active == true) {
+                p.force_direction_shift(90);
+            }
         }
         else if (Input.GetKey("j") && myTime > nextRotate) {    // rotate left
             myTime = 0.0f;
-            offset = Quaternion.AngleAxis(-90, Vector3.up) * offset;
+            offset = Quaternion.Euler(0, -90, 0) * offset;
             var rot = transform.rotation.eulerAngles;
             rot.y -= 90;
             transform.rotation = Quaternion.Euler(rot);
-            p.force_direction_shift(-45f);
+            if (is_active == true) {
+                p.force_direction_shift(-90);
+            }
         }
         // Offset camera
         transform.position = player.transform.position + offset;

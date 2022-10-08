@@ -104,7 +104,8 @@ public class Player : MonoBehaviour
 
     public void force_direction_shift(float angle) {
         for (int i = 0; i < 4; i++) {
-            forceDir[i] = Quaternion.AngleAxis(angle, Vector3.up) * forceDir[i];
+            forceDir[i] = Quaternion.Euler(0, angle, 0) * forceDir[i];
+            // Debug.Log(i + ": " + forceDir[i]);
         }
     }
 

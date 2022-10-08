@@ -10,6 +10,8 @@ public class SwitchCamera : MonoBehaviour
     private Player player;
     private TimerManager TM;
     private Animation levelPreview;
+
+    private bool switch_enabled = true;
     void Start() {
         Switch(0);
         levelPreview = cameras[0].GetComponent<Animation>();
@@ -22,7 +24,7 @@ public class SwitchCamera : MonoBehaviour
     void FixedUpdate()
     {
         for (int i = 0; i < cameras.Length; i++) {
-            if (Input.GetKey(shotcuts[i])) {
+            if (switch_enabled && Input.GetKey(shotcuts[i])) {
                 Switch(i);
             }
         }
@@ -35,12 +37,18 @@ public class SwitchCamera : MonoBehaviour
                     cameras[i].GetComponent<AudioListener>().enabled = false;
                 }
                 cameras[i].GetComponent<Camera>().enabled = false;
+                if (cameras[i].GetComponent<Follower>() != null) {
+                    cameras[i].GetComponent<Follower>().is_active = false;
+                }
             }
             else {
                 if (change) {
                     cameras[i].GetComponent<AudioListener>().enabled = true;
                 }
                 cameras[i].GetComponent<Camera>().enabled = true;
+                if (cameras[i].GetComponent<Follower>() != null) {
+                    cameras[i].GetComponent<Follower>().is_active = true;
+                }
             }
         }
     }
@@ -50,10 +58,22 @@ public class SwitchCamera : MonoBehaviour
         TM = FindObjectOfType<TimerManager>();
         player.GetComponent<Player>().enabled = false;
         TM.enabled = false;
-        cameras[0].GetComponent<Follower>().enabled = false;
+        switch_enabled = false;
+        for (int i = 0; i < cameras.Length; i++) {
+            if (cameras[i].GetComponent<Follower>() != null) {
+                cameras[i].GetComponent<Follower>().enabled = false;
+            }
+        }
+
         yield return new WaitForSeconds(countDown);
+
         player.GetComponent<Player>().enabled = true;
         TM.enabled = true;
-        cameras[0].GetComponent<Follower>().enabled = true;
+        switch_enabled = true;
+        for (int i = 0; i < cameras.Length; i++) {
+            if (cameras[i].GetComponent<Follower>() != null) {
+                cameras[i].GetComponent<Follower>().enabled = true;
+            }
+        }
     }
 }
