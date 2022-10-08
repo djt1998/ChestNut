@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
     private float player_radius;
     // private bool is_jump;
     public int keyStatus;
+    private Vector3[] forceDir = {Vector3.left, Vector3.forward, Vector3.right, Vector3.back};
 
     // for statistics
     // public int blue_cube_num = 0;
@@ -42,19 +43,19 @@ public class Player : MonoBehaviour
             // {
                 if (Input.GetKey("a"))
                 {
-                    rb.AddForce(Vector3.left * force_coef * (float)Math.Sqrt(player_radius));
-                }
-                else if (Input.GetKey("d"))
-                {
-                    rb.AddForce(Vector3.right * force_coef * (float)Math.Sqrt(player_radius));
+                    rb.AddForce(forceDir[0] * force_coef * (float)Math.Sqrt(player_radius));
                 }
                 else if (Input.GetKey("w"))
                 {
-                    rb.AddForce(Vector3.forward * force_coef * (float)Math.Sqrt(player_radius));
+                    rb.AddForce(forceDir[1] * force_coef * (float)Math.Sqrt(player_radius));
+                }
+                else if (Input.GetKey("d"))
+                {
+                    rb.AddForce(forceDir[2] * force_coef * (float)Math.Sqrt(player_radius));
                 }
                 else if (Input.GetKey("s"))
                 {
-                    rb.AddForce(Vector3.back * force_coef * (float)Math.Sqrt(player_radius));
+                    rb.AddForce(forceDir[3] * force_coef * (float)Math.Sqrt(player_radius));
                 }
 
                 // if (Input.GetKey("space"))
@@ -99,6 +100,12 @@ public class Player : MonoBehaviour
 
     public float getRadius() {
         return player_radius;
+    }
+
+    public void force_direction_shift(float angle) {
+        for (int i = 0; i < 4; i++) {
+            forceDir[i] = Quaternion.AngleAxis(angle, Vector3.up) * forceDir[i];
+        }
     }
 
     // private void OnCollisionEnter(Collision other)
