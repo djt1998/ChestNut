@@ -21,7 +21,7 @@ public class StartMenu : MonoBehaviour
 
     public void Start() {
         for (int i = 0; i < level_buttons.Length; i++) {
-            if (i + 1 > PlayerPrefs.GetInt("uLevel")) {
+            if (1 > PlayerPrefs.GetInt("uLevel")) {
                 level_buttons[i].interactable = false;
                 level_buttons[i].GetComponentInChildren<TMP_Text>().text = "Locked";
             }

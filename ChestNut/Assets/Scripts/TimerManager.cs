@@ -16,6 +16,8 @@ public class TimerManager : MonoBehaviour
     public float timerLimit;    // time for bg color change
     public float deathTime;     // time for death
 
+    private bool countdown = true;
+
     private Image img;              // parameters for bg color change
     private float alpha = 0.01f;
     private bool increase = true;
@@ -26,7 +28,8 @@ public class TimerManager : MonoBehaviour
     void Start()
     {
         // enabled = false;
-        currTime = maxTime;
+        currTime = maxTime = 0f;
+        countdown = false;
         displayTime();
         img = GameObject.Find("InGameDisplay").GetComponent<Image>();
     }
@@ -34,14 +37,14 @@ public class TimerManager : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        currTime -= Time.deltaTime;     // countdown
+        currTime += Time.deltaTime;     // countdown
 
         if (currTime <= deathTime) {    // game over, stop watch
             currTime = deathTime;
             GameMenu.IsDead = true;
             enabled = false;
         }
-        else if (currTime <= timerLimit) { // change bg color
+        else if (currTime <= timerLimit && countdown) { // change bg color
             displayTime();
             timerText.fontSize = 40;
             timerText.color = Color.red;
@@ -71,7 +74,7 @@ public class TimerManager : MonoBehaviour
     }
 
     public float getTotalTime() {   // total time for finish this level
-        return maxTime - currTime;
+        return Mathf.Abs(maxTime - currTime);
     }
 
     public static string getFormatTime(float time) {  // in seconds
