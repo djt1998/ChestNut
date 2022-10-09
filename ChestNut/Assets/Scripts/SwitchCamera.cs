@@ -64,7 +64,6 @@ public class SwitchCamera : MonoBehaviour
                 cameras[i].GetComponent<Follower>().enabled = false;
             }
         }
-
         yield return new WaitForSeconds(countDown);
 
         player.GetComponent<Player>().enabled = true;

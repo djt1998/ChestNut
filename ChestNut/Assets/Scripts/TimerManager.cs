@@ -25,14 +25,17 @@ public class TimerManager : MonoBehaviour
     private float currTime;
 
     // Start is called before the first frame update
-    void Start()
-    {
-        // enabled = false;
+    private void Awake() {
         if (!countdown) {
             maxTime = 0f;
         }
         currTime = maxTime;
         displayTime();
+    }
+
+    void Start()
+    {
+        // enabled = false;
         img = GameObject.Find("InGameDisplay").GetComponent<Image>();
     }
 
