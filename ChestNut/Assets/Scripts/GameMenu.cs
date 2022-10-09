@@ -12,6 +12,8 @@ public class GameMenu : MonoBehaviour
     public static bool IsDead = false;
     // public static bool IsRestart = false;
     public GameObject PauseMenuUI;
+    public GameObject SettingsMenuUI;
+
     public GameObject WinMenuUI;
     public GameObject LoseMenuUI;
     public GameObject InGameUI;
@@ -38,11 +40,22 @@ public class GameMenu : MonoBehaviour
         else if (IsDead) {
             lose();
         }
-        else if (Input.GetKey(KeyCode.P) && !GameIsPaused){
-            Pause();
+        else if (Input.GetKey(KeyCode.P) && !GameIsPaused)
+        {
+            showSettings();
         }
+        //else if (Input.GetKey(KeyCode.P) && !GameIsPaused){
+        //    Pause();
+        //}
     }
-
+    private void showSettings()
+    {
+        SettingsMenuUI.SetActive(true);
+        InGameUI.SetActive(false);
+        Time.timeScale = 0f;
+        GameIsPaused = true;
+        sendData("settings");
+    }
     private void Pause(){
         PauseMenuUI.SetActive(true);
         InGameUI.SetActive(false);
@@ -76,6 +89,7 @@ public class GameMenu : MonoBehaviour
 
     public void Resume(){
         PauseMenuUI.SetActive(false);
+        SettingsMenuUI.SetActive(false);
         InGameUI.SetActive(true);
         Time.timeScale = 1f;
         GameIsPaused = false;
