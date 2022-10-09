@@ -23,7 +23,7 @@ public class Area : MonoBehaviour
     {
         if (other.name == "Player")
         {
-            Debug.Log("Area Effected");
+            // Debug.Log("Area Effected");
             player.change_radius(ratio * Time.deltaTime);
         }
     }
