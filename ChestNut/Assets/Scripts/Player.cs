@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using TMPro;
 
 
 public class Player : MonoBehaviour
@@ -15,7 +17,12 @@ public class Player : MonoBehaviour
     private float player_radius;
     // private bool is_jump;
     public int keyStatus;
+    public float min_radius;
+    public float max_radius;
+
+    public GameObject player_transform;
     private Vector3[] forceDir = {Vector3.left, Vector3.forward, Vector3.right, Vector3.back};
+    private TextMeshProUGUI txt;
 
     // for statistics
     // public int blue_cube_num = 0;
@@ -29,10 +36,24 @@ public class Player : MonoBehaviour
         speed = new Vector3(0, 0, 0);
         // spd_val = 5;
         rb.drag = 1;
-        if (force_coef == 0) { force_coef = 25; }
-        if (density == 0) { density = 0.25f; }
-        if (rb.mass == 0) { rb.mass = 10; }
+        if (force_coef == 0) { 
+            force_coef = 25; 
+        }
+        if (density == 0) { 
+            density = 0.25f;
+        }
+        if (rb.mass == 0) { 
+            rb.mass = 10; 
+        }
+        if (min_radius == 0) { 
+            min_radius = 0.3f;
+        }
+        if (max_radius == 0) {
+            max_radius = 4f;
+        }
         player_radius = (float)transform.localScale[0];
+        txt = GameObject.Find("Canvas").transform.Find("InGameDisplay/PlayerInfo").GetComponent<TextMeshProUGUI>();
+        txt.text = "Speed: 00.00 m/s\nKeys: 0";
     }
 
     // Update is called once per frame
@@ -41,22 +62,28 @@ public class Player : MonoBehaviour
         if (!GameMenu.GameIsPaused) {
             // if (is_jump == false)
             // {
+                // float alpha = (float) Math.Sqrt(player_radius);
+                // alpha = 1f / alpha + 1f * alpha * (max_radius - alpha);
+                float alpha = 2f / (1f + Mathf.Exp(2f * player_radius - 3f));
+                Vector3 force_direction = new Vector3(0, 0, 0);
                 if (Input.GetKey("a"))
                 {
-                    rb.AddForce(forceDir[0] * force_coef * (float)Math.Sqrt(player_radius));
+                    force_direction += forceDir[0];
                 }
-                else if (Input.GetKey("w"))
+                if (Input.GetKey("w"))
                 {
-                    rb.AddForce(forceDir[1] * force_coef * (float)Math.Sqrt(player_radius));
+                    force_direction += forceDir[1];
                 }
-                else if (Input.GetKey("d"))
+                if (Input.GetKey("d"))
                 {
-                    rb.AddForce(forceDir[2] * force_coef * (float)Math.Sqrt(player_radius));
+                    force_direction += forceDir[2];
                 }
-                else if (Input.GetKey("s"))
+                if (Input.GetKey("s"))
                 {
-                    rb.AddForce(forceDir[3] * force_coef * (float)Math.Sqrt(player_radius));
+                    force_direction += forceDir[3];
                 }
+
+                rb.AddForce(force_direction.normalized * force_coef * alpha);
 
                 // if (Input.GetKey("space"))
                 // {
@@ -66,36 +93,40 @@ public class Player : MonoBehaviour
             // }
         }
 
+        txt.text = "Speed: " + string.Format("{0:00}.{1:00} m/s\nKeys: {2}", Mathf.FloorToInt(rb.velocity.magnitude), (rb.velocity.magnitude % 1) * 100, keyStatus);
+
         /********************** just for fun **********************/
-        // if (Input.GetKey("r"))
-        // {
-        //     change_radius(0.2f);
-        // }
-        // else if (Input.GetKey("f"))
-        // {
-        //     change_radius(-0.2f);
-        // }
+        if (Input.GetKey("r"))
+        {
+            change_radius(0.2f);
+        }
+        else if (Input.GetKey("f"))
+        {
+            change_radius(-0.2f);
+        }
         // if (Input.GetKey("c")) {
         //     rb.position = GameObject.Find("Trophy").transform.position + new Vector3(0, 5, 0);
         // }
         /********************** just for fun **********************/
     }
 
-    public void change_radius(float amount)
+    // true: if changed; false: invalid
+    public bool change_radius(float amount)
     {
-        if(player_radius + amount < 0.1)
+        if(player_radius + amount < min_radius || player_radius + amount > max_radius)
         {
             // GameMenu.IsDead = true;
-            return;
+            return false;
         }
         player_radius += amount;
         transform.localScale = new Vector3(player_radius, player_radius, player_radius);
-        Debug.Log("radius: " + player_radius + "\nmass: " + rb.mass);
        /* float scale = transform.localScale[0];
         Vector3 pos = transform.position;
         pos[1] += scale / 2;
         transform.position = pos;*/
         rb.mass += amount / density;
+        Debug.Log("radius: " + player_radius + "\nmass: " + rb.mass);
+        return true;
     }
 
     public float getRadius() {

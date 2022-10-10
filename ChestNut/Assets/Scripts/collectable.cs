@@ -25,15 +25,16 @@ public class collectable : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) {
         if (other.name == "Player"){
-            // Debug.Log("Trigger");
-            player.change_radius(ratio);
-            if (this.gameObject.name == "Red Cube") {
-                GameMenu.sendData("item-redcube");
+            Debug.Log("Trigger");
+            if (player.change_radius(ratio)) {
+                if (this.gameObject.name == "Red Cube") {
+                    GameMenu.sendData("item-redcube");
+                }
+                else if (this.gameObject.name == "Blue Cube") {
+                    GameMenu.sendData("item-bluecube");
+                }
+                Destroy(this.gameObject);
             }
-            else if (this.gameObject.name == "Blue Cube") {
-                GameMenu.sendData("item-bluecube");
-            }
-            Destroy(this.gameObject);
             // other.gameObject.transform.localScale = new Vector3(1,1,1);
         }
     }
