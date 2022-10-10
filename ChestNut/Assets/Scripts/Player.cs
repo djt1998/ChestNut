@@ -46,7 +46,7 @@ public class Player : MonoBehaviour
             rb.mass = 10; 
         }
         if (min_radius == 0) { 
-            min_radius = 0.3f;
+            min_radius = 0.4f;
         }
         if (max_radius == 0) {
             max_radius = 4f;
