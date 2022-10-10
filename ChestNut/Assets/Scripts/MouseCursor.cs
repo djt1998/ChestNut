@@ -7,7 +7,8 @@ public class MouseCursor : MonoBehaviour
     [SerializeField] private Camera canvasCamera;
     public GameObject clickEffect;
     public GameObject trailEffect;
-    private float nextTrailSpawn = 0.2f;
+    public Vector3 offset = new Vector3(0.5f, -0.5f, 0);
+    private float nextTrailSpawn = 0.1f;
     private float nextTimeClick = 0.2f;
     // Start is called before the first frame update
     void Start()
@@ -24,12 +25,12 @@ public class MouseCursor : MonoBehaviour
         mouseWorldPosition.z = -0.1f;
         transform.position = mouseWorldPosition;
         if (nextTimeClick <= 0f && Input.GetMouseButton(0)) {
-            nextTimeClick = 0.4f;
+            nextTimeClick = 0.2f;
             Instantiate(clickEffect, transform.position, clickEffect.transform.rotation);
         }
         if (nextTrailSpawn <= 0f) {
-            nextTrailSpawn = 0.2f;
-            Instantiate(clickEffect, transform.position, trailEffect.transform.rotation);
+            nextTrailSpawn = 0.1f;
+            Instantiate(trailEffect, transform.position + offset, trailEffect.transform.rotation);
         }
     }
 }

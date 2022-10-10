@@ -1160,6 +1160,7 @@ MonoBehaviour:
   canvasCamera: {fileID: 240378115}
   clickEffect: {fileID: 5426475329111177840, guid: f4c9dcb365e804be2a57d9f8e1d58bbd, type: 3}
   trailEffect: {fileID: 5426475329111177840, guid: e10b042b1d8cc493ea1bb63d6b38d194, type: 3}
+  offset: {x: 0.5, y: -0.5, z: 0}
 --- !u!4 &729440361
 Transform:
   m_ObjectHideFlags: 0
