@@ -53,14 +53,14 @@ public class Player : MonoBehaviour
         }
         player_radius = (float)transform.localScale[0];
         txt = GameObject.Find("Canvas").transform.Find("InGameDisplay/PlayerInfo").GetComponent<TextMeshProUGUI>();
-        txt.text = "Speed: 00.00 m/s\nKeys: 0";
+        // txt.text = "Speed: 00.00 m/s\nKeys: 0";
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
         if (!GameMenu.GameIsPaused) {
-            // if (is_jump == false)
+            // if (!is_jump)
             // {
                 // float alpha = (float) Math.Sqrt(player_radius);
                 // alpha = 1f / alpha + 1f * alpha * (max_radius - alpha);
