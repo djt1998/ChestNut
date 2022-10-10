@@ -96,14 +96,14 @@ public class Player : MonoBehaviour
         txt.text = "Speed: " + string.Format("{0:00}.{1:00} m/s\nKeys: {2}", Mathf.FloorToInt(rb.velocity.magnitude), (rb.velocity.magnitude % 1) * 100, keyStatus);
 
         /********************** just for fun **********************/
-        if (Input.GetKey("r"))
-        {
-            change_radius(0.2f);
-        }
-        else if (Input.GetKey("f"))
-        {
-            change_radius(-0.2f);
-        }
+        // if (Input.GetKey("r"))
+        // {
+        //     change_radius(0.2f);
+        // }
+        // else if (Input.GetKey("f"))
+        // {
+        //     change_radius(-0.2f);
+        // }
         // if (Input.GetKey("c")) {
         //     rb.position = GameObject.Find("Trophy").transform.position + new Vector3(0, 5, 0);
         // }
