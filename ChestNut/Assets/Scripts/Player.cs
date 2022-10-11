@@ -93,7 +93,7 @@ public class Player : MonoBehaviour
             // }
         }
 
-        txt.text = "Speed: " + string.Format("{0:00}.{1:00} m/s\nKeys: {2}", Mathf.FloorToInt(rb.velocity.magnitude), (rb.velocity.magnitude % 1) * 100, keyStatus);
+        txt.text = string.Format("{0, -7}{1:00}.{2:00} m/s\n{3, -10}{4}", "SPEED:", Mathf.FloorToInt(rb.velocity.magnitude), (rb.velocity.magnitude % 1) * 100, "KEY:", keyStatus);
 
         /********************** just for fun **********************/
         // if (Input.GetKey("r"))
