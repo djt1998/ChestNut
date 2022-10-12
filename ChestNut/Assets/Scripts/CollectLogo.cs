@@ -27,6 +27,7 @@ public class CollectLogo : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
         if (other.name == "Player"){
             Debug.Log("Collect Logo!");
+            GameMenu.sendData("logo");
             StartCoroutine(collectLogo(1));
             GetComponent<MeshRenderer>().enabled = false;
         }
