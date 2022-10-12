@@ -49,7 +49,7 @@ public class Player : MonoBehaviour
             min_radius = 0.4f;
         }
         if (max_radius == 0) {
-            max_radius = 4f;
+            max_radius = 3f;
         }
         player_radius = (float)transform.localScale[0];
         txt = GameObject.Find("Canvas").transform.Find("InGameDisplay/PlayerInfo").GetComponent<TextMeshProUGUI>();
@@ -64,7 +64,7 @@ public class Player : MonoBehaviour
             // {
                 // float alpha = (float) Math.Sqrt(player_radius);
                 // alpha = 1f / alpha + 1f * alpha * (max_radius - alpha);
-                float alpha = 2f / (1f + Mathf.Exp(2f * player_radius - 3f));
+                // alpha = 2f / (1f + Mathf.Exp(2f * player_radius - 3f));
                 Vector3 force_direction = new Vector3(0, 0, 0);
                 if (Input.GetKey("a"))
                 {
@@ -83,7 +83,7 @@ public class Player : MonoBehaviour
                     force_direction += forceDir[3];
                 }
 
-                rb.AddForce(force_direction.normalized * force_coef * alpha);
+                rb.AddForce(force_direction.normalized * force_coef * 2f * Mathf.Max(sigmoid(player_radius, 2f, 1.5f), sigmoid(player_radius, 0.7f, 1.5f)));
 
                 // if (Input.GetKey("space"))
                 // {
@@ -138,6 +138,10 @@ public class Player : MonoBehaviour
             forceDir[i] = Quaternion.Euler(0, angle, 0) * forceDir[i];
             // Debug.Log(i + ": " + forceDir[i]);
         }
+    }
+
+    private static float sigmoid(float x, float alpha, float beta) {
+        return 1f / (1f + Mathf.Exp(alpha * (x - beta)));
     }
 
     // private void OnCollisionEnter(Collision other)
