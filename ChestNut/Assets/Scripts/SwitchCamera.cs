@@ -68,6 +68,7 @@ public class SwitchCamera : MonoBehaviour
         for (int i = 0; i < cameras.Length; i++) {
             if (cameras[i].GetComponent<Follower>() != null) {
                 cameras[i].GetComponent<Follower>().lockCamera();
+                cameras[i].GetComponent<Follower>().enabled = false;
             }
         }
 
@@ -82,6 +83,11 @@ public class SwitchCamera : MonoBehaviour
             }
             textPressAnyKeyToSkip.alpha += beta * Time.deltaTime;
             yield return null;
+        }
+        for (int i = 0; i < cameras.Length; i++) {
+            if (cameras[i].GetComponent<Follower>() != null) {
+                cameras[i].GetComponent<Follower>().enabled = true;
+            }
         }
         yield return new WaitForSeconds(0.5f);
 
