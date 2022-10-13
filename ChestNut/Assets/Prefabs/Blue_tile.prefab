@@ -59,7 +59,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47abded1c2d72664a883a8369b8f7971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ratio: 0.05
+  ratio: 0.1
   effect: 2
 --- !u!1 &2450730652773841309
 GameObject:

@@ -1033,7 +1033,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8275139211917700421, guid: f128cc2ef384cc746b1e4d038c26bc7d, type: 3}
       propertyPath: m_Name
-      value: Player
+      value: Player_model
       objectReference: {fileID: 0}
     - target: {fileID: 8275139211917700431, guid: f128cc2ef384cc746b1e4d038c26bc7d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1065,7 +1065,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8275139212874964604, guid: f128cc2ef384cc746b1e4d038c26bc7d, type: 3}
       propertyPath: density
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8275139212874964604, guid: f128cc2ef384cc746b1e4d038c26bc7d, type: 3}
       propertyPath: force_coef
