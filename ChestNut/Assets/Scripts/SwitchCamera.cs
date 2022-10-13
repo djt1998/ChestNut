@@ -55,11 +55,11 @@ public class SwitchCamera : MonoBehaviour
 
     IEnumerator Preview(float countDown) {
         TextMeshProUGUI textPressAnyKeyToSkip = GameObject.Find("Canvas").transform.Find("InGameDisplay/PressAnyKeyToSkip").GetComponent<TextMeshProUGUI>();
-        textPressAnyKeyToSkip.text = "Press Any Key To Skip";
+        textPressAnyKeyToSkip.enabled = true; // = "Press Any Key To Skip";
         float alpha = textPressAnyKeyToSkip.alpha;
         float beta = -1f;
-        TextMeshProUGUI textInstructions = GameObject.Find("Canvas").transform.Find("InGameDisplay/Instructions").GetComponent<TextMeshProUGUI>();
-        textInstructions.text = "";
+        // TextMeshProUGUI textInstructions = GameObject.Find("Canvas").transform.Find("InGameDisplay/Instructions").GetComponent<TextMeshProUGUI>();
+        // textInstructions.text = "";
         Player player = FindObjectOfType<Player>();
         TimerManager TM = FindObjectOfType<TimerManager>();
         player.GetComponent<Player>().enabled = false;
@@ -89,13 +89,13 @@ public class SwitchCamera : MonoBehaviour
                 cameras[i].GetComponent<Follower>().enabled = true;
             }
         }
+        textPressAnyKeyToSkip.enabled = false;
+        textPressAnyKeyToSkip.alpha = alpha;
+        // textInstructions.text = "Settings: P";
         yield return new WaitForSeconds(0.5f);
 
         player.GetComponent<Player>().enabled = true;
         TM.enabled = true;
-        textPressAnyKeyToSkip.text = "";
-        textPressAnyKeyToSkip.alpha = alpha;
-        textInstructions.text = "Settings: P";
         switch_enabled = true;
         for (int i = 0; i < cameras.Length; i++) {
             if (cameras[i].GetComponent<Follower>() != null) {

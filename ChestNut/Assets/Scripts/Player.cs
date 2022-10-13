@@ -23,7 +23,6 @@ public class Player : MonoBehaviour
 
     public float size_recover_coef;
 
-    public GameObject player_transform;
     private Vector3[] forceDir = {Vector3.left, Vector3.forward, Vector3.right, Vector3.back};
     private TextMeshProUGUI txt;
 
@@ -158,7 +157,7 @@ public class Player : MonoBehaviour
             return true;
         }
         Debug.Log("current_density: " + current_density + "  Density: " + density);
-        float density_diff = current_density - density;
+        // float density_diff = current_density - density;
         float target_radius = rb.mass / density;
         float size_diff = target_radius - player_radius;
         triger_effect(4);
