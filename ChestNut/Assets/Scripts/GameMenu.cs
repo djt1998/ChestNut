@@ -10,6 +10,7 @@ public class GameMenu : MonoBehaviour
     public static bool GameIsPaused = false;
     public static bool IsWon = false;
     public static bool IsDead = false;
+
     // public static bool IsRestart = false;
     public GameObject PauseMenuUI;
     public GameObject SettingsMenuUI;

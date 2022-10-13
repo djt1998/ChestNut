@@ -95,6 +95,18 @@ public class Follower : MonoBehaviour
         cameraTransformation();
     }
 
+    public void lockCamera() {
+        zoom_enabled = false;
+        xrotation_enabled = false;
+        yrotation_enabled = false;
+    }
+
+    public void unlockCamera() {
+        zoom_enabled = true;
+        xrotation_enabled = true;
+        yrotation_enabled = true;
+    }
+
     private void cameraTransformation() {
         distance = Mathf.Clamp(distance, minDistance, maxDistance);
         myRotationX = Mathf.Clamp(myRotationX, minAngleX, maxAngleX);
