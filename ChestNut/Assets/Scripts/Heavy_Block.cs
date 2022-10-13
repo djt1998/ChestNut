@@ -13,7 +13,7 @@ public class Heavy_Block : MonoBehaviour
     void Start()
     {
         player = FindObjectOfType<Player>();
-        if (min_mass == 0) { min_mass = 12; }
+        if (min_mass == 0) { min_mass = 8; }
         rb.constraints = RigidbodyConstraints.FreezePosition | RigidbodyConstraints.FreezeRotation;
         rb.isKinematic = true;
     }
@@ -25,9 +25,9 @@ public class Heavy_Block : MonoBehaviour
     }
 
 
-    private void OnCollisionEnter(Collision other)
+    private void OnTriggerEnter(Collider other) 
     {
-        if (other.gameObject.name == "Player")
+        if (other.name == "Player_model")
         {
             if (player.rb.mass > min_mass)
             {
@@ -42,9 +42,9 @@ public class Heavy_Block : MonoBehaviour
 
         }
     }
-    private void OnCollisionExit(Collision other)
+    private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.name == "Player")
+        if (other.name == "Player_model")
         {
             rb.constraints = RigidbodyConstraints.FreezePosition | RigidbodyConstraints.FreezeRotation;
             rb.isKinematic = true;

@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 6971335993918992982}
-  ratio: 0.2
+  ratio: 2
 --- !u!1 &6971335993946160690
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,7 +12,7 @@ public class Wind : MonoBehaviour
     void Start()
     {
         player = FindObjectOfType<Player>();
-        if (force_coef == 0) { force_coef = 500; }
+        if (force_coef == 0) { force_coef = 200; }
     }
 
     // Update is called once per frame
@@ -27,7 +27,7 @@ public class Wind : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.name == "Player")
+        if (other.name == "Player_model")
         {
             Debug.Log("Wind Active");
             player.rb.AddForce(Vector3.up * force_coef);

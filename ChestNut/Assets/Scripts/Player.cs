@@ -19,10 +19,18 @@ public class Player : MonoBehaviour
     public int keyStatus;
     public float min_radius;
     public float max_radius;
+    public float max_density_diff;
+
+    public float size_recover_coef;
 
     public GameObject player_transform;
     private Vector3[] forceDir = {Vector3.left, Vector3.forward, Vector3.right, Vector3.back};
     private TextMeshProUGUI txt;
+
+    private int player_effect;
+    private int counter;
+    private float r,g,b,a;
+
 
     // for statistics
     // public int blue_cube_num = 0;
@@ -40,7 +48,7 @@ public class Player : MonoBehaviour
             force_coef = 25; 
         }
         if (density == 0) { 
-            density = 0.25f;
+            density = 4f;
         }
         if (rb.mass == 0) { 
             rb.mass = 10; 
@@ -51,8 +59,15 @@ public class Player : MonoBehaviour
         if (max_radius == 0) {
             max_radius = 3f;
         }
+        if (size_recover_coef == 0) {
+            size_recover_coef = 0.005f;
+        }
+        if (max_density_diff == 0) {
+            max_density_diff = 2f;
+        }
         player_radius = (float)transform.localScale[0];
         txt = GameObject.Find("Canvas").transform.Find("InGameDisplay/PlayerInfo").GetComponent<TextMeshProUGUI>();
+        counter = 0;
         // txt.text = "Speed: 00.00 m/s\nKeys: 0";
     }
 
@@ -83,7 +98,7 @@ public class Player : MonoBehaviour
                     force_direction += forceDir[3];
                 }
 
-                rb.AddForce(force_direction.normalized * force_coef * 2f * Mathf.Max(sigmoid(player_radius, 2f, 1.5f), sigmoid(player_radius, 0.7f, 1.5f)));
+                rb.AddForce(force_direction.normalized * force_coef * Mathf.Max(sigmoid(rb.mass, 0.05f, 26f), sigmoid(rb.mass, 0.4f, 9f)) * 2f );
 
                 // if (Input.GetKey("space"))
                 // {
@@ -91,8 +106,15 @@ public class Player : MonoBehaviour
                 //     rb.AddForce(Vector3.up * force_coef * 200);
                 // }
             // }
+            if(counter > 100000){
+                counter = 0;
+            }
+            counter += 1;
+            normalization();
+            effect_update();
         }
-
+        
+        
         txt.text = string.Format("{0, -7}{1:00}.{2:00} m/s\n{3, -10}{4}", "SPEED:", Mathf.FloorToInt(rb.velocity.magnitude), (rb.velocity.magnitude % 1) * 100, "KEY:", keyStatus);
 
         /********************** just for fun **********************/
@@ -108,6 +130,7 @@ public class Player : MonoBehaviour
         //     rb.position = GameObject.Find("Trophy").transform.position + new Vector3(0, 5, 0);
         // }
         /********************** just for fun **********************/
+        
     }
 
     // true: if changed; false: invalid
@@ -120,11 +143,63 @@ public class Player : MonoBehaviour
         }
         player_radius += amount;
         transform.localScale = new Vector3(player_radius, player_radius, player_radius);
-       /* float scale = transform.localScale[0];
-        Vector3 pos = transform.position;
-        pos[1] += scale / 2;
-        transform.position = pos;*/
-        rb.mass += amount / density;
+        rb.mass += amount * density;
+        Debug.Log("radius: " + player_radius + "\nmass: " + rb.mass);
+        return true;
+    }
+
+    // Try to normalized ball to default density,
+    // But not exceed mass_recover_coef speed
+    // return True if normalized, else return False
+    public bool normalization()
+    {
+        float current_density = rb.mass / player_radius;
+        if(Math.Abs(current_density-density) < 0.1){
+            return true;
+        }
+        Debug.Log("current_density: " + current_density + "  Density: " + density);
+        float density_diff = current_density - density;
+        float target_radius = rb.mass / density;
+        float size_diff = target_radius - player_radius;
+        if(Math.Abs(size_diff) > size_recover_coef){
+            player_radius += (size_diff) / Math.Abs(size_diff) * size_recover_coef;
+            transform.localScale = new Vector3(player_radius, player_radius, player_radius);
+            Debug.Log("Normalizing" +(size_diff) / Math.Abs(size_diff) * size_recover_coef);
+            return false;
+        }
+        else{
+            player_radius = target_radius;
+            transform.localScale = new Vector3(player_radius, player_radius, player_radius);
+            Debug.Log("Normalizing" );
+            return true;
+        }
+        
+        
+    }
+
+    // detached_change_radius Method:
+    // Same with change _radius Size Change,
+    // Mass remain the same.
+    public bool detached_change_radius(float amount){
+        if(player_radius + amount < min_radius || player_radius + amount > max_radius)
+        {
+            // GameMenu.IsDead = true;
+            return false;
+        }
+        player_radius += amount;
+        transform.localScale = new Vector3(player_radius, player_radius, player_radius);
+        Debug.Log("radius: " + player_radius + "\nmass: " + rb.mass);
+        return true;
+    }
+
+    public bool detached_change_mass(float amount){
+        float target_density = (rb.mass+amount) / player_radius;
+        if(Math.Abs(target_density - density) > max_density_diff)
+        {
+            // GameMenu.IsDead = true;
+            return false;
+        }
+        rb.mass += amount;
         Debug.Log("radius: " + player_radius + "\nmass: " + rb.mass);
         return true;
     }
@@ -144,6 +219,55 @@ public class Player : MonoBehaviour
         return 1f / (1f + Mathf.Exp(alpha * (x - beta)));
     }
 
+
+    public void triger_effect(int effect){
+        player_effect = effect;
+    }
+
+    private void change_color(float r, float g, float b, float a){
+        var player_Renderer = GameObject.Find("Player_model").GetComponent<Renderer>();
+        Color customColor = new Color(r, g, b, a);
+        player_Renderer.material.SetColor("_Color", customColor);
+        player_effect = 0;
+    }
+
+    private void effect_update(){
+        float flashing_rate;
+        switch (player_effect)
+        {
+            case 1: // Turn RED
+                flashing_rate = 1.0f - (0.8f*(((float) counter%50)/50.0f));
+                r = 1.0f;
+                g = flashing_rate;
+                b = flashing_rate;
+                Debug.Log("change color: " + flashing_rate + "  Counter = " + counter);
+                break;
+            case 2:  // Turn Blue
+                flashing_rate = 0.2f + (0.8f*(((float) counter%50)/50.0f));
+                r = flashing_rate;
+                g = flashing_rate;
+                b = 1.0f;
+                Debug.Log("change color: " + flashing_rate + "  Counter = " + counter);
+                break;
+            case 3:   //Turn Solid
+                flashing_rate = 1.0f - (0.8f*(((float) counter%50)/50.0f));
+                a = flashing_rate;
+                Debug.Log("change transparent: " + flashing_rate + "  Counter = " + counter);
+                break;
+            case 4:   //Turn Transparent
+                flashing_rate = 0.2f + (0.8f*(((float) counter%50)/50.0f));
+                a = flashing_rate;
+                Debug.Log("change transparent: " + flashing_rate + "  Counter = " + counter);
+                break;
+            default:
+                r = 1.0f;
+                g = 1.0f;
+                b = 1.0f;
+                a = 1.0f - sigmoid((rb.mass / player_radius), 2.0f, 4.0f);
+                break;
+        }
+        change_color(r, g, b, a);
+    }
     // private void OnCollisionEnter(Collision other)
     // {
     //     is_jump = false;

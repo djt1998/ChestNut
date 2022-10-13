@@ -6,7 +6,7 @@ public class Death_Block : MonoBehaviour
 {
     private void OnTriggerExit(Collider other)
     {
-        if (other.name == "Player")
+        if (other.name == "Player_model")
         {
             GameMenu.IsDead = true;
         }

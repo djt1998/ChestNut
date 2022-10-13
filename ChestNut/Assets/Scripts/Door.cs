@@ -25,9 +25,9 @@ public class Door: MonoBehaviour
     }
 
 
-    private void OnCollisionEnter(Collision other)
+    private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.name == "Player")
+        if (other.name == "Player_model")
         {
             if (player.keyStatus > 0 && isLocked == true)
             {

@@ -35,9 +35,9 @@ public class Falling_Block : MonoBehaviour
         Debug.Log("Finished Falling at timestamp : " + Time.time);
     }
 
-    private void OnCollisionEnter(Collision other)
+    private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.name == "Player")
+        if (other.name == "Player_model")
         {
             if (player.rb.mass > min_mass)
             {

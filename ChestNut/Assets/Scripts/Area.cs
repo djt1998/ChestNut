@@ -7,6 +7,7 @@ public class Area : MonoBehaviour
     // Start is called before the first frame update
     private Player player;
     public float ratio;
+    public int effect;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,10 +22,11 @@ public class Area : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.name == "Player")
+        if (other.name == "Player_model")
         {
             // Debug.Log("Area Effected");
             player.change_radius(ratio * Time.deltaTime);
+            player.triger_effect(effect);
         }
     }
 }

@@ -13,7 +13,7 @@ public class Checkpoint : MonoBehaviour
         IsOn = false;
     }
     private void OnTriggerEnter(Collider other) {
-        if (IsOn && other.name == "Player") {
+        if (IsOn && other.name == "Player_model") {
             Debug.Log("Checkpoint: cp-" + this.gameObject.name);
             CheckpointSet();
             GameMenu.sendData("cp-" + this.gameObject.name);

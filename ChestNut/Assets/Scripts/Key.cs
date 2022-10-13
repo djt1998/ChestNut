@@ -24,7 +24,7 @@ public class Key : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other) {
-        if (other.name == "Player"){
+        if (other.name == "Player_model"){
             Debug.Log("Key +1");
             player.keyStatus += 1;
             GameMenu.sendData("item-key");

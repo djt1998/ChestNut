@@ -25,7 +25,7 @@ public class CollectLogo : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other) {
-        if (other.name == "Player"){
+        if (other.name == "Player_model"){
             Debug.Log("Collect Logo!");
             GameMenu.sendData("logo");
             StartCoroutine(collectLogo(1));
