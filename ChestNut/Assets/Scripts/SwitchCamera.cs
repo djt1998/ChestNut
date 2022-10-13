@@ -78,7 +78,7 @@ public class SwitchCamera : MonoBehaviour
                 break;
             }
             countDown -= Time.deltaTime;
-            if (textPressAnyKeyToSkip.alpha <= 0.2f || textPressAnyKeyToSkip.alpha >= alpha) {
+            if (textPressAnyKeyToSkip.alpha < 0.3f || textPressAnyKeyToSkip.alpha > alpha) {
                 beta = -beta;
             }
             textPressAnyKeyToSkip.alpha += beta * Time.deltaTime;

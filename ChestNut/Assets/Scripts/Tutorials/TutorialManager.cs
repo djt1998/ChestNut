@@ -37,6 +37,7 @@ public class TutorialManager : MonoBehaviour
     }
 
     public void CompleteTutorial() {
+        explanationText.text = "Task " + currentTutorial.order + " Accomplished!";
         SetNextTutorial(currentTutorial.order + 1);
     }
 
