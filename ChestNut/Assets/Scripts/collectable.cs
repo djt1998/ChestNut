@@ -33,7 +33,7 @@ public class collectable : MonoBehaviour
                 else if (this.gameObject.name == "Blue Cube") {
                     GameMenu.sendData("item-bluecube");
                 }
-                DestroyImmediate(this.gameObject);
+                Destroy(this.gameObject);
             }
             // other.gameObject.transform.localScale = new Vector3(1,1,1);
         }

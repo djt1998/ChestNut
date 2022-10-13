@@ -132,7 +132,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8275139212874964604, guid: f128cc2ef384cc746b1e4d038c26bc7d, type: 3}
       propertyPath: force_coef
-      value: 100
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 8275139212874964605, guid: f128cc2ef384cc746b1e4d038c26bc7d, type: 3}
       propertyPath: m_RootOrder
