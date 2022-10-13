@@ -24,7 +24,7 @@ public class collectable : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other) {
-        if (other.name == "Player"){
+        if (other.name == "Player_model"){
             Debug.Log("Trigger");
             if (player.change_radius(ratio)) {
                 if (this.gameObject.name == "Red Cube") {

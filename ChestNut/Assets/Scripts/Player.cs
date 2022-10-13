@@ -161,6 +161,7 @@ public class Player : MonoBehaviour
         float density_diff = current_density - density;
         float target_radius = rb.mass / density;
         float size_diff = target_radius - player_radius;
+        triger_effect(4);
         if(Math.Abs(size_diff) > size_recover_coef){
             player_radius += (size_diff) / Math.Abs(size_diff) * size_recover_coef;
             transform.localScale = new Vector3(player_radius, player_radius, player_radius);
@@ -221,7 +222,25 @@ public class Player : MonoBehaviour
 
 
     public void triger_effect(int effect){
-        player_effect = effect;
+        // use mask: effect%10 is color, (int) effect/10 is transparecy
+        switch(effect){
+            case 1:
+                player_effect = ((int)player_effect/10)*10 + 1;
+                break;
+            case 2:
+                player_effect = ((int)player_effect/10)*10 + 2;
+                break;
+            case 3:
+                player_effect = 10+(player_effect%10);
+                break;
+            case 4:
+                player_effect = 20+(player_effect%10);
+                break;
+            default:
+                break;
+        }
+            
+        
     }
 
     private void change_color(float r, float g, float b, float a){
@@ -233,7 +252,7 @@ public class Player : MonoBehaviour
 
     private void effect_update(){
         float flashing_rate;
-        switch (player_effect)
+        switch (player_effect%10)
         {
             case 1: // Turn RED
                 flashing_rate = 1.0f - (0.8f*(((float) counter%50)/50.0f));
@@ -249,20 +268,24 @@ public class Player : MonoBehaviour
                 b = 1.0f;
                 Debug.Log("change color: " + flashing_rate + "  Counter = " + counter);
                 break;
-            case 3:   //Turn Solid
+            default:
+                r = 1.0f;
+                g = 1.0f;
+                b = 1.0f;
+                break;
+        }
+        switch ((int)player_effect/10){
+            case 1:   //Turn Solid
                 flashing_rate = 1.0f - (0.8f*(((float) counter%50)/50.0f));
                 a = flashing_rate;
                 Debug.Log("change transparent: " + flashing_rate + "  Counter = " + counter);
                 break;
-            case 4:   //Turn Transparent
+            case 2:   //Turn Transparent
                 flashing_rate = 0.2f + (0.8f*(((float) counter%50)/50.0f));
                 a = flashing_rate;
                 Debug.Log("change transparent: " + flashing_rate + "  Counter = " + counter);
                 break;
             default:
-                r = 1.0f;
-                g = 1.0f;
-                b = 1.0f;
                 a = 1.0f - sigmoid((rb.mass / player_radius), 2.0f, 4.0f);
                 break;
         }
