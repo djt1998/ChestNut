@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 25
+  controlID: 88
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -225,7 +225,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 26
+  controlID: 89
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -250,7 +250,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 27
+  controlID: 90
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -385,22 +385,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/Prefabs
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Prefabs
   m_LastFoldersGridSize: -1
   m_LastProjectPath: /Users/xubinzhang/Documents/GitHub/ChestNut/ChestNut
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 78610000
-    m_LastClickedID: 24952
-    m_ExpandedIDs: 0000000036610000386100003a6100003c610000766100007a61000000ca9a3bffffff7f
+    m_SelectedIDs: 70610000
+    m_LastClickedID: 24944
+    m_ExpandedIDs: 0000000036610000386100003a6100003c61000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -556,9 +556,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: be610000
+      m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 0a88f9ffee89f9ffcc8af9ff6eaaf9ff80cef9ff8ef7f9ff301cfaff0e3efaff103efaffea62faff7a88faffc8acfaff5cd3faffaa56fbffbc56fbffbe56fbfffc7afbff947ffbff3800fcff4400fcff4a00fcfff607fcffa61ffcffba1ffcffea43fcff0e82fcff52a6fcffeee9fcffb42bfeff2a3afeff3c3bfeffec52feff0053feff2077feff068afeffb6a1feffcaa1feffa01effff64adffff5ed7ffffcaf8ffff82f9ffff30fbffffe0df010012e201006a220200182e020082440200684e020094510200ca5402009c570200
+      m_ExpandedIDs: 30fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -882,9 +882,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0.17158322, y: 0.026595868, z: -0.0046339133, w: 0.98479974}
   m_Size:
-    m_Target: 2181.0422
+    m_Target: 12.134103
     speed: 2
-    m_Value: 2181.0422
+    m_Value: 12.134103
   m_Ortho:
     m_Target: 0
     speed: 2
