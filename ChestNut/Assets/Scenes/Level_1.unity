@@ -136,9 +136,8 @@ GameObject:
   - component: {fileID: 13448582}
   - component: {fileID: 13448583}
   - component: {fileID: 13448584}
-  - component: {fileID: 13448585}
   m_Layer: 0
-  m_Name: Player Movement [0:4]
+  m_Name: Player Movement [0:3]
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -241,24 +240,6 @@ MonoBehaviour:
   - 1
   - 2
   - 3
---- !u!114 &13448585
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 13448579}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c47c2df85f44487eb6d5108f7f7ccff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  order: 4
-  explanation: 'You have completed Key tutorial.
-
-    Press ''Space'' to continue.'
-  keys:
-  - space
 --- !u!1001 &90715396
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -337,7 +318,7 @@ GameObject:
   - component: {fileID: 571076332}
   - component: {fileID: 571076334}
   m_Layer: 0
-  m_Name: Eat a Red Cube [5]
+  m_Name: Eat a Red Cube [4]
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -370,7 +351,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 633f7b3c8a2a04b5fa6df69dfaf93365, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  order: 5
+  order: 4
   explanation: Eat the Red cube to become smaller.
   objectTransform: {fileID: 90715397}
 --- !u!65 &571076334
@@ -386,6 +367,70 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.2, y: 1, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &586909294
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 586909295}
+  - component: {fileID: 586909297}
+  - component: {fileID: 586909296}
+  m_Layer: 0
+  m_Name: Push away heavy blocks [8]
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &586909295
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 586909294}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 9.92, y: -1.141, z: -7.82}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 621992388}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &586909296
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 586909294}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.2, y: 1, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &586909297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 586909294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 633f7b3c8a2a04b5fa6df69dfaf93365, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  order: 8
+  explanation: 'You are now heavy enough to push away the heavy blocks.
+
+    Please
+    go ahead.'
+  objectTransform: {fileID: 90715397}
 --- !u!1 &621992386
 GameObject:
   m_ObjectHideFlags: 0
@@ -432,6 +477,9 @@ Transform:
   - {fileID: 13448580}
   - {fileID: 571076329}
   - {fileID: 1314038908}
+  - {fileID: 1254945007}
+  - {fileID: 1443771451}
+  - {fileID: 586909295}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -580,6 +628,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 905efaf33e340423d8613f97b05025ff, type: 3}
+--- !u!4 &826731615 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1343550985793874649, guid: 905efaf33e340423d8613f97b05025ff, type: 3}
+  m_PrefabInstance: {fileID: 826731614}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &826731616 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6949561559570775307, guid: 905efaf33e340423d8613f97b05025ff, type: 3}
+  m_PrefabInstance: {fileID: 826731614}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &826731617 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6085998221321891408, guid: 905efaf33e340423d8613f97b05025ff, type: 3}
+  m_PrefabInstance: {fileID: 826731614}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &843342197 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8275139211917700421, guid: f128cc2ef384cc746b1e4d038c26bc7d, type: 3}
@@ -653,6 +716,70 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1254945006
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1254945007}
+  - component: {fileID: 1254945009}
+  - component: {fileID: 1254945008}
+  m_Layer: 0
+  m_Name: Go through the thin gap [6]
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1254945007
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1254945006}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.706, y: -1.141, z: -8.227}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 621992388}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1254945008
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1254945006}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.2, y: 1, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1254945009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1254945006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 633f7b3c8a2a04b5fa6df69dfaf93365, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  order: 6
+  explanation: 'You are now small enough to go through the thin gap.
+
+    Please
+    go ahead.'
+  objectTransform: {fileID: 90715397}
 --- !u!1 &1256913058
 GameObject:
   m_ObjectHideFlags: 0
@@ -688,8 +815,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -180, y: 0}
-  m_SizeDelta: {x: 400, y: 140}
+  m_AnchoredPosition: {x: -280, y: 0}
+  m_SizeDelta: {x: 200, y: 140}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1256913060
 MonoBehaviour:
@@ -738,8 +865,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 25
-  m_fontSizeBase: 25
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -799,9 +926,8 @@ GameObject:
   - component: {fileID: 1314038908}
   - component: {fileID: 1314038910}
   - component: {fileID: 1314038909}
-  - component: {fileID: 1314038911}
   m_Layer: 0
-  m_Name: Eat a Red Cube [6:7]
+  m_Name: Eat a Red Cube [5]
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -847,31 +973,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 633f7b3c8a2a04b5fa6df69dfaf93365, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  order: 6
+  order: 5
   explanation: 'You get smaller but you are still too large to go through the thin
     gap.
 
     Plaese try to eat another red cube.'
   objectTransform: {fileID: 90715397}
---- !u!114 &1314038911
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1314038907}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7c47c2df85f44487eb6d5108f7f7ccff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  order: 7
-  explanation: 'You are now small enough to go through the thin gap.
-
-    Press ''SPACE''
-    to continue.'
-  keys:
-  - space
 --- !u!1 &1384142659
 GameObject:
   m_ObjectHideFlags: 0
@@ -966,6 +1073,59 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &1443771450
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1443771451}
+  - component: {fileID: 1443771454}
+  m_Layer: 0
+  m_Name: Eat a Blue Cube [7]
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1443771451
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1443771450}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.875, y: -1.141, z: -6.236}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 621992388}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1443771454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1443771450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed6186c46726e44558b6d67c25d75de6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  order: 7
+  explanation: 'You have to gain weight to push away the heavy blocks.
+
+    Please
+    eat some blue cubes to get bigger.'
+  objectTransforms:
+  - {fileID: 826731617}
+  - {fileID: 826731616}
+  - {fileID: 826731615}
 --- !u!1001 &2140424670
 PrefabInstance:
   m_ObjectHideFlags: 0
