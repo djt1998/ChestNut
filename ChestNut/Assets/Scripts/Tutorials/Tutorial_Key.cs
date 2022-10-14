@@ -9,7 +9,7 @@ public class Tutorial_Key : Tutorial
     public override void IsOnGoing()
     {
         for (int i = 0; i < keys.Count; i++) {
-            if (Input.inputString.Contains(keys[i])) {
+            if (Input.GetKey(keys[i])) {
                 keys.RemoveAt(i);
                 break;
             }

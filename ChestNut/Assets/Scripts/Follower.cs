@@ -103,7 +103,7 @@ public class Follower : MonoBehaviour
 
     public void unlockCamera() {
         zoom_enabled = true;
-        xrotation_enabled = true;
+        xrotation_enabled = !(mode == 1);
         yrotation_enabled = true;
     }
 

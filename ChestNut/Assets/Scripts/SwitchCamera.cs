@@ -11,8 +11,11 @@ public class SwitchCamera : MonoBehaviour
     public bool change = true;
     private Animation levelPreview;
     private bool switch_enabled = true;
+    private TextMeshProUGUI textPressAnyKeyToSkip;
     void Start() {
         Switch(0);
+        textPressAnyKeyToSkip = GameObject.Find("Canvas").transform.Find("InGameDisplay/PressAnyKeyToSkip").GetComponent<TextMeshProUGUI>();
+        textPressAnyKeyToSkip.enabled = false;
         levelPreview = cameras[0].GetComponent<Animation>();
         if (levelPreview != null)  {
             levelPreview.Play();
@@ -54,7 +57,6 @@ public class SwitchCamera : MonoBehaviour
     }
 
     IEnumerator Preview(float countDown) {
-        TextMeshProUGUI textPressAnyKeyToSkip = GameObject.Find("Canvas").transform.Find("InGameDisplay/PressAnyKeyToSkip").GetComponent<TextMeshProUGUI>();
         textPressAnyKeyToSkip.enabled = true; // = "Press Any Key To Skip";
         float alpha = textPressAnyKeyToSkip.alpha;
         float beta = -1f;

@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class TutorialManager : MonoBehaviour
 {
     public List<Tutorial> tutorials = new List<Tutorial>();
-    public Text explanationText;
+    public TextMeshProUGUI explanationText;
     private static TutorialManager instance;
     private Tutorial currentTutorial;
     public static TutorialManager Instance {
@@ -37,7 +38,6 @@ public class TutorialManager : MonoBehaviour
     }
 
     public void CompleteTutorial() {
-        explanationText.text = "Task " + currentTutorial.order + " Accomplished!";
         SetNextTutorial(currentTutorial.order + 1);
     }
 
