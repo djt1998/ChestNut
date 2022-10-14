@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 13448584}
   - component: {fileID: 13448585}
   m_Layer: 0
-  m_Name: Player Movement
+  m_Name: Player Movement [0:4]
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -320,6 +320,72 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f128cc2ef384cc746b1e4d038c26bc7d, type: 3}
+--- !u!4 &90715397 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8275139211917700431, guid: f128cc2ef384cc746b1e4d038c26bc7d, type: 3}
+  m_PrefabInstance: {fileID: 90715396}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &571076328
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 571076329}
+  - component: {fileID: 571076332}
+  - component: {fileID: 571076334}
+  m_Layer: 0
+  m_Name: Eat a Red Cube [5]
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &571076329
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 571076328}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.123, y: -1.141, z: -8.238}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 621992388}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &571076332
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 571076328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 633f7b3c8a2a04b5fa6df69dfaf93365, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  order: 5
+  explanation: Eat the Red cube to become smaller.
+  objectTransform: {fileID: 90715397}
+--- !u!65 &571076334
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 571076328}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.2, y: 1, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &621992386
 GameObject:
   m_ObjectHideFlags: 0
@@ -364,6 +430,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 13448580}
+  - {fileID: 571076329}
+  - {fileID: 1314038908}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -374,6 +442,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 61318386240851500, guid: 905efaf33e340423d8613f97b05025ff, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 61318386240851500, guid: 905efaf33e340423d8613f97b05025ff, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2173601548764035366, guid: 905efaf33e340423d8613f97b05025ff, type: 3}
+      propertyPath: m_Name
+      value: redcube2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2370712519064347708, guid: 905efaf33e340423d8613f97b05025ff, type: 3}
+      propertyPath: m_Name
+      value: redcube2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2389835781830427473, guid: 905efaf33e340423d8613f97b05025ff, type: 3}
+      propertyPath: m_Name
+      value: redcube1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2808671263567133391, guid: 905efaf33e340423d8613f97b05025ff, type: 3}
+      propertyPath: m_Size.y
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3697456147531589328, guid: 905efaf33e340423d8613f97b05025ff, type: 3}
       propertyPath: m_Name
       value: Map
@@ -421,6 +513,70 @@ PrefabInstance:
     - target: {fileID: 3697456147531589331, guid: 905efaf33e340423d8613f97b05025ff, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4222559208771327188, guid: 905efaf33e340423d8613f97b05025ff, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4222559208771327188, guid: 905efaf33e340423d8613f97b05025ff, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4222559208771327188, guid: 905efaf33e340423d8613f97b05025ff, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4600868283170878555, guid: 905efaf33e340423d8613f97b05025ff, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4600868283170878555, guid: 905efaf33e340423d8613f97b05025ff, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5209373000656857049, guid: 905efaf33e340423d8613f97b05025ff, type: 3}
+      propertyPath: m_Size.y
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5645113696256227626, guid: 905efaf33e340423d8613f97b05025ff, type: 3}
+      propertyPath: m_Name
+      value: redcube1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5736293438931394119, guid: 905efaf33e340423d8613f97b05025ff, type: 3}
+      propertyPath: m_Name
+      value: redcube2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6064243943652133314, guid: 905efaf33e340423d8613f97b05025ff, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6064243943652133314, guid: 905efaf33e340423d8613f97b05025ff, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6064243943652133314, guid: 905efaf33e340423d8613f97b05025ff, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7721646206277383093, guid: 905efaf33e340423d8613f97b05025ff, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7721646206277383093, guid: 905efaf33e340423d8613f97b05025ff, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7721646206277383093, guid: 905efaf33e340423d8613f97b05025ff, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8167050409297281885, guid: 905efaf33e340423d8613f97b05025ff, type: 3}
+      propertyPath: m_Name
+      value: redcube2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8596000357878685102, guid: 905efaf33e340423d8613f97b05025ff, type: 3}
+      propertyPath: m_Size.y
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 905efaf33e340423d8613f97b05025ff, type: 3}
@@ -532,7 +688,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -180, y: 0}
   m_SizeDelta: {x: 400, y: 140}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1256913060
@@ -632,6 +788,90 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1256913058}
   m_CullTransparentMesh: 1
+--- !u!1 &1314038907
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1314038908}
+  - component: {fileID: 1314038910}
+  - component: {fileID: 1314038909}
+  - component: {fileID: 1314038911}
+  m_Layer: 0
+  m_Name: Eat a Red Cube [6:7]
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1314038908
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1314038907}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.123, y: -1.141, z: -7.238}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 621992388}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1314038909
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1314038907}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.2, y: 1, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1314038910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1314038907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 633f7b3c8a2a04b5fa6df69dfaf93365, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  order: 6
+  explanation: 'You get smaller but you are still too large to go through the thin
+    gap.
+
+    Plaese try to eat another red cube.'
+  objectTransform: {fileID: 90715397}
+--- !u!114 &1314038911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1314038907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c47c2df85f44487eb6d5108f7f7ccff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  order: 7
+  explanation: 'You are now small enough to go through the thin gap.
+
+    Press ''SPACE''
+    to continue.'
+  keys:
+  - space
 --- !u!1 &1384142659
 GameObject:
   m_ObjectHideFlags: 0
