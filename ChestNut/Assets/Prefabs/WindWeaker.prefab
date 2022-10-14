@@ -113,7 +113,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: {fileID: 7887809626656175776}
   ratio: 0
-  force_coef: 400
+  force_coef: 200
 --- !u!1 &9127082493006606562
 GameObject:
   m_ObjectHideFlags: 0
