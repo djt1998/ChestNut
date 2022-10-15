@@ -136,8 +136,11 @@ GameObject:
   - component: {fileID: 13448582}
   - component: {fileID: 13448583}
   - component: {fileID: 13448584}
+  - component: {fileID: 13448585}
+  - component: {fileID: 13448586}
+  - component: {fileID: 13448587}
   m_Layer: 0
-  m_Name: Player Movement [0:3]
+  m_Name: Player Movement [0:4]
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -151,7 +154,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 13448579}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -2.933, y: -1.476, z: -9.097}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -240,6 +243,47 @@ MonoBehaviour:
   - 1
   - 2
   - 3
+--- !u!114 &13448585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 13448579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0035d6bacae85429da550ac39b95a6c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  order: 4
+  explanation: 
+--- !u!135 &13448586
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 13448579}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!64 &13448587
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 13448579}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1001 &90715396
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -323,7 +367,7 @@ GameObject:
   - component: {fileID: 492610125}
   - component: {fileID: 492610124}
   m_Layer: 0
-  m_Name: Push away heavy blocks [11]
+  m_Name: Push away heavy blocks [12]
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -369,7 +413,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 633f7b3c8a2a04b5fa6df69dfaf93365, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  order: 11
+  order: 12
   explanation: 'You are now heavy enough to push away the heavy blocks.
 
     Please
@@ -387,7 +431,7 @@ GameObject:
   - component: {fileID: 586909297}
   - component: {fileID: 586909296}
   m_Layer: 0
-  m_Name: Push away heavy blocks [7]
+  m_Name: Push away heavy blocks [8]
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -433,7 +477,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 633f7b3c8a2a04b5fa6df69dfaf93365, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  order: 7
+  order: 8
   explanation: 'You are now heavy enough to push away the heavy blocks.
 
     Please
@@ -505,7 +549,7 @@ GameObject:
   - component: {fileID: 721932291}
   - component: {fileID: 721932292}
   m_Layer: 0
-  m_Name: Eat up all red cubes [4]
+  m_Name: Eat up all red cubes [5]
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -538,7 +582,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e940b096ad1a44f9b6557088988f8cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  order: 4
+  order: 5
   explanation: Eat the Red cube to become smaller to go through the thin gap.
   objectTransforms:
   - {fileID: 826731619}
@@ -799,7 +843,7 @@ GameObject:
   - component: {fileID: 1254945009}
   - component: {fileID: 1254945008}
   m_Layer: 0
-  m_Name: Go through the thin gap [5]
+  m_Name: Go through the thin gap [6]
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -845,7 +889,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 633f7b3c8a2a04b5fa6df69dfaf93365, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  order: 5
+  order: 6
   explanation: 'You are now small enough to go through the thin gap.
 
     Please
@@ -1089,9 +1133,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1443771451}
-  - component: {fileID: 1443771454}
+  - component: {fileID: 1443771452}
   m_Layer: 0
-  m_Name: Eat up all blue cubes [6]
+  m_Name: Eat up all blue cubes [7]
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1112,7 +1156,7 @@ Transform:
   m_Father: {fileID: 621992388}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1443771454
+--- !u!114 &1443771452
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1121,10 +1165,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1443771450}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed6186c46726e44558b6d67c25d75de6, type: 3}
+  m_Script: {fileID: 11500000, guid: 6e940b096ad1a44f9b6557088988f8cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  order: 6
+  order: 7
   explanation: 'You have to gain weight to push away the heavy blocks.
 
     Please
@@ -1133,6 +1177,7 @@ MonoBehaviour:
   - {fileID: 826731617}
   - {fileID: 826731616}
   - {fileID: 826731615}
+  cubeType: 1
 --- !u!1 &1971026750
 GameObject:
   m_ObjectHideFlags: 0
@@ -1144,7 +1189,7 @@ GameObject:
   - component: {fileID: 1971026751}
   - component: {fileID: 1971026752}
   m_Layer: 0
-  m_Name: Stay on the red area [8]
+  m_Name: Stay on the red area [9]
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1177,10 +1222,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 104c9d857351b4f28ad8bc0855fe84a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  order: 8
+  order: 9
   explanation: Stay on the Red Area to become smaller.
   player: {fileID: 90715398}
-  maxSize: 0.6
+  maxSize: 0.7
 --- !u!1 &1978294702
 GameObject:
   m_ObjectHideFlags: 0
@@ -1193,7 +1238,7 @@ GameObject:
   - component: {fileID: 1978294705}
   - component: {fileID: 1978294704}
   m_Layer: 0
-  m_Name: Go through the thin gap [9]
+  m_Name: Go through the thin gap [10]
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1239,7 +1284,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 633f7b3c8a2a04b5fa6df69dfaf93365, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  order: 9
+  order: 10
   explanation: 'You are now small enough to go through the thin gap.
 
     Please
@@ -1256,7 +1301,7 @@ GameObject:
   - component: {fileID: 2010520718}
   - component: {fileID: 2010520719}
   m_Layer: 0
-  m_Name: Stay on the blue area [10]
+  m_Name: Stay on the blue area [11]
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1289,7 +1334,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9a2bd0cf22474336a8ab9655078a1a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  order: 10
+  order: 11
   explanation: Stay on the Blue Area to become heavier.
   player: {fileID: 90715398}
   minWeight: 8
