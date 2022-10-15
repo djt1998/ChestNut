@@ -31,9 +31,11 @@ public class ArrowLook : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        offset.y = p.getRadius() / 2.2f;
-        offset.z = -p.getRadius() / 2.2f;
-        transform.position = player.position + offset;
+        if (player) {
+            offset.y = p.getRadius() / 2.2f;
+            offset.z = -p.getRadius() / 2.2f;
+            transform.position = player.position + offset;
+        }
         if (LookAtTarget) {
             transform.LookAt(LookAtTarget);
         }
@@ -43,7 +45,11 @@ public class ArrowLook : MonoBehaviour
         }
     }
 
-    private void SetTarget(Transform target = null) {
+    public void SetTarget(Transform target = null) {
         m_Target = target;
+    }
+
+    public void SetPlayer(Transform _player = null) {
+        m_player = _player;
     }
 }
