@@ -1987,8 +1987,14 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 408695492, guid: 78505be017a1b421889434294602f505, type: 3}
       propertyPath: m_text
-      value: "Movement: W A S D\nCameraRotate: I J K L\nCameraSwitch: 1 2 \nZoom
-        In/Out/O: +/-/0  "
+      value: 'Movement: W A S D
+
+        CameraRotate: I J K L
+
+        CameraSwitch:
+        1 2 3
+
+        Zoom In/Out/Reset: +/-/0 '
       objectReference: {fileID: 0}
     - target: {fileID: 769761255696087807, guid: 78505be017a1b421889434294602f505, type: 3}
       propertyPath: m_IsActive

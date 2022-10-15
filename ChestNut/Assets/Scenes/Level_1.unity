@@ -2651,7 +2651,7 @@ PrefabInstance:
         CameraSwitch:
         1 2 3
 
-        Zoom In/Out/O: +/-/0  '
+        Zoom In/Out/Reset: +/-/0  '
       objectReference: {fileID: 0}
     - target: {fileID: 2849802865744092859, guid: 78505be017a1b421889434294602f505, type: 3}
       propertyPath: maxTime

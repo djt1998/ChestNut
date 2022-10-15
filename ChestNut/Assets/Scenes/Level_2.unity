@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657815, g: 0.49641192, b: 0.57481617, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3692,7 +3692,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1001 &1404850482
 PrefabInstance:
@@ -44059,8 +44059,14 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 408695492, guid: 78505be017a1b421889434294602f505, type: 3}
       propertyPath: m_text
-      value: "Movement: W A S D\nCameraRotate: I J K L\nCameraSwitch: 1 2 \nZoom
-        In/Out/O: +/-/0  "
+      value: 'Movement: W A S D
+
+        CameraRotate: I J K L
+
+        CameraSwitch:
+        1 2 3
+
+        Zoom In/Out/Reset: +/-/0  '
       objectReference: {fileID: 0}
     - target: {fileID: 769761255696087807, guid: 78505be017a1b421889434294602f505, type: 3}
       propertyPath: m_IsActive
