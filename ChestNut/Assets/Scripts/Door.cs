@@ -5,8 +5,9 @@ using UnityEngine;
 public class Door: MonoBehaviour
 {
     private Player player;
-    public float ratio;
+    public GameObject cylinder;
     public Rigidbody rb;
+    public GameObject destroyEffect;
     private bool isLocked;
 
     // Start is called before the first frame update
@@ -31,10 +32,13 @@ public class Door: MonoBehaviour
         {
             if (player.keyStatus > 0 && isLocked == true)
             {
-                rb.constraints = RigidbodyConstraints.FreezePositionY;
-                rb.isKinematic = false;
-                isLocked = false;
+                // rb.constraints = RigidbodyConstraints.FreezePositionY;
+                // rb.isKinematic = false;
+                // isLocked = false;
                 player.keyStatus -= 1;
+                Instantiate(destroyEffect, transform.position, transform.rotation);
+                Destroy(cylinder);
+                Destroy(gameObject);
             }
         }
     }

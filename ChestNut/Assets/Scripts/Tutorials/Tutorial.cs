@@ -13,4 +13,8 @@ public class Tutorial : MonoBehaviour
     }
 
     public virtual void IsOnGoing() { }
+
+    public void setExplanation(string exp) {
+        TutorialManager.Instance.explanationText.text = exp;
+    }
 }
