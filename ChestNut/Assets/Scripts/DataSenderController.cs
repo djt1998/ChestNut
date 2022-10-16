@@ -8,8 +8,7 @@ public class DataSenderController : MonoBehaviour
 {
     // URL
     [SerializeField] private string URL;    // = "https://docs.google.com/forms/d/e/1FAIpQLSePz3EsxIRK0KUICpWOA31I30ossPnruJ_Zai7Nz78bydreAA/formResponse";
-	public string _tag = "";
-    public string _time = "";
+    public string[] entryList;
 
     // singleton instance
     public static DataSenderController instacne;
@@ -36,15 +35,15 @@ public class DataSenderController : MonoBehaviour
         
     }
 
-    public void Send() {
-        StartCoroutine(post());
+    public void Send(string _tag, string _time) {
+        StartCoroutine(post(_tag, _time));
     }
 
-    private IEnumerator post() {
+    private IEnumerator post(string _tag, string _time) {
         WWWForm form = new WWWForm();
-		form.AddField("entry.1405061159", GlobalData.SESSION_ID);
-		form.AddField("entry.1408921225", _tag);
-		form.AddField("entry.1638465568", _time);
+		form.AddField(entryList[0], GlobalData.SESSION_ID);
+		form.AddField(entryList[1], _tag);
+		form.AddField(entryList[2], _time);
 
 		// Send responses and verify result
 		using (UnityWebRequest www = UnityWebRequest.Post(URL, form))
