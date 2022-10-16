@@ -10,7 +10,6 @@ public class Wind_Animation : MonoBehaviour
     private int flash_counter;
     private int freq_counter;
     private int current_flash;
-    private bool waiting;
     
     // Start is called before the first frame update
     void Start()
@@ -24,7 +23,6 @@ public class Wind_Animation : MonoBehaviour
         current_flash = 4;
         flash_counter = 0;
         freq_counter = 0;
-        waiting = false;
     }
 
     // Update is called once per frame
@@ -44,22 +42,33 @@ public class Wind_Animation : MonoBehaviour
                     current_flash = 4;
                 }
                 else{
-                    current_flash -= 1;
+                    current_flash += -1;
                 }
                 Debug.Log("next flash: " + current_flash);
             }      
             if(current_flash == 4){
                 freq_counter = 0;
             }
+            flash_counter += 1;  
         }
         freq_counter += 1;    
-        flash_counter += 1;  
+        
     }
 
     private void change_color(float r, float g, float b, float a, string name){
-        var Renderer = GameObject.Find(name).GetComponent<Renderer>();
+        var Renderer = GetChildWithName(name).GetComponent<Renderer>();
         // Debug.Log("Finding Object" + name);
         Color customColor = new Color(r, g, b, a);
         Renderer.material.SetColor("_Color", customColor);
     }
+
+    GameObject GetChildWithName(string name) {
+        Transform childTrans = transform.Find(name);
+        if (childTrans != null) {
+            return childTrans.gameObject;
+        } else {
+            return null;
+        }
+    }
+ 
 }
