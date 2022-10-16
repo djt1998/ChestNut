@@ -2818,6 +2818,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: DataSender
       objectReference: {fileID: 0}
+    - target: {fileID: 1149178484034437765, guid: 1a19a38b8649747d2ae3cdbe1a92064a, type: 3}
+      propertyPath: entryList.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1149178484034437765, guid: 1a19a38b8649747d2ae3cdbe1a92064a, type: 3}
+      propertyPath: entryList.Array.data[0]
+      value: entry.1405061159
+      objectReference: {fileID: 0}
+    - target: {fileID: 1149178484034437765, guid: 1a19a38b8649747d2ae3cdbe1a92064a, type: 3}
+      propertyPath: entryList.Array.data[1]
+      value: entry.1408921225
+      objectReference: {fileID: 0}
+    - target: {fileID: 1149178484034437765, guid: 1a19a38b8649747d2ae3cdbe1a92064a, type: 3}
+      propertyPath: entryList.Array.data[2]
+      value: entry.1638465568
+      objectReference: {fileID: 0}
     - target: {fileID: 1149178484034437770, guid: 1a19a38b8649747d2ae3cdbe1a92064a, type: 3}
       propertyPath: m_RootOrder
       value: 4
