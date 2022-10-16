@@ -2913,6 +2913,18 @@ PrefabInstance:
       propertyPath: EmissionModule.rateOverTime.scalar
       value: 70
       objectReference: {fileID: 0}
+    - target: {fileID: 6359382007364053948, guid: 9fe7d87c39c5e41859555cac1bba21e4, type: 3}
+      propertyPath: InitialModule.startRotation.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6359382007364053948, guid: 9fe7d87c39c5e41859555cac1bba21e4, type: 3}
+      propertyPath: InitialModule.startRotationX.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6359382007364053948, guid: 9fe7d87c39c5e41859555cac1bba21e4, type: 3}
+      propertyPath: InitialModule.startRotationY.scalar
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6359382007364053949, guid: 9fe7d87c39c5e41859555cac1bba21e4, type: 3}
       propertyPath: m_RootOrder
       value: 0
