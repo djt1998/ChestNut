@@ -2196,7 +2196,7 @@ MonoBehaviour:
   maxSize: 0.75
   arrow: {fileID: 3051217233577721925, guid: e98f73fcb46df4c55a54196ffa725633, type: 3}
   target: {fileID: 1573766202}
-  offset: {x: 0, y: 1, z: 0}
+  offset: {x: 0, y: 1.5, z: 0}
 --- !u!1 &1978294702
 GameObject:
   m_ObjectHideFlags: 0
@@ -2408,7 +2408,7 @@ MonoBehaviour:
   minWeight: 8
   arrow: {fileID: 3051217233577721925, guid: e98f73fcb46df4c55a54196ffa725633, type: 3}
   target: {fileID: 702296840}
-  offset: {x: 0, y: 1, z: 0}
+  offset: {x: 0, y: 1.5, z: 0}
 --- !u!4 &2112034199 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5765175473951452305, guid: 5e89106a1c07645afa86f78ae017fe20, type: 3}
@@ -2649,15 +2649,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3051217232450561962, guid: e98f73fcb46df4c55a54196ffa725633, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.05
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 3051217232450561962, guid: e98f73fcb46df4c55a54196ffa725633, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.1
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 3051217232450561962, guid: e98f73fcb46df4c55a54196ffa725633, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.2
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 3051217233577721924, guid: e98f73fcb46df4c55a54196ffa725633, type: 3}
       propertyPath: m_RootOrder
