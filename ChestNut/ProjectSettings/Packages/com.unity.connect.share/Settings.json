@@ -21,7 +21,7 @@
             {
                 "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
                 "key": "buildOutputDirList",
-                "value": "{\"m_Value\":\"E:/CSCI 526/ChestNut/ChestNut/WebGL Builds;/Users/xubinzhang/Desktop/ChestNutJD;/Users/xubinzhang/Desktop/ChestNutJJ;/Users/xubinzhang/Desktop/ChestNutZ;/Users/xubinzhang/Desktop/test;F:/Documents/GitHub/CSCI526GameProject/Chestnut/WebGL Builds;;;;\"}"
+                "value": "{\"m_Value\":\"/Users/xubinzhang/Desktop/Snowball;/Users/xubinzhang/Documents/GitHub/ChestNut/ChestNut/Builds;/Users/xubinzhang/Desktop/ChestNutz;/Users/xubinzhang/Desktop/ChestNutJJJ;E:/CSCI 526/ChestNut/ChestNut/WebGL Builds;/Users/xubinzhang/Desktop/ChestNutJD;/Users/xubinzhang/Desktop/ChestNutJJ;/Users/xubinzhang/Desktop/test;F:/Documents/GitHub/CSCI526GameProject/Chestnut/WebGL Builds;\"}"
             }
         ]
     }
