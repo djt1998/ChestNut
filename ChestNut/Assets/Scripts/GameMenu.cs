@@ -41,13 +41,27 @@ public class GameMenu : MonoBehaviour
         else if (IsDead) {
             lose();
         }
-        else if (Input.GetKey(KeyCode.P) && !GameIsPaused)
+        // else if (Input.GetKeyDown(KeyCode.P))
+        // {
+        //     if (GameIsPaused) {
+        //         Resume();
+        //     }
+        //     else {
+        //         showSettings();
+        //     }
+        // }
+    }
+
+    void Update() {
+        if (Input.GetKeyDown(KeyCode.P) && !IsWon && !IsDead)
         {
-            showSettings();
+            if (GameIsPaused) {
+                Resume();
+            }
+            else {
+                showSettings();
+            }
         }
-        //else if (Input.GetKey(KeyCode.P) && !GameIsPaused){
-        //    Pause();
-        //}
     }
     private void showSettings()
     {
