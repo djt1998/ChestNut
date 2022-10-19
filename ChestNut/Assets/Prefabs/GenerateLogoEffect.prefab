@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 5426475329111177855}
   - component: {fileID: 5426475329111177854}
   - component: {fileID: 7897022598409965148}
-  m_Layer: 0
-  m_Name: DestroyLogoEffect
+  m_Layer: 5
+  m_Name: GenerateLogoEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42,7 +42,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5426475329111177840}
   serializedVersion: 8
-  lengthInSec: 0.5
+  lengthInSec: 20
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -57,7 +57,7 @@ ParticleSystem:
   startDelay:
     serializedVersion: 2
     minMaxState: 0
-    scalar: 0
+    scalar: 0.1
     minScalar: 0
     maxCurve:
       serializedVersion: 2
@@ -117,8 +117,8 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.5
-      minScalar: 0.3
+      scalar: 20
+      minScalar: 20
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -169,8 +169,8 @@ ParticleSystem:
         m_RotationOrder: 4
     startSpeed:
       serializedVersion: 2
-      minMaxState: 1
-      scalar: 1
+      minMaxState: 0
+      scalar: 0
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -224,7 +224,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 0, g: 0, b: 1, a: 1}
-      maxColor: {r: 0, g: 1, b: 0.94070315, a: 1}
+      maxColor: {r: 0, g: 1, b: 0.9411765, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 0.41304737, g: 0.684271, b: 0.9622642, a: 1}
@@ -1307,7 +1307,7 @@ ParticleSystem:
       maxGradient:
         serializedVersion: 2
         key0: {r: 0.040850822, g: 0.9622642, b: 0.95341754, a: 1}
-        key1: {r: 0.5568263, g: 0.9150943, b: 0.88818496, a: 0}
+        key1: {r: 1, g: 1, b: 1, a: 1}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
@@ -4825,4 +4825,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf5e83c9de3064aa08742a435a655a33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroy_time: 1
+  destroy_time: 20

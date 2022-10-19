@@ -23,8 +23,8 @@ public class LogoSpin : MonoBehaviour
             transform.localScale = scale;
         }
         else {
-            transform.eulerAngles = new Vector3(0, 180, 0);
-            transform.localScale = new Vector3(3.33f, 3.33f, 3.33f);
+            transform.eulerAngles = new Vector3(0, 0, 0);
+            transform.localScale = new Vector3(1, 1, 1);
         }
     }
 }

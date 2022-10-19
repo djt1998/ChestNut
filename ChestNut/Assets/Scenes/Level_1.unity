@@ -1029,6 +1029,14 @@ PrefabInstance:
       propertyPath: m_Size.y
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 3043698916746744704, guid: 905efaf33e340423d8613f97b05025ff, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3043698916746744704, guid: 905efaf33e340423d8613f97b05025ff, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3697456147531589328, guid: 905efaf33e340423d8613f97b05025ff, type: 3}
       propertyPath: m_Name
       value: Map
