@@ -64,7 +64,7 @@ public class SwitchCamera : MonoBehaviour
         // textInstructions.text = "";
         Player player = FindObjectOfType<Player>();
         TimerManager TM = FindObjectOfType<TimerManager>();
-        player.GetComponent<Player>().enabled = false;
+        player.enabled = false;
         TM.enabled = false;
         switch_enabled = false;
         for (int i = 0; i < cameras.Length; i++) {
@@ -96,7 +96,7 @@ public class SwitchCamera : MonoBehaviour
         // textInstructions.text = "Settings: P";
         yield return new WaitForSeconds(0.5f);
 
-        player.GetComponent<Player>().enabled = true;
+        player.enabled = true;
         TM.enabled = true;
         switch_enabled = true;
         for (int i = 0; i < cameras.Length; i++) {

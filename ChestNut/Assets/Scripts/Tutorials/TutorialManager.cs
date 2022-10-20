@@ -37,6 +37,12 @@ public class TutorialManager : MonoBehaviour
         }
     }
 
+    void Update() {
+        if (currentTutorial) {
+            currentTutorial.IsOnGoingUpdate();
+        }
+    }
+
     public void CompleteTutorial() {
         SetNextTutorial(currentTutorial.order + 1);
     }

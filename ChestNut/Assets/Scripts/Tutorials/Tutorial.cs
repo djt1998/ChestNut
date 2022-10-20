@@ -12,7 +12,9 @@ public class Tutorial : MonoBehaviour
         TutorialManager.Instance.tutorials.Add(this);
     }
 
-    public virtual void IsOnGoing() { }
+    public virtual void IsOnGoing() { } // fixedupdate
+
+    public virtual void IsOnGoingUpdate() { }   // update
 
     public void setExplanation(string exp) {
         TutorialManager.Instance.explanationText.text = exp;

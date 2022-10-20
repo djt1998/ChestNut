@@ -42,8 +42,6 @@ public class TimerManager : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        currTime = countdown ? currTime - Time.deltaTime : currTime + Time.deltaTime;     // countdown
-
         if (countdown && currTime <= deathTime) {    // game over, stop watch
             currTime = deathTime;
             GameMenu.IsDead = true;
@@ -68,6 +66,7 @@ public class TimerManager : MonoBehaviour
         else {
             displayTime();
         }
+        currTime = countdown ? currTime - Time.deltaTime : currTime + Time.deltaTime;     // countdown
     }
 
     private void displayTime() {

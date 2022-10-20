@@ -41,6 +41,9 @@ public class GameMenu : MonoBehaviour
         else if (IsDead) {
             lose();
         }
+        // else if (Input.GetKey(KeyCode.P) && !GameIsPaused) {
+        //     Pause();
+        // }
         // else if (Input.GetKeyDown(KeyCode.P))
         // {
         //     if (GameIsPaused) {
@@ -62,6 +65,10 @@ public class GameMenu : MonoBehaviour
                 showSettings();
             }
         }
+        // if (Input.GetKeyDown(KeyCode.P) && GameIsPaused && !IsWon && !IsDead)
+        // {
+        //     Resume();
+        // }
     }
     private void showSettings()
     {

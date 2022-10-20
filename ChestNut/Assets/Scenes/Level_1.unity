@@ -615,7 +615,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 378402089}
-  - component: {fileID: 378402090}
+  - component: {fileID: 378402091}
   m_Layer: 0
   m_Name: Press P [0]
   m_TagString: Untagged
@@ -638,7 +638,7 @@ Transform:
   m_Father: {fileID: 621992388}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &378402090
+--- !u!114 &378402091
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -647,11 +647,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 378402088}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2de647d56dcd0484f89dd511a67aef9e, type: 3}
+  m_Script: {fileID: 11500000, guid: d28f27f59920b489893c00ade2d7daa3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   order: 0
-  explanation: Press "P" for Pause and the Key Settings.
+  explanation: 'Press "P" for Pause and the Key Settings.
+
+    Please now Press "P"
+    to check the settings.'
+  key: p
 --- !u!1 &492610122
 GameObject:
   m_ObjectHideFlags: 0
@@ -1708,15 +1712,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
