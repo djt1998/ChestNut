@@ -60,6 +60,7 @@ public class Follower : MonoBehaviour
         nonObstructionNames.Add("Trophy");
         nonObstructionNames.Add("Logo");
         nonObstructionNames.Add("logo_chestnut");
+        nonObstructionNames.Add("YellowRod");
         cameraTransformation();
     }
 
@@ -160,11 +161,19 @@ public class Follower : MonoBehaviour
                 hit.transform.gameObject.GetComponent<MeshRenderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.ShadowsOnly;
                 newHits.Add(hit.transform);
             }
+            // if (hit.transform.gameObject.GetComponent<MeshRenderer>().material.name == "HeaveyBlock") {
+            //     Color c = hit.transform.gameObject.GetComponent<MeshRenderer>().material.color;
+            //     hit.transform.gameObject.GetComponent<MeshRenderer>().material.color = new Color(c.r, c.g, c.b, 0.5f);
+            // } 
         }
         Obstructions.ExceptWith(newHits);    // recover
         foreach (var ob in Obstructions) {
             if (ob != null) {
                 ob.gameObject.GetComponent<MeshRenderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
+                // if (ob.gameObject.GetComponent<MeshRenderer>().material.name == "HeaveyBlock") {
+                //     Color c = ob.gameObject.GetComponent<MeshRenderer>().material.color;
+                //     ob.gameObject.GetComponent<MeshRenderer>().material.color = new Color(c.r, c.g, c.b, 1f);
+                // }
             }
         }
         Obstructions.Clear();
