@@ -21,13 +21,16 @@ public class Follower : MonoBehaviour
     public float minAngleX = 10f;
     public float maxAngleX = 90f;
     public float damping = 10f;
-    public int mode = 0;    // 0: normal; 1: topdown; 2: first person
+    public int mode = 0;    // 0: normal; 1: topdown; 2: first person; 3: consistent to player's motion
     private float orignal_distance;
     private Player p;
     private bool zoom_enabled = true;
     private bool xrotation_enabled = true;
     private bool yrotation_enabled = true;
     private bool damping_enabled = true;
+
+    private HashSet<Transform> Obstructions = new HashSet<Transform>();
+    private HashSet<string> nonObstructionNames = new HashSet<string>();
     // private float myTime = 0.0f;
     // private float nextRotate = 0.4f;
 
@@ -48,6 +51,15 @@ public class Follower : MonoBehaviour
             distance = minDistance;
             damping_enabled = false;
         }
+        // if (mode == 3) {    // player motion
+        //     yrotation_enabled = false;
+        //     // myRotationY = -Mathf.Acos(Vector3.Dot(p.rb.velocity.normalized, Vector3.right)) * Mathf.Rad2Deg;
+        // }
+        nonObstructionNames.Add("Red Cube");
+        nonObstructionNames.Add("Blue Cube");
+        nonObstructionNames.Add("Trophy");
+        nonObstructionNames.Add("Logo");
+        nonObstructionNames.Add("logo_chestnut");
         cameraTransformation();
     }
 
@@ -58,6 +70,13 @@ public class Follower : MonoBehaviour
         if (mode == 2) {
             distance = p.getRadius();
         }
+        // else if (mode == 3) {
+        //     float newRotationY = Mathf.Acos(Vector3.Dot(p.rb.velocity.normalized, Vector3.right)) * Mathf.Rad2Deg;
+        //     if (is_active == true) {
+        //         p.force_direction_shift(newRotationY - myRotationY);
+        //         myRotationY = newRotationY;
+        //     }
+        // }
 
         // zooming
         if (zoom_enabled){
@@ -102,6 +121,7 @@ public class Follower : MonoBehaviour
             }
         }
         cameraTransformation();
+        detectObstructions();
     }
 
     public void lockCamera() {
@@ -113,7 +133,7 @@ public class Follower : MonoBehaviour
     public void unlockCamera() {
         zoom_enabled = !(mode == 2);
         xrotation_enabled = !(mode == 1);
-        yrotation_enabled = true;
+        yrotation_enabled = true;   // !(mode == 3)
     }
 
     private void cameraTransformation() {
@@ -126,5 +146,28 @@ public class Follower : MonoBehaviour
             myPosition += new Vector3(0, distance / 2, 0);
         }
         transform.position = damping_enabled ? Vector3.Lerp(transform.position, myPosition, Time.deltaTime * damping) : myPosition;
+    }
+
+    private void detectObstructions() {
+        RaycastHit[] hits;
+        HashSet<Transform> newHits = new HashSet<Transform>();
+        hits = Physics.RaycastAll(transform.position, player.transform.position - transform.position, Vector3.Distance(player.transform.position, transform.position));
+        foreach (RaycastHit hit in hits) {     // hide
+            if (hit.collider.gameObject.name == "Player_model") {
+                break;
+            }
+            if (!nonObstructionNames.Contains(hit.collider.gameObject.name) && hit.transform.gameObject.GetComponent<MeshRenderer>() != null) {
+                hit.transform.gameObject.GetComponent<MeshRenderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.ShadowsOnly;
+                newHits.Add(hit.transform);
+            }
+        }
+        Obstructions.ExceptWith(newHits);    // recover
+        foreach (var ob in Obstructions) {
+            if (ob != null) {
+                ob.gameObject.GetComponent<MeshRenderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
+            }
+        }
+        Obstructions.Clear();
+        Obstructions.UnionWith(newHits);
     }
 }

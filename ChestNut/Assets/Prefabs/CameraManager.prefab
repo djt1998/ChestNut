@@ -103,6 +103,9 @@ MonoBehaviour:
   is_active: 0
   rotateDeltaX: 1
   rotateDeltaY: 3
+  mouseZoomSpeed: 2
+  mouseSensitivityX: 3
+  mouseSensitivityY: 1
   distance: 5
   minDistance: 0
   maxDistance: 20
@@ -215,6 +218,9 @@ MonoBehaviour:
   is_active: 0
   rotateDeltaX: 1
   rotateDeltaY: 3
+  mouseZoomSpeed: 2
+  mouseSensitivityX: 3
+  mouseSensitivityY: 1
   distance: 5
   minDistance: 0
   maxDistance: 20
@@ -383,6 +389,9 @@ MonoBehaviour:
   is_active: 0
   rotateDeltaX: 1
   rotateDeltaY: 3
+  mouseZoomSpeed: 2
+  mouseSensitivityX: 3
+  mouseSensitivityY: 1
   distance: 5
   minDistance: 0
   maxDistance: 20
