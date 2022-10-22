@@ -31,6 +31,8 @@ public class Follower : MonoBehaviour
 
     private HashSet<Transform> Obstructions = new HashSet<Transform>();
     private HashSet<string> nonObstructionNames = new HashSet<string>();
+    private int renderingMode = 1;    // 0: shadow only; 1: semi transparent
+    private float transparentRate = 4f;
     // private float myTime = 0.0f;
     // private float nextRotate = 0.4f;
 
@@ -157,23 +159,38 @@ public class Follower : MonoBehaviour
             if (hit.collider.gameObject.name == "Player_model") {
                 break;
             }
-            if (!nonObstructionNames.Contains(hit.collider.gameObject.name) && hit.transform.gameObject.GetComponent<MeshRenderer>() != null) {
-                hit.transform.gameObject.GetComponent<MeshRenderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.ShadowsOnly;
+            var renderer = hit.transform.gameObject.GetComponent<Renderer>();
+            if (!nonObstructionNames.Contains(hit.collider.gameObject.name) && renderer != null) {
+                if (!Obstructions.Contains(hit.transform)) {
+                    if (renderingMode == 0) {
+                        renderer.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.ShadowsOnly;
+                    }
+                    else if (renderingMode == 1 && renderer.material != null) {
+                        if (renderer.material.GetFloat("_Mode") != 0) {
+                            continue;
+                        }
+                        MaterialMode.SetMaterialRenderingMode(renderer.material, MaterialMode.BlendMode.Transparent);
+                        Color c = renderer.material.color;
+                        c.a /= transparentRate;
+                        renderer.material.SetColor("_Color", c);
+                    }
+                }
                 newHits.Add(hit.transform);
             }
-            // if (hit.transform.gameObject.GetComponent<MeshRenderer>().material.name == "HeaveyBlock") {
-            //     Color c = hit.transform.gameObject.GetComponent<MeshRenderer>().material.color;
-            //     hit.transform.gameObject.GetComponent<MeshRenderer>().material.color = new Color(c.r, c.g, c.b, 0.5f);
-            // } 
         }
         Obstructions.ExceptWith(newHits);    // recover
         foreach (var ob in Obstructions) {
             if (ob != null) {
-                ob.gameObject.GetComponent<MeshRenderer>().shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
-                // if (ob.gameObject.GetComponent<MeshRenderer>().material.name == "HeaveyBlock") {
-                //     Color c = ob.gameObject.GetComponent<MeshRenderer>().material.color;
-                //     ob.gameObject.GetComponent<MeshRenderer>().material.color = new Color(c.r, c.g, c.b, 1f);
-                // }
+                var renderer = ob.GetComponent<Renderer>();
+                if (renderingMode == 0) {
+                    renderer.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
+                }
+                else if (renderingMode == 1 && renderer.material != null) {
+                    MaterialMode.SetMaterialRenderingMode(renderer.material, MaterialMode.BlendMode.Opaque);
+                    Color c = renderer.material.color;
+                    c.a *= transparentRate;
+                    renderer.material.SetColor("_Color", c);
+                }
             }
         }
         Obstructions.Clear();
