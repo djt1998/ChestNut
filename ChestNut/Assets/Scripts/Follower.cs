@@ -5,11 +5,14 @@ using UnityEngine;
 public class Follower : MonoBehaviour
 {
     public GameObject player;
-    public float zoom_in_param = 1.25f;
+    public float zoom_in_param = 1.25f; // key board zoom
     public float zoom_out_param = 1.25f;
     public bool is_active = false;  // is in use
-    public float rotateDeltaX = 1f;
+    public float rotateDeltaX = 1f; // key board rotate
     public float rotateDeltaY = 3f;
+    public float mouseZoomSpeed = 2f;  // mouse zoom
+    public float mouseSensitivityX = 3f;   // mouse rotate
+    public float mouseSensitivityY = 1f;
     public float distance = 5f;
     public float minDistance;
     public float maxDistance = 20f;
@@ -67,21 +70,24 @@ public class Follower : MonoBehaviour
             else if (Input.GetKey("0")) {
                 distance = orignal_distance;
             }
+            distance -= Input.GetAxis("Mouse ScrollWheel") * mouseZoomSpeed;
         }
 
         // rotation
         if (yrotation_enabled) {
+            float delta = 0f;
             if (Input.GetKey("l")) {    // rotate right
-                myRotationY += rotateDeltaY;
-                if (is_active == true) {
-                    p.force_direction_shift(rotateDeltaY);
-                }
+                delta += rotateDeltaY;
             }
             if (Input.GetKey("j")) {    // rotate left
-                myRotationY -= rotateDeltaY;
-                if (is_active == true) {
-                    p.force_direction_shift(-rotateDeltaY);
-                }
+                delta -= rotateDeltaY;
+            }
+            if (Input.GetMouseButton(1)) {  // mouse right click
+                delta += Input.GetAxis("Mouse X") * mouseSensitivityX;
+            }
+            myRotationY += delta;
+            if (is_active == true) {
+                p.force_direction_shift(delta);
             }
         }
         if (xrotation_enabled) {
@@ -90,6 +96,9 @@ public class Follower : MonoBehaviour
             }
             if (Input.GetKey("k")) {    // rotate down
                 myRotationX -= rotateDeltaX;
+            }
+            if (Input.GetMouseButton(1)) {  // mouse right click
+                myRotationX -= Input.GetAxis("Mouse Y") * mouseSensitivityY;
             }
         }
         cameraTransformation();
@@ -102,7 +111,7 @@ public class Follower : MonoBehaviour
     }
 
     public void unlockCamera() {
-        zoom_enabled = true;
+        zoom_enabled = !(mode == 2);
         xrotation_enabled = !(mode == 1);
         yrotation_enabled = true;
     }
