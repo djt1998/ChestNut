@@ -191,6 +191,11 @@ public class Follower : MonoBehaviour
             }
         }
         Obstructions.ExceptWith(newHits);    // recover
+        recoverObstructions();
+        Obstructions.UnionWith(newHits);
+    }
+
+    public void recoverObstructions() {
         foreach (var ob in Obstructions) {
             if (ob != null) {
                 var renderer = ob.GetComponent<Renderer>();
@@ -209,6 +214,5 @@ public class Follower : MonoBehaviour
             }
         }
         Obstructions.Clear();
-        Obstructions.UnionWith(newHits);
     }
 }

@@ -41,6 +41,7 @@ public class SwitchCamera : MonoBehaviour
                 }
                 cameras[i].GetComponent<Camera>().enabled = false;
                 if (cameras[i].GetComponent<Follower>() != null) {
+                    cameras[i].GetComponent<Follower>().recoverObstructions();
                     cameras[i].GetComponent<Follower>().is_active = false;
                 }
             }
