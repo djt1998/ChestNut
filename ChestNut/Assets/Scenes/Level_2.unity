@@ -19517,6 +19517,18 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 90715397}
+    - target: {fileID: 8543892068585941969, guid: ab61dfdcfba494da8b02e109e83e52f8, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 4496738432559243988}
+    - target: {fileID: 8543892068585941969, guid: ab61dfdcfba494da8b02e109e83e52f8, type: 3}
+      propertyPath: northLayer
+      value: 
+      objectReference: {fileID: 8879212485232036249}
+    - target: {fileID: 8543892068585941969, guid: ab61dfdcfba494da8b02e109e83e52f8, type: 3}
+      propertyPath: targetLayer
+      value: 
+      objectReference: {fileID: 8879212485232036248}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab61dfdcfba494da8b02e109e83e52f8, type: 3}
 --- !u!1 &2990122971124147227 stripped
@@ -44084,6 +44096,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 78505be017a1b421889434294602f505, type: 3}
+--- !u!224 &8879212485232036248 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 6847873957622159360, guid: 78505be017a1b421889434294602f505, type: 3}
+  m_PrefabInstance: {fileID: 8879212485232036247}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &8879212485232036249 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 5409879554909197899, guid: 78505be017a1b421889434294602f505, type: 3}
+  m_PrefabInstance: {fileID: 8879212485232036247}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8901731425879522363
 PrefabInstance:
   m_ObjectHideFlags: 0
