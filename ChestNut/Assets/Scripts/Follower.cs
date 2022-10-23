@@ -111,7 +111,7 @@ public class Follower : MonoBehaviour
                 delta += Input.GetAxis("Mouse X") * mouseSensitivityX;
             }
             myRotationY += delta;
-            if (is_active == true) {
+            if (is_active) {
                 p.force_direction_shift(delta);
             }
         }
@@ -127,7 +127,9 @@ public class Follower : MonoBehaviour
             }
         }
         cameraTransformation();
-        detectObstructions();
+        if (is_active) {
+            detectObstructions();
+        }
     }
 
     public void lockCamera() {
