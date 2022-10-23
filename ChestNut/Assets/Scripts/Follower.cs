@@ -33,6 +33,7 @@ public class Follower : MonoBehaviour
     private HashSet<string> nonObstructionNames = new HashSet<string>();
     private int renderingMode = 2;    // 0: no transparency; 1: shadow only; 2: semi transparent; 3: enable render
     private float transparentRate = 4f;
+    private Physics physics;
     // private float myTime = 0.0f;
     // private float nextRotate = 0.4f;
 
@@ -63,6 +64,8 @@ public class Follower : MonoBehaviour
         nonObstructionNames.Add("Logo");
         nonObstructionNames.Add("logo_chestnut");
         nonObstructionNames.Add("YellowRod");
+        nonObstructionNames.Add("Player");
+        nonObstructionNames.Add("Player_model");
         cameraTransformation();
     }
 
@@ -153,67 +156,10 @@ public class Follower : MonoBehaviour
 
     private void detectObstructions() {
         HashSet<Transform> newHits = new HashSet<Transform>();
-        collectAllHitObjectsByOneRaycast(newHits, transform.position, player.transform.position - transform.position, Vector3.Distance(player.transform.position, transform.position));
         // RaycastHit[] hits = Physics.RaycastAll(transform.position, player.transform.position - transform.position, Vector3.Distance(player.transform.position, transform.position));
-        // foreach (RaycastHit hit in hits) {     // hide
-        //     if (hit.collider.gameObject.name == "Player_model") {
-        //         break;
-        //     }
-        //     var renderer = hit.transform.gameObject.GetComponent<Renderer>();
-        //     if (!nonObstructionNames.Contains(hit.collider.gameObject.name) && renderer != null && renderer.enabled) {
-        //         if (!Obstructions.Contains(hit.transform)) {
-        //             if (renderingMode == 1) {
-        //                 renderer.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.ShadowsOnly;
-        //             }
-        //             else if (renderingMode == 2 && renderer.material != null) {
-        //                 if (renderer.material.GetFloat("_Mode") != 0) {
-        //                     continue;
-        //                 }
-        //                 // Material[] ms = renderer.materials;
-        //                 // for (int i = 0; i < ms.Length; i++) {
-        //                 //     MaterialMode.SetMaterialRenderingMode(ms[i], MaterialMode.BlendMode.Transparent);
-        //                 //     Color c = ms[i].color;
-        //                 //     c.a /= transparentRate;
-        //                 //     ms[i].SetColor("_Color", c);
-        //                 // }
-        //                 MaterialMode.SetMaterialRenderingMode(renderer.material, MaterialMode.BlendMode.Transparent);
-        //                 Color c = renderer.material.color;
-        //                 c.a /= transparentRate;
-        //                 renderer.material.SetColor("_Color", c);
-        //             }
-        //             else if (renderingMode == 3) {
-        //                 renderer.enabled = false;
-        //             }
-        //         }
-        //         newHits.Add(hit.transform);
-        //     }
-        // }
-        Obstructions.ExceptWith(newHits);    // recover
-        foreach (var ob in Obstructions) {
-            if (ob != null) {
-                var renderer = ob.GetComponent<Renderer>();
-                if (renderingMode == 1) {
-                    renderer.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
-                }
-                else if (renderingMode == 2 && renderer.material != null) {
-                    MaterialMode.SetMaterialRenderingMode(renderer.material, MaterialMode.BlendMode.Opaque);
-                    Color c = renderer.material.color;
-                    c.a *= transparentRate;
-                    renderer.material.SetColor("_Color", c);
-                }
-                else if (renderingMode == 3) {
-                    renderer.enabled = true;
-                }
-            }
-        }
-        Obstructions.Clear();
-        Obstructions.UnionWith(newHits);
-    }
-
-    private void collectAllHitObjectsByOneRaycast(HashSet<Transform> hitSet, Vector3 startPoint, Vector3 rayDirection, float range) {
-        RaycastHit[] hits = Physics.RaycastAll(startPoint, rayDirection, range);
+        RaycastHit[] hits = physics.FollowSpotCastAll(transform.position, player.transform.position, 3f);
         foreach (RaycastHit hit in hits) {     // hide
-            var renderer = hit.transform.gameObject.GetComponent<Renderer>();
+            var renderer = hit.collider.gameObject.GetComponent<Renderer>();
             if (!nonObstructionNames.Contains(hit.collider.gameObject.name) && renderer != null && renderer.enabled) {
                 if (!Obstructions.Contains(hit.transform)) {
                     if (renderingMode == 1) {
@@ -239,8 +185,28 @@ public class Follower : MonoBehaviour
                         renderer.enabled = false;
                     }
                 }
-                hitSet.Add(hit.transform);
+                newHits.Add(hit.collider.gameObject.transform);
             }
         }
+        Obstructions.ExceptWith(newHits);    // recover
+        foreach (var ob in Obstructions) {
+            if (ob != null) {
+                var renderer = ob.GetComponent<Renderer>();
+                if (renderingMode == 1) {
+                    renderer.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
+                }
+                else if (renderingMode == 2 && renderer.material != null) {
+                    MaterialMode.SetMaterialRenderingMode(renderer.material, MaterialMode.BlendMode.Opaque);
+                    Color c = renderer.material.color;
+                    c.a *= transparentRate;
+                    renderer.material.SetColor("_Color", c);
+                }
+                else if (renderingMode == 3) {
+                    renderer.enabled = true;
+                }
+            }
+        }
+        Obstructions.Clear();
+        Obstructions.UnionWith(newHits);
     }
 }
