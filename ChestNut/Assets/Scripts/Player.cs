@@ -25,6 +25,7 @@ public class Player : MonoBehaviour
 
     private Vector3[] forceDir = {Vector3.left, Vector3.forward, Vector3.right, Vector3.back};
     private TextMeshProUGUI txt;
+    private TextMeshProUGUI textKey;
 
     private int player_effect;
     private int counter;
@@ -65,7 +66,9 @@ public class Player : MonoBehaviour
             max_density_diff = 2f;
         }
         player_radius = (float)transform.localScale[0];
-        txt = GameObject.Find("Canvas").transform.Find("InGameDisplay/PlayerInfo").GetComponent<TextMeshProUGUI>();
+        var canvas = GameObject.Find("Canvas");
+        txt = canvas.transform.Find("InGameDisplay/PlayerInfo").GetComponent<TextMeshProUGUI>();
+        textKey = canvas.transform.Find("InGameDisplay/MiniMapSystem/KeyStatus/KeyStatusText").GetComponent<TextMeshProUGUI>();
         counter = 0;
         // txt.text = "Speed: 00.00 m/s\nKeys: 0";
     }
@@ -113,7 +116,9 @@ public class Player : MonoBehaviour
             effect_update();
         }
 
-        txt.text = string.Format("{0, -7}{1:00}.{2:00} m/s\n{3, -10}{4}", "SPEED:", Mathf.FloorToInt(rb.velocity.magnitude), (rb.velocity.magnitude % 1) * 100, "KEY:", keyStatus);
+        // txt.text = string.Format("{0, -7}{1:00}.{2:00} m/s\n{3, -10}{4}", "SPEED:", Mathf.FloorToInt(rb.velocity.magnitude), (rb.velocity.magnitude % 1) * 100, "KEY:", keyStatus);
+        txt.text = string.Format("{0, -10}{1:00}.{2:00}\n{3, -8}{4:00}.{5:00}", "SIZE:", Mathf.FloorToInt(player_radius), (player_radius % 1) * 100, "MASS:", Mathf.FloorToInt(rb.mass), (rb.mass % 1) * 100);
+        textKey.text = keyStatus.ToString();
 
         /********************** just for fun **********************/
         // if (Input.GetKey("r"))
