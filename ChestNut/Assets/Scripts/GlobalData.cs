@@ -46,6 +46,7 @@ public static class GlobalData
         else {
             SESSION_ID = PlayerPrefs.GetString("sessionID");
         }
+        // Time.fixedDeltaTime = 0.04f;
     }
 
     public static void getInfo() {

@@ -14,9 +14,11 @@ public class OptionsMenu : MonoBehaviour
     public TMP_Dropdown frameRateDropdown;
 
     private enum frameRates {
-        low = 31,
-        medium = 59, 
-        high = 119
+        fps_25 = 25,
+        fps_30 = 31,
+        fps_50 = 50,
+        fps_60 = 59, 
+        fps_120 = 119
     };
     
     // Resolution[] resolutions;
@@ -28,19 +30,24 @@ public class OptionsMenu : MonoBehaviour
         audioMixer.GetFloat("bgmVolume", out volumeTmp);
         volumeSlider.value = volumeTmp;
         if (GlobalData.FirstTimeEnterMenu) {
-            frameRateDropdown.value = 1;
             SetFrameRate(frameRateDropdown.value);
         }
         else {
             switch(Application.targetFrameRate) {
-                case (int) frameRates.low:
+                case (int) frameRates.fps_25:
                     frameRateDropdown.value = 0;
                     break;
-                case (int) frameRates.medium:
+                case (int) frameRates.fps_30:
                     frameRateDropdown.value = 1;
                     break;
-                case (int) frameRates.high:
+                case (int) frameRates.fps_50:
                     frameRateDropdown.value = 2;
+                    break;
+                case (int) frameRates.fps_60:
+                    frameRateDropdown.value = 3;
+                    break;
+                case (int) frameRates.fps_120:
+                    frameRateDropdown.value = 4;
                     break;
             }
         }
@@ -77,13 +84,19 @@ public class OptionsMenu : MonoBehaviour
     public void SetFrameRate(int frameRateIndex) {
         switch (frameRateIndex) {
             case 0:
-                Application.targetFrameRate = (int) frameRates.low;
+                Application.targetFrameRate = (int) frameRates.fps_25;
                 break;
             case 1:
-                Application.targetFrameRate = (int) frameRates.medium;
+                Application.targetFrameRate = (int) frameRates.fps_30;
                 break;
             case 2:
-                Application.targetFrameRate = (int) frameRates.high;
+                Application.targetFrameRate = (int) frameRates.fps_50;
+                break;
+            case 3:
+                Application.targetFrameRate = (int) frameRates.fps_60;
+                break;
+            case 4:
+                Application.targetFrameRate = (int) frameRates.fps_120;
                 break;
         }
     }
