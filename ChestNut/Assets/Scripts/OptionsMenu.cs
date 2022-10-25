@@ -10,6 +10,14 @@ public class OptionsMenu : MonoBehaviour
     public AudioMixer audioMixer;
     public TMP_Dropdown graphicsDropdown;
     public Slider volumeSlider;
+
+    public TMP_Dropdown frameRateDropdown;
+
+    private enum frameRates {
+        low = 31,
+        medium = 59, 
+        high = 119
+    };
     
     // Resolution[] resolutions;
     // public TMP_Dropdown resolutionsDropdown;
@@ -19,6 +27,23 @@ public class OptionsMenu : MonoBehaviour
         float volumeTmp;
         audioMixer.GetFloat("bgmVolume", out volumeTmp);
         volumeSlider.value = volumeTmp;
+        if (GlobalData.FirstTimeEnterMenu) {
+            frameRateDropdown.value = 1;
+            SetFrameRate(frameRateDropdown.value);
+        }
+        else {
+            switch(Application.targetFrameRate) {
+                case (int) frameRates.low:
+                    frameRateDropdown.value = 0;
+                    break;
+                case (int) frameRates.medium:
+                    frameRateDropdown.value = 1;
+                    break;
+                case (int) frameRates.high:
+                    frameRateDropdown.value = 2;
+                    break;
+            }
+        }
 
         // int currentResolutionIndex = 0;
         // resolutions = Screen.resolutions;
@@ -47,5 +72,19 @@ public class OptionsMenu : MonoBehaviour
 
     public void SetQuality(int quality) {
         QualitySettings.SetQualityLevel(quality);
+    }
+
+    public void SetFrameRate(int frameRateIndex) {
+        switch (frameRateIndex) {
+            case 0:
+                Application.targetFrameRate = (int) frameRates.low;
+                break;
+            case 1:
+                Application.targetFrameRate = (int) frameRates.medium;
+                break;
+            case 2:
+                Application.targetFrameRate = (int) frameRates.high;
+                break;
+        }
     }
 }
