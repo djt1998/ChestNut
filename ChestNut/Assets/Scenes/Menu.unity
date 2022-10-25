@@ -262,8 +262,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioMixer: {fileID: 24100000, guid: 288572b438f0248049d2d4fbc3e0b73b, type: 2}
-  graphicsDropdown: {fileID: 1738185548}
   volumeSlider: {fileID: 1638830198}
+  graphicsDropdown: {fileID: 1738185548}
   frameRateDropdown: {fileID: 939202632}
 --- !u!1 &51225969
 GameObject:
@@ -2076,9 +2076,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 236747566046115053, guid: b4db0df80c75d483fa10295ca5039c68, type: 3}
     - target: {fileID: 6359382007364053951, guid: 9fe7d87c39c5e41859555cac1bba21e4, type: 3}
+      propertyPath: m_RenderMode
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6359382007364053951, guid: 9fe7d87c39c5e41859555cac1bba21e4, type: 3}
       propertyPath: m_EnableGPUInstancing
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6359382007364053951, guid: 9fe7d87c39c5e41859555cac1bba21e4, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9fe7d87c39c5e41859555cac1bba21e4, type: 3}
 --- !u!1 &441100685
