@@ -2063,6 +2063,22 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 6359382007364053951, guid: 9fe7d87c39c5e41859555cac1bba21e4, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 236747566046115053, guid: dbed95f387a1548529f34e26c51a51d0, type: 3}
+    - target: {fileID: 6359382007364053951, guid: 9fe7d87c39c5e41859555cac1bba21e4, type: 3}
+      propertyPath: m_Mesh1
+      value: 
+      objectReference: {fileID: 236747566046115053, guid: f36e1807102b14f6db6b2c38bf182998, type: 3}
+    - target: {fileID: 6359382007364053951, guid: 9fe7d87c39c5e41859555cac1bba21e4, type: 3}
+      propertyPath: m_Mesh2
+      value: 
+      objectReference: {fileID: 236747566046115053, guid: b4db0df80c75d483fa10295ca5039c68, type: 3}
+    - target: {fileID: 6359382007364053951, guid: 9fe7d87c39c5e41859555cac1bba21e4, type: 3}
+      propertyPath: m_EnableGPUInstancing
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9fe7d87c39c5e41859555cac1bba21e4, type: 3}
 --- !u!1 &441100685

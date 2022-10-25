@@ -8,6 +8,7 @@ public class CollectLogo : MonoBehaviour
     public GameObject destroyEffect;
     public GameObject absorbEffect;
     private Player player;
+    public Transform miniMapIcon;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +30,7 @@ public class CollectLogo : MonoBehaviour
             Debug.Log("Collect Logo!");
             player.logoStatus += 1;
             GameMenu.sendData("logo");
+            Destroy(miniMapIcon.gameObject);
             StartCoroutine(collectLogo(1));
             GetComponent<MeshRenderer>().enabled = false;
         }

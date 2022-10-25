@@ -7,6 +7,8 @@ public class collectable : MonoBehaviour
     public Transform item;
     private Player player;
     public float ratio;
+    public Transform miniMapIcon;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +35,7 @@ public class collectable : MonoBehaviour
                 else if (this.gameObject.name == "Blue Cube") {
                     GameMenu.sendData("item-bluecube");
                 }
+                Destroy(miniMapIcon.gameObject);
                 Destroy(this.gameObject);
             }
             // other.gameObject.transform.localScale = new Vector3(1,1,1);

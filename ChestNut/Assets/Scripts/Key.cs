@@ -7,6 +7,8 @@ public class Key : MonoBehaviour
     public Transform item;
     private Player player;
     public float ratio;
+    public Transform miniMapIcon;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +30,7 @@ public class Key : MonoBehaviour
             Debug.Log("Key +1");
             player.keyStatus += 1;
             GameMenu.sendData("item-key");
+            Destroy(miniMapIcon.gameObject);
             Destroy(this.gameObject);
             // other.gameObject.transform.localScale = new Vector3(1,1,1);
         }
