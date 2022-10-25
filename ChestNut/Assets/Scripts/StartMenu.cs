@@ -29,6 +29,7 @@ public class StartMenu : MonoBehaviour
     }
 
     public void PlayGame_Level (GameObject obj) {  // Button_"Level_X"
+        GlobalData.FirstTimeEnterMenu = false;
         SceneManager.LoadScene(obj.name.Substring(7));
     }
 }
