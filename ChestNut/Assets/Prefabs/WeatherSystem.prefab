@@ -216,9 +216,41 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6359382007364053951, guid: 9fe7d87c39c5e41859555cac1bba21e4, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 236747566046115053, guid: dbed95f387a1548529f34e26c51a51d0, type: 3}
+    - target: {fileID: 6359382007364053951, guid: 9fe7d87c39c5e41859555cac1bba21e4, type: 3}
+      propertyPath: m_Mesh1
+      value: 
+      objectReference: {fileID: 236747566046115053, guid: f36e1807102b14f6db6b2c38bf182998, type: 3}
+    - target: {fileID: 6359382007364053951, guid: 9fe7d87c39c5e41859555cac1bba21e4, type: 3}
+      propertyPath: m_Mesh2
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6359382007364053951, guid: 9fe7d87c39c5e41859555cac1bba21e4, type: 3}
+      propertyPath: m_Mesh3
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6359382007364053951, guid: 9fe7d87c39c5e41859555cac1bba21e4, type: 3}
+      propertyPath: m_MeshWeighting
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6359382007364053951, guid: 9fe7d87c39c5e41859555cac1bba21e4, type: 3}
+      propertyPath: m_MeshWeighting1
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6359382007364053951, guid: 9fe7d87c39c5e41859555cac1bba21e4, type: 3}
       propertyPath: m_MeshDistribution
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6359382007364053951, guid: 9fe7d87c39c5e41859555cac1bba21e4, type: 3}
+      propertyPath: m_EnableGPUInstancing
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6359382007364053951, guid: 9fe7d87c39c5e41859555cac1bba21e4, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9fe7d87c39c5e41859555cac1bba21e4, type: 3}
 --- !u!4 &9148470634528746003 stripped

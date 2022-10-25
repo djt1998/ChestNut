@@ -85,18 +85,23 @@ public class OptionsMenu : MonoBehaviour
         switch (frameRateIndex) {
             case 0:
                 Application.targetFrameRate = (int) frameRates.fps_25;
+                Time.fixedDeltaTime = 1f / 25;
                 break;
             case 1:
                 Application.targetFrameRate = (int) frameRates.fps_30;
+                Time.fixedDeltaTime = 1f / 30;
                 break;
             case 2:
                 Application.targetFrameRate = (int) frameRates.fps_50;
+                Time.fixedDeltaTime = 0.02f;
                 break;
             case 3:
                 Application.targetFrameRate = (int) frameRates.fps_60;
+                Time.fixedDeltaTime = 0.02f;
                 break;
             case 4:
                 Application.targetFrameRate = (int) frameRates.fps_120;
+                Time.fixedDeltaTime = 0.02f;
                 break;
         }
     }
