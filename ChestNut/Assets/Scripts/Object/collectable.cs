@@ -5,6 +5,7 @@ using UnityEngine;
 public class collectable : MonoBehaviour
 {
     public Transform item;
+    // public GameObject destroyEffect;
     private Player player;
     public float ratio;
     public Transform miniMapIcon;
@@ -18,10 +19,10 @@ public class collectable : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(item != null)
-        {
-            item.transform.Rotate(0.0f, 0.05f, 0.0f, Space.Self);
-        }
+        // if(item != null)
+        // {
+        //     item.transform.Rotate(0.0f, 0.05f, 0.0f, Space.Self);
+        // }
         
     }
 
@@ -35,11 +36,15 @@ public class collectable : MonoBehaviour
                 else if (this.gameObject.name == "Blue Cube") {
                     GameMenu.sendData("item-bluecube");
                 }
-                Destroy(miniMapIcon.gameObject);
                 Destroy(this.gameObject);
             }
             // other.gameObject.transform.localScale = new Vector3(1,1,1);
         }
+    }
+
+    private void OnDestroy() {
+        // Instantiate(destroyEffect, transform.position, transform.rotation);
+        Destroy(miniMapIcon.gameObject);
     }
 
     // public void Interaction() {
