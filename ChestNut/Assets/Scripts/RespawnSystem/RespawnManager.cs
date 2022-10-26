@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class RespawnManager : MonoBehaviour
 {
-    public GameObject respawnPrefab;
+    // public GameObject respawnPrefab;
+    public Transform player;
     private RespawnPoint[] respawnPoints;
     private int currActiveRespawnPointID = 0;
 
@@ -20,16 +21,14 @@ public class RespawnManager : MonoBehaviour
         // }
     }
 
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-        
-    }
-
     public void SetRespawnPointsActive(int id) {
         respawnPoints[currActiveRespawnPointID].IsOn = false;
         respawnPoints[currActiveRespawnPointID].destroyAllGameObject();
         respawnPoints[id].IsOn = true;
         currActiveRespawnPointID = id;
+    }
+
+    public void Respawn() {     // respawn the player at currentActiveRespawnPoint
+        
     }
 }

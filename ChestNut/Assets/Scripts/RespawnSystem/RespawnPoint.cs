@@ -15,12 +15,6 @@ public class RespawnPoint : MonoBehaviour
         RM = FindObjectOfType<RespawnManager>();
     }
 
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-
-    }
-
     public void destroyAllGameObject() {
         foreach (Transform tf in storedObject) {
             Destroy(tf.gameObject);
