@@ -19,11 +19,10 @@ public class collectable : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        // if(item != null)
-        // {
-        //     item.transform.Rotate(0.0f, 0.05f, 0.0f, Space.Self);
-        // }
-        
+        if(item != null)
+        {
+            item.transform.Rotate(0.0f, 0.05f, 0.0f, Space.Self);
+        }
     }
 
     private void OnTriggerEnter(Collider other) {
