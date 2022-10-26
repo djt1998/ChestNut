@@ -5,7 +5,7 @@ using UnityEngine;
 public class Door: MonoBehaviour
 {
     private Player player;
-    public GameObject cylinder;
+    // public GameObject cylinder;
     public Rigidbody rb;
     public GameObject destroyEffect;
     private bool isLocked;
@@ -37,7 +37,7 @@ public class Door: MonoBehaviour
                 // isLocked = false;
                 player.keyStatus -= 1;
                 Instantiate(destroyEffect, transform.position, transform.rotation);
-                Destroy(cylinder);
+                // Destroy(cylinder);
                 Destroy(gameObject);
             }
         }
