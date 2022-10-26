@@ -6,7 +6,7 @@ public class CollectLogo : MonoBehaviour
 {
     public Transform item;
     public GameObject destroyEffect;
-    public GameObject absorbEffect;
+    // public GameObject absorbEffect;
     private Player player;
     public Transform miniMapIcon;
     // Start is called before the first frame update
@@ -30,16 +30,21 @@ public class CollectLogo : MonoBehaviour
             Debug.Log("Collect Logo!");
             player.logoStatus += 1;
             GameMenu.sendData("logo");
-            Destroy(miniMapIcon.gameObject);
-            StartCoroutine(collectLogo(1));
-            GetComponent<MeshRenderer>().enabled = false;
+            Instantiate(destroyEffect, transform.position, transform.rotation);
+            Destroy(gameObject);
+            // StartCoroutine(collectLogo(1));
+            // GetComponent<MeshRenderer>().enabled = false;
         }
     }
 
-    IEnumerator collectLogo(int countDown) {
-        Instantiate(destroyEffect, transform.position, transform.rotation);
-        yield return new WaitForSeconds(countDown);
-        Instantiate(absorbEffect, player.transform.position, player.transform.rotation);
-        Destroy(gameObject);
+    private void OnDestroy() {
+        Destroy(miniMapIcon.gameObject);
     }
+
+    // IEnumerator collectLogo(int countDown) {
+    //     Instantiate(destroyEffect, transform.position, transform.rotation);
+    //     yield return new WaitForSeconds(countDown);
+    //     Instantiate(absorbEffect, player.transform.position, player.transform.rotation);
+    //     Destroy(gameObject);
+    // }
 }
