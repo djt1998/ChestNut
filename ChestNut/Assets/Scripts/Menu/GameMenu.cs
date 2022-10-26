@@ -149,10 +149,12 @@ public class GameMenu : MonoBehaviour
     
     public static void sendData(String tag) {
         // Debug.Log("time1: " + DateTime.Now.Ticks.ToString());
-        // DataSenderController sendObject = FindObjectOfType<DataSenderController>();
-        string _tag = "lv" + (SceneManager.GetActiveScene().buildIndex - 1) + "-" + tag;
-        string _time = DateTime.Now.Ticks.ToString().Substring(0, 15);
-        FindObjectOfType<DataSenderController>().Send(_tag, _time);
+        DataSenderController sendObject = FindObjectOfType<DataSenderController>();
+        if (sendObject) {
+            string _tag = "lv" + (SceneManager.GetActiveScene().buildIndex - 1) + "-" + tag;
+            string _time = DateTime.Now.Ticks.ToString().Substring(0, 15);
+            sendObject.Send(_tag, _time);
+        }
         // Debug.Log("time2:" + DateTime.Now.Ticks.ToString());
     }
 }
