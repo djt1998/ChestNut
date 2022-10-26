@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657815, g: 0.49641192, b: 0.57481617, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -876,9 +876,12 @@ MonoBehaviour:
   player: {fileID: 1831927927}
   zoom_in_param: 1.25
   zoom_out_param: 1.25
-  is_active: 0
+  is_active: 1
   rotateDeltaX: 1
   rotateDeltaY: 8
+  mouseZoomSpeed: 2
+  mouseSensitivityX: 3
+  mouseSensitivityY: 1
   distance: 5
   minDistance: 0
   maxDistance: 20
@@ -1559,6 +1562,14 @@ PrefabInstance:
     - target: {fileID: 8275139212874964579, guid: f128cc2ef384cc746b1e4d038c26bc7d, type: 3}
       propertyPath: m_Mass
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8275139212874964604, guid: f128cc2ef384cc746b1e4d038c26bc7d, type: 3}
+      propertyPath: max_radius
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8275139212874964604, guid: f128cc2ef384cc746b1e4d038c26bc7d, type: 3}
+      propertyPath: min_radius
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8275139212874964604, guid: f128cc2ef384cc746b1e4d038c26bc7d, type: 3}
       propertyPath: size_recover_coef
