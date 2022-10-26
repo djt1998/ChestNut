@@ -30,7 +30,7 @@ public class Wind : MonoBehaviour
         if (other.name == "Player_model")
         {
             Debug.Log("Wind Active");
-            player.rb.AddForce(Vector3.up * force_coef);
+            player.rb.AddForce(transform.up * force_coef);
             // other.gameObject.transform.localScale = new Vector3(1,1,1);
         }
     }
