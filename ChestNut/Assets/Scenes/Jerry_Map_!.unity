@@ -4997,7 +4997,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9148470633966604143, guid: d9cb9900be7d141d5af77462c949a79f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -16.73384
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 9148470633966604143, guid: d9cb9900be7d141d5af77462c949a79f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5028,32 +5028,44 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9148470634528746002, guid: d9cb9900be7d141d5af77462c949a79f, type: 3}
+      propertyPath: ShapeModule.type
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9148470634528746002, guid: d9cb9900be7d141d5af77462c949a79f, type: 3}
       propertyPath: ShapeModule.m_Scale.x
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 9148470634528746002, guid: d9cb9900be7d141d5af77462c949a79f, type: 3}
       propertyPath: ShapeModule.m_Scale.z
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 9148470634528746002, guid: d9cb9900be7d141d5af77462c949a79f, type: 3}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9148470634528746002, guid: d9cb9900be7d141d5af77462c949a79f, type: 3}
       propertyPath: InitialModule.maxNumParticles
-      value: 1200
+      value: 800
       objectReference: {fileID: 0}
     - target: {fileID: 9148470634528746002, guid: d9cb9900be7d141d5af77462c949a79f, type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
-      value: 120
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 9148470635264610597, guid: d9cb9900be7d141d5af77462c949a79f, type: 3}
       propertyPath: m_LocalScale.x
-      value: 30
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 9148470635264610597, guid: d9cb9900be7d141d5af77462c949a79f, type: 3}
       propertyPath: m_LocalScale.z
-      value: 40
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 9148470635264610597, guid: d9cb9900be7d141d5af77462c949a79f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 10.5
       objectReference: {fileID: 0}
     - target: {fileID: 9148470635264610597, guid: d9cb9900be7d141d5af77462c949a79f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 10
+      value: 9.5
       objectReference: {fileID: 0}
     - target: {fileID: 9148470635264610598, guid: d9cb9900be7d141d5af77462c949a79f, type: 3}
       propertyPath: m_Enabled
@@ -7798,7 +7810,7 @@ PrefabInstance:
     - target: {fileID: 8543892068585941969, guid: ab61dfdcfba494da8b02e109e83e52f8, type: 3}
       propertyPath: target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2038896552}
     - target: {fileID: 8543892068585941969, guid: ab61dfdcfba494da8b02e109e83e52f8, type: 3}
       propertyPath: northLayer
       value: 
