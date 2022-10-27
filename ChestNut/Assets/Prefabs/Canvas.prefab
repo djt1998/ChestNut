@@ -3400,6 +3400,7 @@ GameObject:
   - component: {fileID: 5107367150791879362}
   - component: {fileID: 2083316370700730106}
   - component: {fileID: 5218122239899183538}
+  - component: {fileID: 3185083847355372026}
   m_Layer: 5
   m_Name: PlayerInfo
   m_TagString: Untagged
@@ -3541,6 +3542,19 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: 4, y: -4}
   m_UseGraphicAlpha: 1
+--- !u!114 &3185083847355372026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8971023494886868223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6073cb42cd4f44a4be9918864ffb75e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textPlayerInfo: {fileID: 2083316370700730106}
 --- !u!1 &9030666775735860564
 GameObject:
   m_ObjectHideFlags: 0

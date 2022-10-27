@@ -25,7 +25,6 @@ public class Player : MonoBehaviour
     public float size_recover_coef;
 
     private Vector3[] forceDir = {Vector3.left, Vector3.forward, Vector3.right, Vector3.back};
-    private TextMeshProUGUI txt;
     private TextMeshProUGUI textKey;
     private TextMeshProUGUI textLogo;
 
@@ -71,7 +70,6 @@ public class Player : MonoBehaviour
         player_radius = (float)transform.localScale[0];
         var canvas = GameObject.Find("Canvas");
         if (canvas != null) {
-            txt = canvas.transform.Find("InGameDisplay/PlayerInfo").GetComponent<TextMeshProUGUI>();
             textKey = canvas.transform.Find("InGameDisplay/MiniMapSystem/KeyStatus/KeyStatusText").GetComponent<TextMeshProUGUI>();
             textLogo = canvas.transform.Find("InGameDisplay/MiniMapSystem/LogoStatus/LogoStatusText").GetComponent<TextMeshProUGUI>();
         }
@@ -122,10 +120,6 @@ public class Player : MonoBehaviour
             effect_update();
         }
 
-        // txt.text = string.Format("{0, -7}{1:00}.{2:00} m/s\n{3, -10}{4}", "SPEED:", Mathf.FloorToInt(rb.velocity.magnitude), (rb.velocity.magnitude % 1) * 100, "KEY:", keyStatus);
-        if (txt) {
-            txt.text = string.Format("{0, -10}{1:00}.{2:00}\n{3, -8}{4:00}.{5:00}", "SIZE:", Mathf.FloorToInt(player_radius), (player_radius % 1) * 100, "MASS:", Mathf.FloorToInt(rb.mass), (rb.mass % 1) * 100);
-        }
         if (textKey) {
             textKey.text = keyStatus.ToString();
         }
