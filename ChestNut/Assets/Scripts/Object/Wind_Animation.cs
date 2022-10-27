@@ -44,7 +44,7 @@ public class Wind_Animation : MonoBehaviour
                 else{
                     current_flash += -1;
                 }
-                Debug.Log("next flash: " + current_flash);
+                //Debug.Log("next flash: " + current_flash);
             }      
             if(current_flash == 4){
                 freq_counter = 0;
