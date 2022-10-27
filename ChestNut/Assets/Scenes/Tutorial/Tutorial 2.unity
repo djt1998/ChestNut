@@ -256,6 +256,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1343550985793874649, guid: 95c68522f454e774294893cf20b91e3e, type: 3}
   m_PrefabInstance: {fileID: 511076740}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &569123243 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1380479162541994899, guid: 95c68522f454e774294893cf20b91e3e, type: 3}
+  m_PrefabInstance: {fileID: 511076740}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &586909294
 GameObject:
   m_ObjectHideFlags: 0
@@ -568,7 +573,7 @@ MonoBehaviour:
   explanation: 
   objectTransform: {fileID: 90715397}
   arrow: {fileID: 3051217233577721925, guid: e98f73fcb46df4c55a54196ffa725633, type: 3}
-  target: {fileID: 0}
+  target: {fileID: 569123243}
   offset: {x: -1, y: 1, z: 0}
 --- !u!1 &1256913058
 GameObject:
