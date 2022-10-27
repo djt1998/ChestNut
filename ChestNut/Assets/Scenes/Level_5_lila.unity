@@ -5878,11 +5878,11 @@ Transform:
   - {fileID: 2020166965}
   - {fileID: 620240966}
   - {fileID: 906912987}
-  - {fileID: 800769130}
   - {fileID: 870052617}
   - {fileID: 991575235}
   - {fileID: 1116071670}
   - {fileID: 1357475366}
+  - {fileID: 800769130}
   - {fileID: 737835916}
   - {fileID: 804954015}
   - {fileID: 1091566229}
@@ -7148,19 +7148,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9148470634528746002, guid: d9cb9900be7d141d5af77462c949a79f, type: 3}
       propertyPath: ShapeModule.m_Scale.x
-      value: 60
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 9148470634528746002, guid: d9cb9900be7d141d5af77462c949a79f, type: 3}
       propertyPath: ShapeModule.m_Scale.z
-      value: 40
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 9148470634528746002, guid: d9cb9900be7d141d5af77462c949a79f, type: 3}
       propertyPath: InitialModule.maxNumParticles
-      value: 2500
+      value: 1500
       objectReference: {fileID: 0}
     - target: {fileID: 9148470634528746002, guid: d9cb9900be7d141d5af77462c949a79f, type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
-      value: 220
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 9148470634528746002, guid: d9cb9900be7d141d5af77462c949a79f, type: 3}
       propertyPath: InitialModule.startLifetime.scalar
@@ -7172,19 +7172,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9148470635264610597, guid: d9cb9900be7d141d5af77462c949a79f, type: 3}
       propertyPath: m_LocalScale.x
-      value: 70
+      value: 28
       objectReference: {fileID: 0}
     - target: {fileID: 9148470635264610597, guid: d9cb9900be7d141d5af77462c949a79f, type: 3}
       propertyPath: m_LocalScale.z
-      value: 50
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 9148470635264610597, guid: d9cb9900be7d141d5af77462c949a79f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 30
+      value: 27.5
       objectReference: {fileID: 0}
     - target: {fileID: 9148470635264610597, guid: d9cb9900be7d141d5af77462c949a79f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5
+      value: 16.5
       objectReference: {fileID: 0}
     - target: {fileID: 9148470635264610598, guid: d9cb9900be7d141d5af77462c949a79f, type: 3}
       propertyPath: m_Enabled
@@ -39229,7 +39229,7 @@ PrefabInstance:
     - target: {fileID: 8543892068585941969, guid: ab61dfdcfba494da8b02e109e83e52f8, type: 3}
       propertyPath: target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1804551794}
     - target: {fileID: 8543892068585941969, guid: ab61dfdcfba494da8b02e109e83e52f8, type: 3}
       propertyPath: northLayer
       value: 

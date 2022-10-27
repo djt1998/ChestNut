@@ -15,6 +15,11 @@ public class Player : MonoBehaviour
     private Vector3 speed;
     // private int spd_val;
     private float player_radius;
+    public float radius {
+        get {
+            return player_radius;
+        }
+    }
     // private bool is_jump;
     public int keyStatus;
     public int logoStatus;
@@ -25,9 +30,6 @@ public class Player : MonoBehaviour
     public float size_recover_coef;
 
     private Vector3[] forceDir = {Vector3.left, Vector3.forward, Vector3.right, Vector3.back};
-    private TextMeshProUGUI textKey;
-    private TextMeshProUGUI textLogo;
-
     private int player_effect;
     private int counter;
     private float r,g,b,a;
@@ -68,11 +70,6 @@ public class Player : MonoBehaviour
             max_density_diff = 2f;
         }
         player_radius = (float)transform.localScale[0];
-        var canvas = GameObject.Find("Canvas");
-        if (canvas != null) {
-            textKey = canvas.transform.Find("InGameDisplay/MiniMapSystem/KeyStatus/KeyStatusText").GetComponent<TextMeshProUGUI>();
-            textLogo = canvas.transform.Find("InGameDisplay/MiniMapSystem/LogoStatus/LogoStatusText").GetComponent<TextMeshProUGUI>();
-        }
         counter = 0;
         // txt.text = "Speed: 00.00 m/s\nKeys: 0";
     }
@@ -118,13 +115,6 @@ public class Player : MonoBehaviour
             counter += 1;
             normalization();
             effect_update();
-        }
-
-        if (textKey) {
-            textKey.text = keyStatus.ToString();
-        }
-        if (textLogo) {
-            textLogo.text = logoStatus.ToString();
         }
 
         /********************** just for fun **********************/
