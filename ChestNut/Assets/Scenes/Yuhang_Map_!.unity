@@ -2158,12 +2158,12 @@ MonoBehaviour:
   x_speed: 0
   x_range_pos: 0
   x_range_neg: 0
-  y_speed: 2
-  y_range_pos: 3
+  y_speed: 0
+  y_range_pos: 0
   y_range_neg: 0
-  z_speed: 0
-  z_range_pos: 0
-  z_range_neg: 0
+  z_speed: 0.5
+  z_range_pos: 2
+  z_range_neg: -2
 --- !u!4 &543849521 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4323170775839909716, guid: 1988004a120f80743b537bf137af5a56, type: 3}
@@ -7213,7 +7213,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3341210027420132117, guid: c5ead254d238c441d900068122539231, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3341210027420132117, guid: c5ead254d238c441d900068122539231, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7918,7 +7918,7 @@ PrefabInstance:
     - target: {fileID: 8543892068585941969, guid: ab61dfdcfba494da8b02e109e83e52f8, type: 3}
       propertyPath: target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1009774495}
     - target: {fileID: 8543892068585941969, guid: ab61dfdcfba494da8b02e109e83e52f8, type: 3}
       propertyPath: northLayer
       value: 
