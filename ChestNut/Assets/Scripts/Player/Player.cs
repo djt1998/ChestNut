@@ -28,6 +28,7 @@ public class Player : MonoBehaviour
     public float max_density_diff;
 
     public float size_recover_coef;
+    public ParticleSystem dust;
 
     private Vector3[] forceDir = {Vector3.left, Vector3.forward, Vector3.right, Vector3.back};
     private int player_effect;
@@ -128,6 +129,9 @@ public class Player : MonoBehaviour
         // }
         // if (Input.GetKey("c")) {
         //     rb.position = GameObject.Find("Trophy").transform.position + new Vector3(0, 5, 0);
+        // }
+        // if (rb.velocity.magnitude > 0.5f) {
+        //     PlayDust();
         // }
         /********************** just for fun **********************/
         
@@ -315,4 +319,8 @@ public class Player : MonoBehaviour
     //         GameMenu.IsWon = true;
     //     }
     // }
+
+    private void PlayDust() {
+        dust.Play();
+    }
 }
