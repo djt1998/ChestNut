@@ -6,9 +6,10 @@ using TMPro;
 
 public class InGameDisPlay : MonoBehaviour
 {
-    public TextMeshProUGUI textPlayerInfo;
+    // public TextMeshProUGUI textPlayerInfo;
     public TextMeshProUGUI textKeyStatus;
     public TextMeshProUGUI textLogoStatus;
+    public Slider sizeSlider;
     private Player player;
 
     // Start is called before the first frame update
@@ -21,7 +22,7 @@ public class InGameDisPlay : MonoBehaviour
     void FixedUpdate()
     {
         if (player) {
-            textPlayerInfo.text = string.Format("{0, -10}{1:00}.{2:00}\n{3, -8}{4:00}.{5:00}", "SIZE:", Mathf.FloorToInt(player.radius), (player.radius % 1) * 100, "MASS:", Mathf.FloorToInt(player.rb.mass), (player.rb.mass % 1) * 100);
+            // textPlayerInfo.text = string.Format("{0, -10}{1:00}.{2:00}\n{3, -8}{4:00}.{5:00}", "SIZE:", Mathf.FloorToInt(player.radius), (player.radius % 1) * 100, "MASS:", Mathf.FloorToInt(player.rb.mass), (player.rb.mass % 1) * 100);
             textKeyStatus.text = player.keyStatus.ToString();
             textLogoStatus.text = player.logoStatus.ToString();
         }
