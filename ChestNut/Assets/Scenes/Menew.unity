@@ -957,6 +957,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1700734463}
     m_Modifications:
+    - target: {fileID: 3226067743087400088, guid: 8c90c1a76b6824642975790afa5811e4, type: 3}
+      propertyPath: m_text
+      value: TUTORIAL 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6462761719673711144, guid: 8c90c1a76b6824642975790afa5811e4, type: 3}
       propertyPath: m_text
       value: 2
@@ -1048,6 +1052,10 @@ PrefabInstance:
     - target: {fileID: 9080858187215147128, guid: 8c90c1a76b6824642975790afa5811e4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9223113396392675375, guid: 8c90c1a76b6824642975790afa5811e4, type: 3}
+      propertyPath: m_Name
+      value: Button_Tutorial_2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c90c1a76b6824642975790afa5811e4, type: 3}
@@ -1878,7 +1886,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9080858187215147128, guid: 8c90c1a76b6824642975790afa5811e4, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 38.42857
+      value: 38.428574
       objectReference: {fileID: 0}
     - target: {fileID: 9080858187215147128, guid: 8c90c1a76b6824642975790afa5811e4, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -2827,7 +2835,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9080858187215147128, guid: 8c90c1a76b6824642975790afa5811e4, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 38.42857
+      value: 38.428574
       objectReference: {fileID: 0}
     - target: {fileID: 9080858187215147128, guid: 8c90c1a76b6824642975790afa5811e4, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -3180,7 +3188,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 275, y: -24.166666}
+  m_AnchoredPosition: {x: 275, y: -24.166664}
   m_SizeDelta: {x: 550, y: 48.333332}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &528016695
@@ -7498,6 +7506,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1700734463}
     m_Modifications:
+    - target: {fileID: 3226067743087400088, guid: 8c90c1a76b6824642975790afa5811e4, type: 3}
+      propertyPath: m_text
+      value: TUTORIAL 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7005397202452578596, guid: 8c90c1a76b6824642975790afa5811e4, type: 3}
       propertyPath: m_Name
       value: DateCell (4)
@@ -7585,6 +7597,10 @@ PrefabInstance:
     - target: {fileID: 9080858187215147128, guid: 8c90c1a76b6824642975790afa5811e4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9223113396392675375, guid: 8c90c1a76b6824642975790afa5811e4, type: 3}
+      propertyPath: m_Name
+      value: Button_Tutorial_1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c90c1a76b6824642975790afa5811e4, type: 3}
@@ -9372,7 +9388,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9080858187215147128, guid: 8c90c1a76b6824642975790afa5811e4, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 38.42857
+      value: 38.428574
       objectReference: {fileID: 0}
     - target: {fileID: 9080858187215147128, guid: 8c90c1a76b6824642975790afa5811e4, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -11470,7 +11486,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9080858187215147128, guid: 8c90c1a76b6824642975790afa5811e4, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 38.42857
+      value: 38.428574
       objectReference: {fileID: 0}
     - target: {fileID: 9080858187215147128, guid: 8c90c1a76b6824642975790afa5811e4, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -12340,6 +12356,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1700734463}
     m_Modifications:
+    - target: {fileID: 3226067743087400088, guid: 8c90c1a76b6824642975790afa5811e4, type: 3}
+      propertyPath: m_text
+      value: TUTORIAL 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6462761719673711144, guid: 8c90c1a76b6824642975790afa5811e4, type: 3}
       propertyPath: m_text
       value: 3
@@ -12431,6 +12451,10 @@ PrefabInstance:
     - target: {fileID: 9080858187215147128, guid: 8c90c1a76b6824642975790afa5811e4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9223113396392675375, guid: 8c90c1a76b6824642975790afa5811e4, type: 3}
+      propertyPath: m_Name
+      value: Button_Tutorial_3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c90c1a76b6824642975790afa5811e4, type: 3}
@@ -12940,7 +12964,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8073475090525277265, guid: 2f553174b0ff048b79c20f52af04aeaf, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 38.42857
+      value: 38.428574
       objectReference: {fileID: 0}
     - target: {fileID: 8073475090525277265, guid: 2f553174b0ff048b79c20f52af04aeaf, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -13062,7 +13086,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9080858187215147128, guid: 8c90c1a76b6824642975790afa5811e4, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 38.42857
+      value: 38.428574
       objectReference: {fileID: 0}
     - target: {fileID: 9080858187215147128, guid: 8c90c1a76b6824642975790afa5811e4, type: 3}
       propertyPath: m_AnchoredPosition.y

@@ -19,14 +19,14 @@ public class StartMenu : MonoBehaviour
         }
     }
 
-    public void Start() {
-        for (int i = 1; i < level_buttons.Length; i++) {
-            if (2 > PlayerPrefs.GetInt("uLevel")) {
-                level_buttons[i].interactable = false;
-                level_buttons[i].GetComponentInChildren<TMP_Text>().text = "Locked";
-            }
-        }
-    }
+    // public void Start() {
+    //     for (int i = 1; i < level_buttons.Length; i++) {
+    //         if (2 > PlayerPrefs.GetInt("uLevel")) {
+    //             level_buttons[i].interactable = false;
+    //             level_buttons[i].GetComponentInChildren<TMP_Text>().text = "Locked";
+    //         }
+    //     }
+    // }
 
     public void PlayGame_Level (GameObject obj) {  // Button_"Level_X"
         GlobalData.FirstTimeEnterMenu = false;
