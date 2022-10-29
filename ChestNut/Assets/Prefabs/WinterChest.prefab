@@ -705,6 +705,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 'DestroyChestEffect '
       objectReference: {fileID: 0}
+    - target: {fileID: 5426475329111177840, guid: 49b0adf41b3398344b5cc671ab585015, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5426475329111177841, guid: 49b0adf41b3398344b5cc671ab585015, type: 3}
       propertyPath: m_RootOrder
       value: 0
