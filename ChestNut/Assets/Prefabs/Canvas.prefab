@@ -166,11 +166,11 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1632066525}
+  - {fileID: 4492471694386983738}
   - {fileID: 598671531844612184}
   - {fileID: 598671532534007850}
   - {fileID: 598671531593472292}
   - {fileID: 7562208146958156187}
-  - {fileID: 4492471694386983738}
   m_Father: {fileID: 8879212486657263193}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -982,7 +982,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2095431931}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1440,7 +1440,7 @@ RectTransform:
   - {fileID: 7220222307275422064}
   - {fileID: 5787363469149902038}
   m_Father: {fileID: 2095431931}
-  m_RootOrder: 5
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
@@ -4909,7 +4909,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 598671532024025364, guid: 5c794109bfd924f78b3e236b976f3090, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 598671532024025364, guid: 5c794109bfd924f78b3e236b976f3090, type: 3}
       propertyPath: m_AnchorMax.x
@@ -5031,7 +5031,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 598671532024025364, guid: 5c794109bfd924f78b3e236b976f3090, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 598671532024025364, guid: 5c794109bfd924f78b3e236b976f3090, type: 3}
       propertyPath: m_AnchorMax.x
@@ -5145,7 +5145,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 598671532024025364, guid: 5c794109bfd924f78b3e236b976f3090, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 598671532024025364, guid: 5c794109bfd924f78b3e236b976f3090, type: 3}
       propertyPath: m_AnchorMax.x
