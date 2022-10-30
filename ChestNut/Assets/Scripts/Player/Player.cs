@@ -85,19 +85,19 @@ public class Player : MonoBehaviour
                 // alpha = 1f / alpha + 1f * alpha * (max_radius - alpha);
                 // alpha = 2f / (1f + Mathf.Exp(2f * player_radius - 3f));
                 Vector3 force_direction = new Vector3(0, 0, 0);
-                if (Input.GetKey("a"))
+                if (Input.GetKey("a") || Input.GetKey("left"))
                 {
                     force_direction += forceDir[0];
                 }
-                if (Input.GetKey("w"))
+                if (Input.GetKey("w") || Input.GetKey("up"))
                 {
                     force_direction += forceDir[1];
                 }
-                if (Input.GetKey("d"))
+                if (Input.GetKey("d") || Input.GetKey("right"))
                 {
                     force_direction += forceDir[2];
                 }
-                if (Input.GetKey("s"))
+                if (Input.GetKey("s") || Input.GetKey("down"))
                 {
                     force_direction += forceDir[3];
                 }
