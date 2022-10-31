@@ -48,9 +48,9 @@ public class Linear_cycle : MonoBehaviour
         else if(diff[2] < z_range_neg){
             z_dir = 1.0f;
         }
-        Debug.Log(diff);
+        //Debug.Log(diff);
         Vector3 movement = new Vector3(x_speed*x_dir, y_speed*y_dir, z_speed*z_dir);
-        Debug.Log(movement);
+        //Debug.Log(movement);
         transform.Translate(movement * Time.deltaTime, Space.World);
     }
 

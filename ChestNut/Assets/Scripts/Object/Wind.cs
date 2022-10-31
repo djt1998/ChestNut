@@ -27,11 +27,16 @@ public class Wind : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.name == "Player_model")
-        {
+        
+        if (other.attachedRigidbody){
             Debug.Log("Wind Active");
-            player.rb.AddForce(transform.up * force_coef);
-            // other.gameObject.transform.localScale = new Vector3(1,1,1);
+            other.attachedRigidbody.AddForce(transform.up * force_coef);
         }
+        // if (other.name == "Player_model")
+        // {
+            // Debug.Log("Wind Active");
+            // player.rb.AddForce(transform.up * force_coef);
+        // other.gameObject.transform.localScale = new Vector3(1,1,1);
+        // }
     }
 }

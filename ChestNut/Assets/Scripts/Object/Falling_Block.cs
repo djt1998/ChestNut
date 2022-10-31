@@ -26,10 +26,24 @@ public class Falling_Block : MonoBehaviour
 
     }
 
+    private void change_color(float r, float g, float b, float a){
+        var renderer = GetComponent<Renderer>();
+        Color customColor = new Color(r, g, b, a);
+        renderer.material.SetColor("_Color", customColor);
+    }
+
     IEnumerator FallingCoroutine()
     {
         Debug.Log("Started Count Falling at timestamp : " + Time.time);
-        yield return new WaitForSeconds(waitSec);
+        
+        for(int i = 0; i < 3; i ++){
+            change_color(0.6f, 0.6f, 1.0f, 0.4f);
+            yield return new WaitForSeconds((float)waitSec/10.0f);
+            change_color(0.6f, 0.6f, 1.0f, 0.2f);
+            yield return new WaitForSeconds((float)waitSec/10.0f);
+        }
+        change_color(0.6f, 0.6f, 1.0f, 0.4f);
+        yield return new WaitForSeconds((float)waitSec/10.0f * 4);
         rb.constraints = RigidbodyConstraints.None;
         rb.isKinematic = false;
         Debug.Log("Finished Falling at timestamp : " + Time.time);
@@ -45,5 +59,4 @@ public class Falling_Block : MonoBehaviour
             }
         }
     }
-
 }
