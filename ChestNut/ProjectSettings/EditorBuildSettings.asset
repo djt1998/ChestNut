@@ -35,4 +35,13 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Level_5.unity
     guid: cb30dca11ae754985ad8432114cdcb3c
+  - enabled: 1
+    path: Assets/Scenes/Level_4_Robin.unity
+    guid: 92abd3c7bfb2d8547bb95343e29000e1
+  - enabled: 1
+    path: Assets/Scenes/Yuhang_Map_!.unity
+    guid: 7b48f843775a64a7e955f218b8d9f0f5
+  - enabled: 1
+    path: Assets/Scenes/Jerry_Map_!.unity
+    guid: a937d888c0f87485e8d42db9114c11a5
   m_configObjects: {}
