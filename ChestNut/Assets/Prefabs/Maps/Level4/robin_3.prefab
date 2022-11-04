@@ -1593,7 +1593,7 @@ MonoBehaviour:
   x_speed: 0
   x_range_pos: 0
   x_range_neg: 0
-  y_speed: 2
+  y_speed: 1
   y_range_pos: 0
   y_range_neg: -3
   z_speed: 0
@@ -1852,7 +1852,7 @@ MonoBehaviour:
   x_speed: 0
   x_range_pos: 0
   x_range_neg: 0
-  y_speed: 2
+  y_speed: 1
   y_range_pos: 0
   y_range_neg: -3
   z_speed: 0
@@ -1948,7 +1948,7 @@ MonoBehaviour:
   y_speed: 0
   y_range_pos: 0
   y_range_neg: 0
-  z_speed: 1
+  z_speed: 0.5
   z_range_pos: 2
   z_range_neg: -2
 --- !u!1001 &1237067478330167112
@@ -2036,7 +2036,7 @@ MonoBehaviour:
   y_speed: 0
   y_range_pos: 0
   y_range_neg: 0
-  z_speed: 1
+  z_speed: 0.5
   z_range_pos: 2
   z_range_neg: -2
 --- !u!1001 &1279674779334050550
@@ -2121,7 +2121,7 @@ MonoBehaviour:
   x_speed: 0
   x_range_pos: 0
   x_range_neg: 0
-  y_speed: 2
+  y_speed: 1
   y_range_pos: 0
   y_range_neg: -3
   z_speed: 0
@@ -2664,7 +2664,7 @@ MonoBehaviour:
   x_speed: 0
   x_range_pos: 0
   x_range_neg: 0
-  y_speed: 2
+  y_speed: 1
   y_range_pos: 0
   y_range_neg: -3
   z_speed: 0
@@ -3034,7 +3034,7 @@ MonoBehaviour:
   y_speed: 0
   y_range_pos: 0
   y_range_neg: 0
-  z_speed: 1
+  z_speed: 0.5
   z_range_pos: 2
   z_range_neg: -2
 --- !u!1001 &3019789086602251887
@@ -3538,7 +3538,7 @@ MonoBehaviour:
   x_speed: 0
   x_range_pos: 0
   x_range_neg: 0
-  y_speed: 2
+  y_speed: 1
   y_range_pos: 0
   y_range_neg: -3
   z_speed: 0
@@ -4624,7 +4624,7 @@ MonoBehaviour:
   x_speed: 0
   x_range_pos: 0
   x_range_neg: 0
-  y_speed: 2
+  y_speed: 1
   y_range_pos: 0
   y_range_neg: -3
   z_speed: 0
@@ -4805,7 +4805,7 @@ MonoBehaviour:
   x_speed: 0
   x_range_pos: 0
   x_range_neg: 0
-  y_speed: 2
+  y_speed: 1
   y_range_pos: 0
   y_range_neg: -3
   z_speed: 0
@@ -5038,7 +5038,7 @@ MonoBehaviour:
   x_speed: 0
   x_range_pos: 0
   x_range_neg: 0
-  y_speed: 2
+  y_speed: 1
   y_range_pos: 0
   y_range_neg: -3
   z_speed: 0
@@ -5253,7 +5253,7 @@ MonoBehaviour:
   y_speed: 0
   y_range_pos: 0
   y_range_neg: 0
-  z_speed: 1
+  z_speed: 0.5
   z_range_pos: 2
   z_range_neg: -2
 --- !u!4 &1750793121943634571 stripped
@@ -5338,7 +5338,7 @@ MonoBehaviour:
   x_speed: 0
   x_range_pos: 0
   x_range_neg: 0
-  y_speed: 2
+  y_speed: 1
   y_range_pos: 0
   y_range_neg: -3
   z_speed: 0

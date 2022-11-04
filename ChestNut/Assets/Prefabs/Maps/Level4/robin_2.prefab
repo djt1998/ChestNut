@@ -3999,7 +3999,7 @@ MonoBehaviour:
   y_speed: 0
   y_range_pos: 0
   y_range_neg: 0
-  z_speed: 2
+  z_speed: 1
   z_range_pos: 2
   z_range_neg: -2
 --- !u!1001 &7561971075437581268
