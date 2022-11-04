@@ -12,7 +12,6 @@ public class GameMenu : MonoBehaviour
     public static bool IsDead = false;
 
     // public static bool IsRestart = false;
-    public GameObject PauseMenuUI;
     public GameObject SettingsMenuUI;
 
     public GameObject WinMenuUI;
@@ -78,13 +77,6 @@ public class GameMenu : MonoBehaviour
         GameIsPaused = true;
         sendData("settings");
     }
-    private void Pause(){
-        PauseMenuUI.SetActive(true);
-        InGameUI.SetActive(false);
-        Time.timeScale = 0f;
-        GameIsPaused = true;
-        sendData("pause");
-    }
 
     private void win() {
         WinMenuUI.SetActive(true);
@@ -110,7 +102,6 @@ public class GameMenu : MonoBehaviour
     }
 
     public void Resume(){
-        PauseMenuUI.SetActive(false);
         SettingsMenuUI.SetActive(false);
         InGameUI.SetActive(true);
         Time.timeScale = 1f;
