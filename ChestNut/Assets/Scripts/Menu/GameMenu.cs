@@ -18,17 +18,11 @@ public class GameMenu : MonoBehaviour
     public GameObject LoseMenuUI;
     public GameObject InGameUI;
 
+    private int levelIndex;
+
     void Start() {
-        // GlobalData.levelStartTimes[SceneManager.GetActiveScene().buildIndex]++;  // start++
-        // InGameUI.SetActive(true);
-        // if (IsRestart) {
-        //     sendData("restart");
-        //     IsRestart = false;
-        // }
-        // else {
-        //     sendData("start");
-        // }
         sendData("start");
+        levelIndex = SceneManager.GetActiveScene().buildIndex;
     }
 
     // Update is called once per frame
@@ -40,18 +34,6 @@ public class GameMenu : MonoBehaviour
         else if (IsDead) {
             lose();
         }
-        // else if (Input.GetKey(KeyCode.P) && !GameIsPaused) {
-        //     Pause();
-        // }
-        // else if (Input.GetKeyDown(KeyCode.P))
-        // {
-        //     if (GameIsPaused) {
-        //         Resume();
-        //     }
-        //     else {
-        //         showSettings();
-        //     }
-        // }
     }
 
     void Update() {
@@ -64,10 +46,6 @@ public class GameMenu : MonoBehaviour
                 showSettings();
             }
         }
-        // if (Input.GetKeyDown(KeyCode.P) && GameIsPaused && !IsWon && !IsDead)
-        // {
-        //     Resume();
-        // }
     }
     private void showSettings()
     {
@@ -81,14 +59,19 @@ public class GameMenu : MonoBehaviour
     private void win() {
         WinMenuUI.SetActive(true);
         InGameUI.SetActive(false);
-        // StartMenu.unlocked_level = Math.Min(Math.Max(StartMenu.unlocked_level, SceneManager.GetActiveScene().buildIndex + 1), GlobalData.MAX_LEVEL);  // unlock level
-        // Debug.Log("level: " + StartMenu.unlocked_level);
-        PlayerPrefs.SetInt("uLevel", Math.Min(Math.Max(PlayerPrefs.GetInt("uLevel"), SceneManager.GetActiveScene().buildIndex + 1), GlobalData.MAX_LEVEL));  // unlock level
+        PlayerPrefs.SetInt("uLevel", Math.Min(Math.Max(PlayerPrefs.GetInt("uLevel"), levelIndex + 1), GlobalData.MAX_LEVEL));  // unlock level
         Debug.Log("level: " + PlayerPrefs.GetInt("uLevel"));
+        // update star and level
+        int currentStarsNum = 1;
+        currentStarsNum += Math.Min(FindObjectOfType<Player>().logoStatus, 2);
+        if(currentStarsNum > PlayerPrefs.GetInt("Lv" + levelIndex))
+        {
+            PlayerPrefs.SetInt("Lv" + levelIndex, currentStarsNum);
+        }
+
         Time.timeScale = 0f;
         float totTime = FindObjectOfType<TimerManager>().getTotalTime();    // display totTime to finish this level
         GameObject.Find("WinMenu/Score").GetComponentInChildren<TMP_Text>().text = "Scores: " + TimerManager.getFormatTime(totTime);
-        // GlobalData.levelAccomplishTimes[SceneManager.GetActiveScene().buildIndex]++;  // win++
         // sendData
         sendData("success");
     }
@@ -97,7 +80,6 @@ public class GameMenu : MonoBehaviour
         LoseMenuUI.SetActive(true);
         InGameUI.SetActive(false);
         Time.timeScale = 0f;
-        // GlobalData.levelDeathTimes[SceneManager.GetActiveScene().buildIndex]++;  // death++
         sendData("death");
     }
 
@@ -112,7 +94,7 @@ public class GameMenu : MonoBehaviour
     public void NextLevel() {
         Debug.Log("next level");
         init();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(levelIndex + 1);
     }
 
     public void LoadMenu(){
@@ -127,8 +109,7 @@ public class GameMenu : MonoBehaviour
         // IsRestart = false;
         Debug.Log("restart game");
         init();
-        // GlobalData.levelRestartTimes[SceneManager.GetActiveScene().buildIndex]++;  // restart++
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene(levelIndex);
     }
 
     private void init() {  // init some static variables
