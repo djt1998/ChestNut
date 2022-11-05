@@ -2361,7 +2361,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &337954030
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7398,6 +7398,10 @@ PrefabInstance:
     - target: {fileID: 9080858187215147128, guid: 8c90c1a76b6824642975790afa5811e4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9223113396392675375, guid: 8c90c1a76b6824642975790afa5811e4, type: 3}
+      propertyPath: m_Name
+      value: Button_Tutorial_1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c90c1a76b6824642975790afa5811e4, type: 3}
