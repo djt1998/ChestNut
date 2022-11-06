@@ -1196,7 +1196,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9148470634528746002, guid: d9cb9900be7d141d5af77462c949a79f, type: 3}
       propertyPath: ShapeModule.m_Scale.z
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9148470634528746002, guid: d9cb9900be7d141d5af77462c949a79f, type: 3}
       propertyPath: InitialModule.maxNumParticles
