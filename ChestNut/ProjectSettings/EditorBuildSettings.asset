@@ -45,12 +45,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Level_5_Jiahui.unity
     guid: 0609495056cba4adfb2f1411b14e22f9
   - enabled: 1
-    path: Assets/Scenes/Level_5_sonia_new.unity
-    guid: 2dbd512e15b224e55ac5822567021bf6
-  - enabled: 1
     path: Assets/Scenes/Level_5_lila.unity
     guid: 09e793e3151ed4845930b40d6d137a08
   - enabled: 1
     path: Assets/Scenes/Level_5.unity
     guid: cb30dca11ae754985ad8432114cdcb3c
+  - enabled: 1
+    path: Assets/Scenes/leve_5_1_sonia.unity
+    guid: 6d1afc7a0806346b99abea4a7b9e25ad
   m_configObjects: {}
