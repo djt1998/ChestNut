@@ -2523,31 +2523,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3129235375958893906, guid: ab61dfdcfba494da8b02e109e83e52f8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -20
-      objectReference: {fileID: 0}
-    - target: {fileID: 3129235375958893906, guid: ab61dfdcfba494da8b02e109e83e52f8, type: 3}
-      propertyPath: m_LocalPosition.y
       value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 3129235375958893906, guid: ab61dfdcfba494da8b02e109e83e52f8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 3129235375958893906, guid: ab61dfdcfba494da8b02e109e83e52f8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -40
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 3129235375958893906, guid: ab61dfdcfba494da8b02e109e83e52f8, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9659258
+      value: -0.68301266
       objectReference: {fileID: 0}
     - target: {fileID: 3129235375958893906, guid: ab61dfdcfba494da8b02e109e83e52f8, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.2588191
+      value: -0.18301274
       objectReference: {fileID: 0}
     - target: {fileID: 3129235375958893906, guid: ab61dfdcfba494da8b02e109e83e52f8, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.68301266
       objectReference: {fileID: 0}
     - target: {fileID: 3129235375958893906, guid: ab61dfdcfba494da8b02e109e83e52f8, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0.18301274
       objectReference: {fileID: 0}
     - target: {fileID: 3129235375958893906, guid: ab61dfdcfba494da8b02e109e83e52f8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2603,11 +2603,11 @@ Animation:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2990122971124147227}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 39e4dbccde34e49b2b4ebc112612e176, type: 2}
+  m_Animation: {fileID: 7400000, guid: f2a82b6a5d18a4a02a79a52ce90bde03, type: 2}
   m_Animations:
-  - {fileID: 7400000, guid: 39e4dbccde34e49b2b4ebc112612e176, type: 2}
+  - {fileID: 7400000, guid: f2a82b6a5d18a4a02a79a52ce90bde03, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
