@@ -47,7 +47,7 @@ public class GameMenu : MonoBehaviour
             }
         }
     }
-    private void showSettings()
+    public void showSettings()
     {
         SettingsMenuUI.SetActive(true);
         InGameUI.SetActive(false);
