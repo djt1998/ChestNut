@@ -17545,7 +17545,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9148470634528746002, guid: d9cb9900be7d141d5af77462c949a79f, type: 3}
       propertyPath: InitialModule.maxNumParticles
-      value: 2500
+      value: 2700
       objectReference: {fileID: 0}
     - target: {fileID: 9148470634528746002, guid: d9cb9900be7d141d5af77462c949a79f, type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
@@ -17553,7 +17553,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9148470634528746002, guid: d9cb9900be7d141d5af77462c949a79f, type: 3}
       propertyPath: InitialModule.startLifetime.scalar
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 9148470635264610596, guid: d9cb9900be7d141d5af77462c949a79f, type: 3}
       propertyPath: m_IsActive
@@ -17569,7 +17569,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9148470635264610597, guid: d9cb9900be7d141d5af77462c949a79f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 30
+      value: 29
       objectReference: {fileID: 0}
     - target: {fileID: 9148470635264610597, guid: d9cb9900be7d141d5af77462c949a79f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -90645,10 +90645,10 @@ Transform:
   - {fileID: 1193338167}
   - {fileID: 1160352009}
   - {fileID: 1247476614}
-  - {fileID: 1105132279}
-  - {fileID: 640976893}
   - {fileID: 1169380457}
+  - {fileID: 1105132279}
   - {fileID: 821404037}
+  - {fileID: 640976893}
   m_Father: {fileID: 5287645893686237729}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -91595,12 +91595,12 @@ Transform:
   - {fileID: 1227030204}
   - {fileID: 544775987}
   - {fileID: 295853739}
+  - {fileID: 1491481779}
   - {fileID: 1722428768}
   - {fileID: 1277577317}
+  - {fileID: 1822287443}
   - {fileID: 1028020058}
   - {fileID: 1144649423}
-  - {fileID: 1491481779}
-  - {fileID: 1822287443}
   m_Father: {fileID: 5287645893686237729}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
