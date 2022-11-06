@@ -43,6 +43,7 @@ public class LevelButton : MonoBehaviour
             {
                 stars[i].gameObject.SetActive(false);
             }
+            GetComponent<Button>().interactable = false;
         }
         else {
             lockImage.gameObject.SetActive(false);
