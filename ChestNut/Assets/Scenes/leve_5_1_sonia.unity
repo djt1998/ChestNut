@@ -723,7 +723,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 769761255696087807, guid: 78505be017a1b421889434294602f505, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2849802865744092859, guid: 78505be017a1b421889434294602f505, type: 3}
       propertyPath: maxTime
@@ -731,7 +731,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4795711105112789076, guid: 78505be017a1b421889434294602f505, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8879212486657263193, guid: 78505be017a1b421889434294602f505, type: 3}
       propertyPath: m_Pivot.x
