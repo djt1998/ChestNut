@@ -596,23 +596,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3129235375958893906, guid: ab61dfdcfba494da8b02e109e83e52f8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -20
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3129235375958893906, guid: ab61dfdcfba494da8b02e109e83e52f8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 40
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 3129235375958893906, guid: ab61dfdcfba494da8b02e109e83e52f8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -40
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3129235375958893906, guid: ab61dfdcfba494da8b02e109e83e52f8, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9659258
+      value: 0.70710677
       objectReference: {fileID: 0}
     - target: {fileID: 3129235375958893906, guid: ab61dfdcfba494da8b02e109e83e52f8, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.2588191
+      value: 0.70710677
       objectReference: {fileID: 0}
     - target: {fileID: 3129235375958893906, guid: ab61dfdcfba494da8b02e109e83e52f8, type: 3}
       propertyPath: m_LocalRotation.y
@@ -669,7 +669,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3129235375958893905, guid: ab61dfdcfba494da8b02e109e83e52f8, type: 3}
   m_PrefabInstance: {fileID: 2990122971124147226}
   m_PrefabAsset: {fileID: 0}
---- !u!111 &2990122971124147228
+--- !u!111 &2990122971124147234
 Animation:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -678,9 +678,9 @@ Animation:
   m_GameObject: {fileID: 2990122971124147227}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 39e4dbccde34e49b2b4ebc112612e176, type: 2}
+  m_Animation: {fileID: 7400000, guid: d431b65cff61f474e88e49d708b1ac96, type: 2}
   m_Animations:
-  - {fileID: 7400000, guid: 39e4dbccde34e49b2b4ebc112612e176, type: 2}
+  - {fileID: 7400000, guid: d431b65cff61f474e88e49d708b1ac96, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
