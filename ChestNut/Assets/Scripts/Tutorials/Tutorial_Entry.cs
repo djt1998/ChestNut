@@ -8,6 +8,7 @@ public class Tutorial_Entry : Tutorial
     private bool needInit = true;
     private Player player;
     private TimerManager TM;
+    private SettingButtonClick SBC;
     public override void IsOnGoing()
     {
         if (needInit) {
@@ -15,13 +16,14 @@ public class Tutorial_Entry : Tutorial
             player.enabled = false;
             TM = FindObjectOfType<TimerManager>();
             TM.enabled = false;
+            SBC = FindObjectOfType<SettingButtonClick>();
             needInit = false;
         }
     }
 
     public override void IsOnGoingUpdate()
     {
-        if (Input.GetKeyDown(key)) {
+        if (Input.GetKeyDown(key) || SBC.buttonPressed) {
             player.enabled = true;
             TM.enabled = true;
             TutorialManager.Instance.CompleteTutorial();
