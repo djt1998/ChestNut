@@ -10,8 +10,8 @@ public class OptionsMenu : MonoBehaviour
     public AudioMixer audioMixer;
     public Slider volumeSlider;
     public TMP_Dropdown graphicsDropdown;
-
     public TMP_Dropdown frameRateDropdown;
+    public TMP_Dropdown controlModeDropdown;
 
     private enum frameRates {
         fps_25 = 26,
@@ -29,6 +29,7 @@ public class OptionsMenu : MonoBehaviour
             SetVolume(volumeSlider.value);
             SetQuality(graphicsDropdown.value);
             SetFrameRate(frameRateDropdown.value);
+            SetControlMode(controlModeDropdown.value);
         }
         else {
             float volumeTmp;
@@ -52,6 +53,7 @@ public class OptionsMenu : MonoBehaviour
                     frameRateDropdown.value = 4;
                     break;
             }
+            controlModeDropdown.value = GlobalData.controlMode;
         }
 
         // int currentResolutionIndex = 0;
@@ -107,5 +109,9 @@ public class OptionsMenu : MonoBehaviour
                 Time.fixedDeltaTime = 0.02f;
                 break;
         }
+    }
+
+    public void SetControlMode(int controlMode) {
+        GlobalData.controlMode = controlMode;
     }
 }

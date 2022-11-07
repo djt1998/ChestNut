@@ -9,13 +9,17 @@ public class InGameDisPlay : MonoBehaviour
     // public TextMeshProUGUI textPlayerInfo;
     public TextMeshProUGUI textKeyStatus;
     public TextMeshProUGUI textLogoStatus;
-    public Slider sizeSlider;
+    public GameObject Movement;
+
     private Player player;
 
     // Start is called before the first frame update
     void Start()
     {
         player = FindObjectOfType<Player>();
+        if (GlobalData.controlMode != 1) {
+            Movement.SetActive(false);
+        }
     }
 
     // Update is called once per frame

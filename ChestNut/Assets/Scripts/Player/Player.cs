@@ -30,6 +30,18 @@ public class Player : MonoBehaviour
     public float size_recover_coef;
     public ParticleSystem dust;
 
+    // private Vector3 force_direction = Vector3.zero;
+    // public Vector3 ForceDir {
+    //     get {
+    //         return force_direction;
+    //     }
+
+    //     set {
+    //         force_direction = value;
+    //     }
+    // }
+    private ButtonMovement BM;
+
     private Vector3[] forceDir = {Vector3.left, Vector3.forward, Vector3.right, Vector3.back};
     private int player_effect;
     private int counter;
@@ -72,6 +84,9 @@ public class Player : MonoBehaviour
         }
         player_radius = (float)transform.localScale[0];
         counter = 0;
+        if (GlobalData.controlMode == 1) {
+            BM = FindObjectOfType<ButtonMovement>();
+        }
         // txt.text = "Speed: 00.00 m/s\nKeys: 0";
     }
 
@@ -84,25 +99,30 @@ public class Player : MonoBehaviour
                 // float alpha = (float) Math.Sqrt(player_radius);
                 // alpha = 1f / alpha + 1f * alpha * (max_radius - alpha);
                 // alpha = 2f / (1f + Mathf.Exp(2f * player_radius - 3f));
-                Vector3 force_direction = new Vector3(0, 0, 0);
-                if (Input.GetKey("a") || Input.GetKey("left"))
-                {
-                    force_direction += forceDir[0];
+                Vector3 force_direction = Vector3.zero;
+                if (GlobalData.controlMode == 0) {
+                    if (Input.GetKey("a") || Input.GetKey("left"))
+                    {
+                        force_direction += forceDir[0];
+                    }
+                    if (Input.GetKey("w") || Input.GetKey("up"))
+                    {
+                        force_direction += forceDir[1];
+                    }
+                    if (Input.GetKey("d") || Input.GetKey("right"))
+                    {
+                        force_direction += forceDir[2];
+                    }
+                    if (Input.GetKey("s") || Input.GetKey("down"))
+                    {
+                        force_direction += forceDir[3];
+                    }
                 }
-                if (Input.GetKey("w") || Input.GetKey("up"))
-                {
-                    force_direction += forceDir[1];
-                }
-                if (Input.GetKey("d") || Input.GetKey("right"))
-                {
-                    force_direction += forceDir[2];
-                }
-                if (Input.GetKey("s") || Input.GetKey("down"))
-                {
-                    force_direction += forceDir[3];
+                else if (GlobalData.controlMode == 1) {
+                    force_direction = BM.pos.x * forceDir[2] + BM.pos.y * forceDir[1];
                 }
 
-                rb.AddForce(force_direction.normalized * force_coef * Mathf.Max(sigmoid(rb.mass, 0.05f, 26f), sigmoid(rb.mass, 0.4f, 9f)) * 2f );
+                rb.AddForce(force_direction.normalized * force_coef * Mathf.Max(sigmoid(rb.mass, 0.05f, 26f), sigmoid(rb.mass, 0.4f, 9f)) * 2f);
 
                 // if (Input.GetKey("space"))
                 // {
