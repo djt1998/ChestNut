@@ -15,10 +15,6 @@ public class LevelButton : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // if (2 > PlayerPrefs.GetInt("uLevel")) {
-        //     levelButton.interactable = false;
-        //     lockImage.enabled = true;
-        // }
         UpdateLevelStatus();
         UpdateLevelImage();
     }
@@ -39,21 +35,18 @@ public class LevelButton : MonoBehaviour
     {
         if(!unlocked) {
             lockImage.gameObject.SetActive(true);
-            for(int i = 0; i < stars.Length; i++)
-            {
+            for(int i = 0; i < stars.Length; i++) {
                 stars[i].gameObject.SetActive(false);
             }
             GetComponent<Button>().interactable = false;
         }
         else {
             lockImage.gameObject.SetActive(false);
-            for (int i = 0; i < stars.Length; i++)
-            {
+            for (int i = 0; i < stars.Length; i++) {
                 stars[i].gameObject.SetActive(true);
             }
 
-            for(int i = 0; i < PlayerPrefs.GetInt("Lv" + levelIndex); i++)
-            {
+            for(int i = 0; i < PlayerPrefs.GetInt("Lv" + levelIndex); i++) {
                 stars[i].gameObject.GetComponent<Image>().sprite = star;
             }
         }

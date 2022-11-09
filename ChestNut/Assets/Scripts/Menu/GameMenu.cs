@@ -4,19 +4,19 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System;
 using TMPro;
+using UnityEngine.UI;
 
 public class GameMenu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
     public static bool IsWon = false;
     public static bool IsDead = false;
-
-    // public static bool IsRestart = false;
     public GameObject SettingsMenuUI;
-
     public GameObject WinMenuUI;
     public GameObject LoseMenuUI;
     public GameObject InGameUI;
+    public GameObject[] stars;
+    public Sprite star;
 
     private int levelIndex;
 
@@ -70,6 +70,9 @@ public class GameMenu : MonoBehaviour
         }
 
         Time.timeScale = 0f;
+        for (int i = 0; i < stars.Length && i < currentStarsNum; i++) {
+            stars[i].gameObject.GetComponent<Image>().sprite = star;
+        }
         float totTime = FindObjectOfType<TimerManager>().getTotalTime();    // display totTime to finish this level
         GameObject.Find("WinMenu/Score").GetComponentInChildren<TMP_Text>().text = "Scores: " + TimerManager.getFormatTime(totTime);
         // sendData
