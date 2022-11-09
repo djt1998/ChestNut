@@ -17,6 +17,8 @@ public class GameMenu : MonoBehaviour
     public GameObject InGameUI;
     public GameObject[] stars;
     public Sprite star;
+    public Animator transition;
+    public float transitionTime = 1f;
 
     private int levelIndex;
 
@@ -97,14 +99,14 @@ public class GameMenu : MonoBehaviour
     public void NextLevel() {
         Debug.Log("next level");
         init();
-        SceneManager.LoadScene(levelIndex + 1);
+        PlayGame_Level(levelIndex + 1);
     }
 
     public void LoadMenu(){
         sendData("quit");
         Debug.Log("loading menu");
         init();
-        SceneManager.LoadScene(0);
+        PlayGame_Level(0);
     }
 
     public void Restart() {
@@ -112,7 +114,7 @@ public class GameMenu : MonoBehaviour
         // IsRestart = false;
         Debug.Log("restart game");
         init();
-        SceneManager.LoadScene(levelIndex);
+        PlayGame_Level(levelIndex);
     }
 
     private void init() {  // init some static variables
@@ -120,6 +122,21 @@ public class GameMenu : MonoBehaviour
         GameIsPaused = false;
         IsWon = false;
         IsDead = false;
+    }
+
+    private void PlayGame_Level(int level) {
+        if (transition != null) {
+            StartCoroutine(LoadLevel(level));
+        }
+        else {
+            SceneManager.LoadScene(level);
+        }
+    }
+
+    IEnumerator LoadLevel(int level) {
+        transition.SetTrigger("Start");
+        yield return new WaitForSeconds(transitionTime);
+        SceneManager.LoadScene(level);
     }
     
     public static void sendData(String tag) {

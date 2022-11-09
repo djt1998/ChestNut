@@ -10,6 +10,7 @@ public class LevelButton : MonoBehaviour
     public GameObject[] stars;
     public Image lockImage;
     public Sprite star;
+    public GameObject canvas;
     public Animator transition;
     public float transitionTime = 1f;
     private int levelIndex;
@@ -19,6 +20,7 @@ public class LevelButton : MonoBehaviour
     {
         UpdateLevelStatus();
         UpdateLevelImage();
+        canvas = GameObject.Find("Canvas");
     }
 
     private void UpdateLevelStatus()
@@ -56,8 +58,8 @@ public class LevelButton : MonoBehaviour
 
     public void PlayGame_Level () {  // Button_"Level_X"
         GlobalData.FirstTimeEnterMenu = false;
-        if (transition == null) {
-            transition = GameObject.Find("LevelTransition/CrossFade").GetComponent<Animator>();
+        if (transition == null && canvas != null) {
+            transition = canvas.GetComponent<Animator>();
         }
         if (transition != null) {
             StartCoroutine(LoadLevel(levelIndex));

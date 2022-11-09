@@ -23,7 +23,7 @@ public class Tutorial_Entry : Tutorial
 
     public override void IsOnGoingUpdate()
     {
-        if (Input.GetKeyDown(key) || SBC.buttonPressed) {
+        if (Input.GetKeyUp(key) || SBC.buttonPressed) {
             player.enabled = true;
             TM.enabled = true;
             TutorialManager.Instance.CompleteTutorial();
