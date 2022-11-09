@@ -70,7 +70,7 @@ public class TimerManager : MonoBehaviour
     }
 
     private void displayTime() {
-        timerText.text = "TIME:    " + getFormatTime(currTime);
+        timerText.text = "TIME  " + getFormatTime(currTime);
     }
 
     public float getFinishTime() {  // get finishing time

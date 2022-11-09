@@ -10,6 +10,8 @@ public class LevelButton : MonoBehaviour
     public GameObject[] stars;
     public Image lockImage;
     public Sprite star;
+    public Animator transition;
+    public float transitionTime = 1f;
     private int levelIndex;
 
     // Start is called before the first frame update
@@ -50,5 +52,24 @@ public class LevelButton : MonoBehaviour
                 stars[i].gameObject.GetComponent<Image>().sprite = star;
             }
         }
+    }
+
+    public void PlayGame_Level () {  // Button_"Level_X"
+        GlobalData.FirstTimeEnterMenu = false;
+        if (transition == null) {
+            transition = GameObject.Find("LevelTransition/CrossFade").GetComponent<Animator>();
+        }
+        if (transition != null) {
+            StartCoroutine(LoadLevel(levelIndex));
+        }
+        else {
+            SceneManager.LoadScene(levelIndex);
+        }
+    }
+
+    IEnumerator LoadLevel(int level) {
+        transition.SetTrigger("Start");
+        yield return new WaitForSeconds(transitionTime);
+        SceneManager.LoadScene(level);
     }
 }
