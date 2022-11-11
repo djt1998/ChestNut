@@ -8,7 +8,8 @@ using TMPro;
 public class OptionsMenu : MonoBehaviour
 {
     public AudioMixer audioMixer;
-    public Slider volumeSlider;
+    public Slider bgmSlider;
+    public Slider soundSlider;
     public TMP_Dropdown graphicsDropdown;
     public TMP_Dropdown frameRateDropdown;
     public TMP_Dropdown controlModeDropdown;
@@ -26,7 +27,7 @@ public class OptionsMenu : MonoBehaviour
 
     void Start() {
         if (GlobalData.FirstTimeEnterMenu) {
-            SetVolume(volumeSlider.value);
+            SetVolume(bgmSlider.value);
             SetQuality(graphicsDropdown.value);
             SetFrameRate(frameRateDropdown.value);
             SetControlMode(controlModeDropdown.value);
@@ -34,7 +35,7 @@ public class OptionsMenu : MonoBehaviour
         else {
             float volumeTmp;
             audioMixer.GetFloat("bgmVolume", out volumeTmp);
-            volumeSlider.value = volumeTmp;
+            bgmSlider.value = volumeTmp;
             graphicsDropdown.value = QualitySettings.GetQualityLevel();
             switch(Application.targetFrameRate) {
                 case (int) frameRates.fps_25:
@@ -55,6 +56,7 @@ public class OptionsMenu : MonoBehaviour
             }
             controlModeDropdown.value = GlobalData.controlMode;
         }
+        soundSlider.value = FindObjectOfType<SoundEffectManger>().volumeParam;
 
         // int currentResolutionIndex = 0;
         // resolutions = Screen.resolutions;
@@ -79,6 +81,10 @@ public class OptionsMenu : MonoBehaviour
 
     public void SetVolume(float volume) {
         audioMixer.SetFloat("bgmVolume", volume);
+    }
+
+    public void SetSoundVolume(float volume) {
+        FindObjectOfType<SoundEffectManger>().VolumeChange(volume);
     }
 
     public void SetQuality(int quality) {
