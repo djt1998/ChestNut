@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Key
   - Arrow
+  - Portal
   layers:
   - Default
   - TransparentFX
