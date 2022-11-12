@@ -13419,6 +13419,14 @@ MonoBehaviour:
     spatialBlend: 0
     description: On trigger collision by player
     source: {fileID: 0}
+  - name: OpenChestBox
+    clip: {fileID: 8300000, guid: 696e67af7b52849e79a3096b9cb99ea7, type: 3}
+    loop: 0
+    volume: 1
+    pitch: 1
+    spatialBlend: 0
+    description: Play on ChestBoxOpen
+    source: {fileID: 0}
   - name: SnowBallMovement
     clip: {fileID: 8300000, guid: 453731180a5724366952f65bed7a108e, type: 3}
     loop: 0
