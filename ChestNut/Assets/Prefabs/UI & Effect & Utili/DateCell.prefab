@@ -742,6 +742,7 @@ GameObject:
   - component: {fileID: 8754976451828780826}
   - component: {fileID: 999361193942670995}
   - component: {fileID: 8193204157048409325}
+  - component: {fileID: 3706071976929730443}
   m_Layer: 5
   m_Name: Button_Level_X
   m_TagString: Untagged
@@ -890,3 +891,15 @@ MonoBehaviour:
   canvas: {fileID: 0}
   transition: {fileID: 0}
   transitionTime: 1
+--- !u!114 &3706071976929730443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9223113396392675375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3ae23e014de74624b48996f59fa0575, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

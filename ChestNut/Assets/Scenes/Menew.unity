@@ -13371,13 +13371,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   volumeParam: 1
   soundEffects:
-  - name: BGM
-    clip: {fileID: 8300000, guid: 3cd1211cb83634a1baa1b262ca489149, type: 3}
-    loop: 1
+  - name: ButtonClick
+    clip: {fileID: 8300000, guid: c3da35ba720c54f98b1d4dd09a0fda34, type: 3}
+    loop: 0
     volume: 1
-    pitch: 3
-    spatialBlend: 1
-    description: BGM
+    pitch: 1
+    spatialBlend: 0
+    description: ButtonClick
     source: {fileID: 0}
 --- !u!4 &2030619388
 Transform:
