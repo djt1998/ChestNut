@@ -27,7 +27,7 @@ public class SizeBar : MonoBehaviour
     void FixedUpdate()
     {
         if (player && player.radius >= MIN_SIZE) {
-            barImage.color = player.radius <= criticalPoint ? Color.red : Color.blue;
+            barImage.color = player.radius <= criticalPoint ? new Color32(255, 102, 102, 255) : new Color32(110, 163, 255, 255);
             barImage.fillAmount = Mathf.Min((player.radius - MIN_SIZE) / (turningPoint - MIN_SIZE) / 2f, (player.radius - turningPoint) / (MAX_SIZE - turningPoint) / 2f + 0.5f);
         }
     }

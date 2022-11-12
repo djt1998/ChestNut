@@ -27,7 +27,7 @@ public class MassBar : MonoBehaviour
     void FixedUpdate()
     {
         if (player && player.rb.mass >= MIN_SIZE) {
-            barImage.color = player.rb.mass <= criticalPoint ? Color.red : Color.blue;
+            barImage.color = player.rb.mass <= criticalPoint ? new Color32(255, 102, 102, 255) : new Color32(110, 163, 255, 255);
             barImage.fillAmount = Mathf.Min((player.rb.mass - MIN_SIZE) / (turningPoint - MIN_SIZE) / 2f, (player.rb.mass - turningPoint) / (MAX_SIZE - turningPoint) / 2f + 0.5f);
         }
     }
