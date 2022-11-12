@@ -55,6 +55,7 @@ public class GameMenu : MonoBehaviour
         InGameUI.SetActive(false);
         Time.timeScale = 0f;
         GameIsPaused = true;
+        SoundEffectManger.PauseSoundAll();
         sendData("settings");
     }
 
@@ -95,6 +96,7 @@ public class GameMenu : MonoBehaviour
         InGameUI.SetActive(true);
         Time.timeScale = 1f;
         GameIsPaused = false;
+        SoundEffectManger.UnPauseSoundAll();
         sendData("resume");
     }
 

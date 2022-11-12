@@ -10946,9 +10946,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1368808448}
   m_Direction: 0
   m_MinValue: -20
-  m_MaxValue: 20
+  m_MaxValue: 0
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: -10
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -13410,6 +13410,14 @@ MonoBehaviour:
     pitch: 1
     spatialBlend: 0
     description: Play after Snow Ball Collect Cube
+    source: {fileID: 0}
+  - name: Wind
+    clip: {fileID: 8300000, guid: 6fa42dd0c4cc14c4ea90878d51689664, type: 3}
+    loop: 0
+    volume: 1
+    pitch: 1
+    spatialBlend: 0
+    description: On trigger collision by player
     source: {fileID: 0}
   - name: SnowBallMovement
     clip: {fileID: 8300000, guid: 453731180a5724366952f65bed7a108e, type: 3}
