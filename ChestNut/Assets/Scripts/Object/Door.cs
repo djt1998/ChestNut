@@ -36,6 +36,7 @@ public class Door: MonoBehaviour
                 // rb.isKinematic = false;
                 // isLocked = false;
                 player.keyStatus -= 1;
+                SoundEffectManger.PlaySound("UnlockDoor");
                 Instantiate(destroyEffect, transform.position, transform.rotation);
                 // Destroy(cylinder);
                 Destroy(gameObject);

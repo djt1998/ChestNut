@@ -13435,6 +13435,14 @@ MonoBehaviour:
     spatialBlend: 0
     description: Play after Snow Ball collect the key
     source: {fileID: 0}
+  - name: UnlockDoor
+    clip: {fileID: 8300000, guid: c80ee9fae772f4381bf00bd791788aab, type: 3}
+    loop: 0
+    volume: 1
+    pitch: 1
+    spatialBlend: 0
+    description: Play after Snow Ball Oepn the door
+    source: {fileID: 0}
   - name: SnowBallMovement
     clip: {fileID: 8300000, guid: 453731180a5724366952f65bed7a108e, type: 3}
     loop: 0
