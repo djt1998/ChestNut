@@ -59,6 +59,7 @@ public class GameMenu : MonoBehaviour
     }
 
     private void win() {
+        SoundEffectManger.PlaySound("PlayerWin");
         WinMenuUI.SetActive(true);
         InGameUI.SetActive(false);
         PlayerPrefs.SetInt("uLevel", Math.Min(Math.Max(PlayerPrefs.GetInt("uLevel"), levelIndex + 1), GlobalData.MAX_LEVEL));  // unlock level
@@ -82,6 +83,7 @@ public class GameMenu : MonoBehaviour
     }
 
     private void lose() {
+        SoundEffectManger.PlaySound("PlayerDeath");
         LoseMenuUI.SetActive(true);
         InGameUI.SetActive(false);
         Time.timeScale = 0f;

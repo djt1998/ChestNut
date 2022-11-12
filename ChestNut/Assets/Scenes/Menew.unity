@@ -13377,7 +13377,39 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     spatialBlend: 0
-    description: ButtonClick
+    description: OnButtonClick
+    source: {fileID: 0}
+  - name: PlayerDeath
+    clip: {fileID: 8300000, guid: 75668ceaef25d4be092eb9d4b898e7e5, type: 3}
+    loop: 0
+    volume: 1
+    pitch: 1
+    spatialBlend: 0
+    description: Play after Snow Ball died
+    source: {fileID: 0}
+  - name: PlayerWin
+    clip: {fileID: 8300000, guid: 56f7b1c0c8b814021afae0aa8459c336, type: 3}
+    loop: 0
+    volume: 1
+    pitch: 1
+    spatialBlend: 0
+    description: Play after Snow Ball Won
+    source: {fileID: 0}
+  - name: CollectLogo
+    clip: {fileID: 8300000, guid: c425f59ab79c24dc89d0bdcb072626b7, type: 3}
+    loop: 0
+    volume: 1
+    pitch: 1
+    spatialBlend: 0
+    description: Play after Snow Ball Collect Logo
+    source: {fileID: 0}
+  - name: CollectCube
+    clip: {fileID: 8300000, guid: 6b7932dd0a8794a27866f0ad1e4b529e, type: 3}
+    loop: 0
+    volume: 1
+    pitch: 1
+    spatialBlend: 0
+    description: Play after Snow Ball Collect Cube
     source: {fileID: 0}
   - name: SnowBallMovement
     clip: {fileID: 8300000, guid: 453731180a5724366952f65bed7a108e, type: 3}

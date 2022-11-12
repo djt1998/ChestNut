@@ -35,6 +35,7 @@ public class collectable : MonoBehaviour
                 else if (this.gameObject.name == "Blue Cube") {
                     GameMenu.sendData("item-bluecube");
                 }
+                SoundEffectManger.PlaySound("CollectCube");
                 Instantiate(destroyEffect, transform.position, transform.rotation);
                 Destroy(this.gameObject);
             }

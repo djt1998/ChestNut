@@ -30,6 +30,7 @@ public class CollectLogo : MonoBehaviour
             Debug.Log("Collect Logo!");
             player.logoStatus += 1;
             GameMenu.sendData("logo");
+            SoundEffectManger.PlaySound("CollectLogo");
             Instantiate(destroyEffect, transform.position, transform.rotation);
             Destroy(gameObject);
             // StartCoroutine(collectLogo(1));

@@ -9,6 +9,7 @@ public class SoundEffectManger : MonoBehaviour
     [Range(0f, 1f)]
     public float volumeParam;
     public SoundEffect[] soundEffects;
+    // private Dictionary<string, SoundEffect> ss = new Dictionary<string, SoundEffect>();
     public static SoundEffectManger instacne;
 
     private void Awake() {
@@ -49,6 +50,12 @@ public class SoundEffectManger : MonoBehaviour
         se.source.Stop();
     }
 
+    public void StopAll() {
+        foreach (SoundEffect se in soundEffects) {
+            se.source.Stop();
+        }
+    }
+
     public void VolumeChange(float volume) {
         volumeParam = volume;
         foreach (SoundEffect se in soundEffects) {
@@ -67,6 +74,13 @@ public class SoundEffectManger : MonoBehaviour
         SoundEffectManger SEM = FindObjectOfType<SoundEffectManger>();
         if (SEM) {
             SEM.Stop(name);
+        }
+    }
+
+    public static void StopSoundAll() {
+        SoundEffectManger SEM = FindObjectOfType<SoundEffectManger>();
+        if (SEM) {
+            SEM.StopAll();
         }
     }
 }
