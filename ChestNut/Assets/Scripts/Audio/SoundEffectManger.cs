@@ -31,12 +31,6 @@ public class SoundEffectManger : MonoBehaviour
         }
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        // Play("BGM");
-    }
-
     public void Play(string name) {
         SoundEffect se = Array.Find(soundEffects, sound => sound.name == name);
         if (se == null) {
@@ -46,10 +40,33 @@ public class SoundEffectManger : MonoBehaviour
         se.source.Play();
     }
 
+    public void Stop(string name) {
+        SoundEffect se = Array.Find(soundEffects, sound => sound.name == name);
+        if (se == null) {
+            Debug.Log("Sound effect " + name + " not found!");
+            return;
+        }
+        se.source.Stop();
+    }
+
     public void VolumeChange(float volume) {
         volumeParam = volume;
         foreach (SoundEffect se in soundEffects) {
             se.source.volume = se.volume * volumeParam;
+        }
+    }
+
+    public static void PlaySound(string name) {
+        SoundEffectManger SEM = FindObjectOfType<SoundEffectManger>();
+        if (SEM) {
+            SEM.Play(name);
+        }
+    }
+
+    public static void StopSound(string name) {
+        SoundEffectManger SEM = FindObjectOfType<SoundEffectManger>();
+        if (SEM) {
+            SEM.Stop(name);
         }
     }
 }

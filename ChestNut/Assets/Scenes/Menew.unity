@@ -13379,6 +13379,14 @@ MonoBehaviour:
     spatialBlend: 0
     description: ButtonClick
     source: {fileID: 0}
+  - name: SnowBallMovement
+    clip: {fileID: 8300000, guid: 453731180a5724366952f65bed7a108e, type: 3}
+    loop: 0
+    volume: 1
+    pitch: 1
+    spatialBlend: 0
+    description: Snow Ball movement
+    source: {fileID: 0}
 --- !u!4 &2030619388
 Transform:
   m_ObjectHideFlags: 0

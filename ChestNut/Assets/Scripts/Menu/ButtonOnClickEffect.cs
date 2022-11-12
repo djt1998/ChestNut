@@ -13,9 +13,6 @@ public class ButtonOnClickEffect : MonoBehaviour
 
     void ButtonClicked()
     {
-        SoundEffectManger SEM = FindObjectOfType<SoundEffectManger>();
-        if (SEM) {
-            SEM.Play("ButtonClick");
-        }
+        SoundEffectManger.PlaySound("ButtonClick");
     }
 }
