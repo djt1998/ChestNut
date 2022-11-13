@@ -29,6 +29,9 @@ public class Player : MonoBehaviour
 
     public float size_recover_coef;
     public ParticleSystem dust;
+    public GameObject player_model;
+    public LayerMask SnowGround;
+    private float timeToplaySound = 0f;
 
     // private Vector3 force_direction = Vector3.zero;
     // public Vector3 ForceDir {
@@ -154,7 +157,20 @@ public class Player : MonoBehaviour
         //     PlayDust();
         // }
         /********************** just for fun **********************/
-        
+        timeToplaySound -= Time.deltaTime;
+        if (timeToplaySound < 0f) {
+            timeToplaySound = 1f;
+            if (IsOnSnowGround() && rb.velocity.magnitude > 0.5f) {
+                SoundEffectManger.PlaySound("SnowBallMoveOnSnowGround");
+            }
+            else {
+                SoundEffectManger.StopSound("SnowBallMoveOnSnowGround");
+            }
+        }
+    }
+
+    public bool IsOnSnowGround() {
+        return Physics.CheckSphere(player_model.transform.position, player_radius * 0.9f, SnowGround);
     }
 
     // true: if changed; false: invalid

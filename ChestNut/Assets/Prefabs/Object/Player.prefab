@@ -4980,6 +4980,10 @@ MonoBehaviour:
   max_density_diff: 0
   size_recover_coef: 0
   dust: {fileID: 6764493390265466976}
+  player_model: {fileID: 8275139211917700421}
+  SnowGround:
+    serializedVersion: 2
+    m_Bits: 65536
 --- !u!54 &8275139212874964579
 Rigidbody:
   m_ObjectHideFlags: 0
