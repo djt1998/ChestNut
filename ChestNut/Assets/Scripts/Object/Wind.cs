@@ -8,6 +8,7 @@ public class Wind : MonoBehaviour
     private Player player;
     public float ratio;
     public float force_coef;
+    private float timeToplaySound = 0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +23,7 @@ public class Wind : MonoBehaviour
         {
             item.transform.Rotate(0.0f, 2f, 0.0f, Space.Self);
         }
-
+        timeToplaySound -= Time.deltaTime;
     }
 
     private void OnTriggerStay(Collider other)
@@ -32,6 +33,12 @@ public class Wind : MonoBehaviour
             Debug.Log("Wind Active");
             other.attachedRigidbody.AddForce(transform.up * force_coef);
         }
+
+        if (timeToplaySound < 0f && other.name == "Player_model") {
+            timeToplaySound = 1f;
+            SoundEffectManger.PlaySound("Wind");
+        }
+        
         // if (other.name == "Player_model")
         // {
             // Debug.Log("Wind Active");

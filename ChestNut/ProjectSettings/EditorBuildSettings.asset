@@ -18,11 +18,17 @@ EditorBuildSettings:
     path: Assets/Scenes/Tutorial/Tutorial_3.unity
     guid: 9ce201f58f46e1f4080be1b634d708b9
   - enabled: 1
+    path: Assets/Scenes/Ramp_Level.unity
+    guid: 84ac05f67168a894ea1d8312192a3c44
+  - enabled: 1
     path: Assets/Scenes/Robin_Map.unity
     guid: 1de19b464595e6c4081f27b1025cfd7d
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/Level_4_4.unity
+    guid: 7bfc986a5180e434498c49e0976290b1
+  - enabled: 1
+    path: Assets/Scenes/Yuhang_Map_!.unity
+    guid: 7f7c2eb7c92e344c8ab7e55164ad5ef3
   - enabled: 1
     path: Assets/Scenes/Jerry_Map_!.unity
     guid: a937d888c0f87485e8d42db9114c11a5
@@ -33,6 +39,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Level_3_1.unity
     guid: c99f342539dffc34ca562ef41990d28c
   - enabled: 1
+    path: Assets/Scenes/Level_3_4.unity
+    guid: e298388646955884290843efe1bbb537
+  - enabled: 1
     path: Assets/Scenes/Level_3_2.unity
     guid: 01f26a456b107c142b2f57f2dc5c73dd
   - enabled: 1
@@ -41,6 +50,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level_3.unity
     guid: dcd5df4bc24e447fabda765580259caf
+  - enabled: 1
+    path: Assets/Scenes/Level_5_4.unity
+    guid: 7021f8ea385fe462481cebd5cc30a556
   - enabled: 1
     path: Assets/Scenes/Level_5_Jiahui.unity
     guid: 0609495056cba4adfb2f1411b14e22f9

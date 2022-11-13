@@ -1098,7 +1098,7 @@ PrefabInstance:
       objectReference: {fileID: 843342197}
     - target: {fileID: 3129235375958893917, guid: ab61dfdcfba494da8b02e109e83e52f8, type: 3}
       propertyPath: m_CullingMask.m_Bits
-      value: 1783
+      value: 67319
       objectReference: {fileID: 0}
     - target: {fileID: 3129235376038093258, guid: ab61dfdcfba494da8b02e109e83e52f8, type: 3}
       propertyPath: player
@@ -1236,7 +1236,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2181292914098919466, guid: 78505be017a1b421889434294602f505, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2433275737961884920, guid: 78505be017a1b421889434294602f505, type: 3}
       propertyPath: m_RootOrder
@@ -1248,7 +1248,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3148180078316529919, guid: 78505be017a1b421889434294602f505, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4378022697215919318, guid: 78505be017a1b421889434294602f505, type: 3}
       propertyPath: m_RootOrder

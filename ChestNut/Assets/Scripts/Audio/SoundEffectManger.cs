@@ -56,6 +56,18 @@ public class SoundEffectManger : MonoBehaviour
         }
     }
 
+    public void PauseAll() {
+        foreach (SoundEffect se in soundEffects) {
+            se.source.Pause();
+        }
+    }
+
+    public void UnPauseAll() {
+        foreach (SoundEffect se in soundEffects) {
+            se.source.UnPause();
+        }
+    }
+
     public void VolumeChange(float volume) {
         volumeParam = volume;
         foreach (SoundEffect se in soundEffects) {
@@ -81,6 +93,20 @@ public class SoundEffectManger : MonoBehaviour
         SoundEffectManger SEM = FindObjectOfType<SoundEffectManger>();
         if (SEM) {
             SEM.StopAll();
+        }
+    }
+
+    public static void PauseSoundAll() {
+        SoundEffectManger SEM = FindObjectOfType<SoundEffectManger>();
+        if (SEM) {
+            SEM.PauseAll();
+        }
+    }
+
+    public static void UnPauseSoundAll() {
+        SoundEffectManger SEM = FindObjectOfType<SoundEffectManger>();
+        if (SEM) {
+            SEM.UnPauseAll();
         }
     }
 }

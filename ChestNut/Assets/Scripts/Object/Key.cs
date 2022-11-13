@@ -30,6 +30,7 @@ public class Key : MonoBehaviour
             Debug.Log("Key +1");
             player.keyStatus += 1;
             GameMenu.sendData("item-key");
+            SoundEffectManger.PlaySound("CollectKey");
             Destroy(miniMapIcon.gameObject);
             Destroy(this.gameObject);
             // other.gameObject.transform.localScale = new Vector3(1,1,1);

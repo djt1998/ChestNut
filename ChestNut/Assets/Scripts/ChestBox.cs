@@ -29,6 +29,7 @@ public class ChestBox : MonoBehaviour
 
     IEnumerator OpenCloseChest()
     {
+        SoundEffectManger.PlaySound("OpenChestBox");
         //play open animation;
         chestAnim.SetTrigger("open");
         //wait 2 seconds;
