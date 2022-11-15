@@ -29,6 +29,7 @@ public class Player : MonoBehaviour
 
     public float size_recover_coef;
     public ParticleSystem dust;
+    public ParticleSystem portalTransmissionEffect;
     public GameObject player_model;
     public LayerMask SnowGround;
     private float timeToplaySound = 0f;

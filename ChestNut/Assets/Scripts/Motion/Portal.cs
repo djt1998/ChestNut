@@ -78,6 +78,9 @@ public class Portal : MonoBehaviour
                         // freeze_portal();
                         other.attachedRigidbody.transform.position = portal.transform.position;
                         portal.sendingEffect.Play();
+                        if (other.name == "Player_model") {
+                            StartCoroutine(respawnPlayer(other.attachedRigidbody, 0.5f));
+                        }
                         break;
                     }
                 }
@@ -91,5 +94,14 @@ public class Portal : MonoBehaviour
         // Debug.Log("Finding Object" + name);
         Color customColor = new Color(r, g, b, a);
         Renderer.material.SetColor("_Color", customColor);
+    }
+
+    IEnumerator respawnPlayer(Rigidbody rb, float countDown) {
+        Player player = FindObjectOfType<Player>();
+        player.portalTransmissionEffect.Play();
+        player.GetComponentInChildren<MeshRenderer>().enabled = false;
+        player.rb.velocity = Vector3.zero;
+        yield return new WaitForSeconds(countDown);
+        player.GetComponentInChildren<MeshRenderer>().enabled = true;
     }
 }
