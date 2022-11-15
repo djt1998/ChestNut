@@ -157,16 +157,16 @@ public class Player : MonoBehaviour
         //     PlayDust();
         // }
         /********************** just for fun **********************/
-        timeToplaySound -= Time.deltaTime;
-        if (timeToplaySound < 0f) {
-            timeToplaySound = 1f;
-            if (IsOnSnowGround() && rb.velocity.magnitude > 0.5f) {
-                SoundEffectManger.PlaySound("SnowBallMoveOnSnowGround");
-            }
-            else {
-                SoundEffectManger.StopSound("SnowBallMoveOnSnowGround");
-            }
-        }
+        // timeToplaySound -= Time.deltaTime;
+        // if (timeToplaySound < 0f) {
+        //     timeToplaySound = 1f;
+        //     if (IsOnSnowGround() && rb.velocity.magnitude > 0.5f) {
+        //         SoundEffectManger.PlaySound("SnowBallMoveOnSnowGround");
+        //     }
+        //     else {
+        //         SoundEffectManger.StopSound("SnowBallMoveOnSnowGround");
+        //     }
+        // }
     }
 
     public bool IsOnSnowGround() {
