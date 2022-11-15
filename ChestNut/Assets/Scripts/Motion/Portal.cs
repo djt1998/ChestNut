@@ -6,6 +6,7 @@ public class Portal : MonoBehaviour
 {
     public string portal_name;
     public string target_portal_name;
+    public ParticleSystem sendingEffect;
 
     private Portal[] portal_list;
     private Portal target_portal;
@@ -76,6 +77,7 @@ public class Portal : MonoBehaviour
                         portal.freeze_portal();
                         // freeze_portal();
                         other.attachedRigidbody.transform.position = portal.transform.position;
+                        portal.sendingEffect.Play();
                         break;
                     }
                 }

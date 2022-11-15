@@ -168,7 +168,7 @@ public class Follower : MonoBehaviour
                         renderer.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.ShadowsOnly;
                     }
                     else if (renderingMode == 2 && renderer.material != null) {
-                        if (renderer.material.GetFloat("_Mode") != 0) {
+                        if (renderer.material.HasProperty("_Mode") && renderer.material.GetFloat("_Mode") != 0) {
                             continue;
                         }
                         // Material[] ms = renderer.materials;
