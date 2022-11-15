@@ -13465,7 +13465,15 @@ MonoBehaviour:
     volume: 0.7
     pitch: 1
     spatialBlend: 0
-    description: Snow Ball moves on snow grounfd
+    description: Snow Ball moves on snow ground
+    source: {fileID: 0}
+  - name: SnowBallHitOnSnowGround
+    clip: {fileID: 8300000, guid: 62c6450ba84224d8da47cd085bf51ec4, type: 3}
+    loop: 0
+    volume: 0.7
+    pitch: 1
+    spatialBlend: 0
+    description: Snow Ball hits on snow ground
     source: {fileID: 0}
 --- !u!4 &2030619388
 Transform:

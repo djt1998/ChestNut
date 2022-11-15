@@ -32,7 +32,8 @@ public class Player : MonoBehaviour
     public ParticleSystem portalTransmissionEffect;
     public GameObject player_model;
     public LayerMask SnowGround;
-    private float timeToplaySound = 0f;
+    // private float timeToplaySound = 0f;
+    private bool isOnSnowGround;
 
     // private Vector3 force_direction = Vector3.zero;
     // public Vector3 ForceDir {
@@ -91,6 +92,7 @@ public class Player : MonoBehaviour
         if (GlobalData.controlMode == 1) {
             BM = FindObjectOfType<ButtonMovement>();
         }
+        isOnSnowGround = IsOnSnowGround();
         // txt.text = "Speed: 00.00 m/s\nKeys: 0";
     }
 
@@ -168,10 +170,14 @@ public class Player : MonoBehaviour
         //         SoundEffectManger.StopSound("SnowBallMoveOnSnowGround");
         //     }
         // }
+        if (!isOnSnowGround && IsOnSnowGround() && rb.velocity.y < -1f) {
+            SoundEffectManger.PlaySound("SnowBallHitOnSnowGround");
+        }
+        isOnSnowGround = IsOnSnowGround();
     }
 
     public bool IsOnSnowGround() {
-        return Physics.CheckSphere(player_model.transform.position, player_radius * 0.9f, SnowGround);
+        return Physics.CheckSphere(player_model.transform.position - Vector3.up * player_radius * 0.8f, 0.1f, SnowGround);
     }
 
     // true: if changed; false: invalid
