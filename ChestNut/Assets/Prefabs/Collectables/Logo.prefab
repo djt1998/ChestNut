@@ -88,7 +88,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1282700528634089490}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0.47014707, y: -0, z: -0, w: 0.8825881}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -96,7 +96,7 @@ Transform:
   - {fileID: 3119300045855560555}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 56.088, y: 0, z: 0}
 --- !u!1 &6306712344201986026
 GameObject:
   m_ObjectHideFlags: 0
@@ -291,5 +291,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: {fileID: 4773578165176899142}
   destroyEffect: {fileID: 5426475329111177840, guid: 2b10bc91b5345475fa4525c29e3ba6b2, type: 3}
-  absorbEffect: {fileID: 5426475329111177840, guid: 5903ef9bc294b498f95eecd2ce483e58, type: 3}
   miniMapIcon: {fileID: 3140267745612602935}
