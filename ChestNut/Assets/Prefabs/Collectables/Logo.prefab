@@ -291,5 +291,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: {fileID: 4773578165176899142}
   destroyEffect: {fileID: 5426475329111177840, guid: 2b10bc91b5345475fa4525c29e3ba6b2, type: 3}
-  absorbEffect: {fileID: 5426475329111177840, guid: 5903ef9bc294b498f95eecd2ce483e58, type: 3}
   miniMapIcon: {fileID: 3140267745612602935}
