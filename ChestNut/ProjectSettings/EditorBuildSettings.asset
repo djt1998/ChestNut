@@ -9,14 +9,56 @@ EditorBuildSettings:
     path: Assets/Scenes/Menew.unity
     guid: fe03668a9b68b4842a228ce509a47203
   - enabled: 1
-    path: Assets/Scenes/Tutorial/Tutorial_1.unity
+    path: Assets/Scenes/TUT/1.unity
     guid: 574e162712921b140ad70afb49d01a48
   - enabled: 1
-    path: Assets/Scenes/Tutorial/Tutorial_2.unity
+    path: Assets/Scenes/TUT/2.unity
     guid: ad865534905e50a46b3060754df2b9bb
   - enabled: 1
-    path: Assets/Scenes/Tutorial/Tutorial_3.unity
+    path: Assets/Scenes/TUT/3.unity
     guid: 9ce201f58f46e1f4080be1b634d708b9
+  - enabled: 1
+    path: Assets/Scenes/UP/1.unity
+    guid: 09e793e3151ed4845930b40d6d137a08
+  - enabled: 1
+    path: Assets/Scenes/UP/2.unity
+    guid: 6d1afc7a0806346b99abea4a7b9e25ad
+  - enabled: 1
+    path: Assets/Scenes/UP/3.unity
+    guid: 0609495056cba4adfb2f1411b14e22f9
+  - enabled: 1
+    path: Assets/Scenes/UP/4.unity
+    guid: a5659287ac85849058c0e46e2d81ba64
+  - enabled: 1
+    path: Assets/Scenes/UP/5.unity
+    guid: 7021f8ea385fe462481cebd5cc30a556
+  - enabled: 1
+    path: Assets/Scenes/UP/6.unity
+    guid: 4d09a281cd49f41a8aff77d8c7dcebeb
+  - enabled: 1
+    path: Assets/Scenes/UP/B.unity
+    guid: cb30dca11ae754985ad8432114cdcb3c
+  - enabled: 1
+    path: Assets/Scenes/WIND/1.unity
+    guid: c99f342539dffc34ca562ef41990d28c
+  - enabled: 1
+    path: Assets/Scenes/WIND/2.unity
+    guid: 01f26a456b107c142b2f57f2dc5c73dd
+  - enabled: 1
+    path: Assets/Scenes/WIND/3.unity
+    guid: e298388646955884290843efe1bbb537
+  - enabled: 1
+    path: Assets/Scenes/WIND/4.unity
+    guid: 8e22c2ebf8d393c4ea28cecedc13e90b
+  - enabled: 1
+    path: Assets/Scenes/WIND/5.unity
+    guid: dc7dbd4596f0fda41b5f004f1be9e6ba
+  - enabled: 1
+    path: Assets/Scenes/WIND/6.unity
+    guid: d4be2ec8afb75de488fc9f4e1561e27d
+  - enabled: 1
+    path: Assets/Scenes/WIND/B.unity
+    guid: dcd5df4bc24e447fabda765580259caf
   - enabled: 1
     path: Assets/Scenes/Ramp_Level.unity
     guid: 84ac05f67168a894ea1d8312192a3c44
@@ -35,34 +77,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level_4_new.unity
     guid: 84c0036a24e79bd4192228abe8404dea
-  - enabled: 1
-    path: Assets/Scenes/Level_3_1.unity
-    guid: c99f342539dffc34ca562ef41990d28c
-  - enabled: 1
-    path: Assets/Scenes/Level_3_4.unity
-    guid: e298388646955884290843efe1bbb537
-  - enabled: 1
-    path: Assets/Scenes/Level_3_2.unity
-    guid: 01f26a456b107c142b2f57f2dc5c73dd
-  - enabled: 1
-    path: Assets/Scenes/Level_3_3.unity
-    guid: dc7dbd4596f0fda41b5f004f1be9e6ba
-  - enabled: 1
-    path: Assets/Scenes/Level_3.unity
-    guid: dcd5df4bc24e447fabda765580259caf
-  - enabled: 1
-    path: Assets/Scenes/Level_5_4.unity
-    guid: 7021f8ea385fe462481cebd5cc30a556
-  - enabled: 1
-    path: Assets/Scenes/Level_5_Jiahui.unity
-    guid: 0609495056cba4adfb2f1411b14e22f9
-  - enabled: 1
-    path: Assets/Scenes/level_5_2_sonia.unity
-    guid: 6d1afc7a0806346b99abea4a7b9e25ad
-  - enabled: 1
-    path: Assets/Scenes/Level_5_lila.unity
-    guid: 09e793e3151ed4845930b40d6d137a08
-  - enabled: 1
-    path: Assets/Scenes/Level_5.unity
-    guid: cb30dca11ae754985ad8432114cdcb3c
   m_configObjects: {}

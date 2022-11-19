@@ -25,12 +25,9 @@ public class LevelButton : MonoBehaviour
 
     private void UpdateLevelStatus()
     {
-        levelIndex = SceneUtility.GetBuildIndexByScenePath("Assets/Scenes/" + gameObject.name.Substring(7) + ".unity");
-        if (levelIndex < 0) {
-            levelIndex = SceneUtility.GetBuildIndexByScenePath("Assets/Scenes/Tutorial/" + gameObject.name.Substring(7) + ".unity");
-        }
-        if (levelIndex == 1 || (levelIndex > 1 && levelIndex <= 4 && PlayerPrefs.GetInt("Lv1") > 0) || PlayerPrefs.GetInt("Lv" + (levelIndex - 1).ToString()) > 0)
-        {
+        string[] subs = gameObject.name.Split('_');
+        levelIndex = SceneUtility.GetBuildIndexByScenePath("Assets/Scenes/" + subs[1] + "/" + subs[2] + ".unity");
+        if (levelIndex == 1 || (levelIndex > 1 && levelIndex <= 4 && PlayerPrefs.GetInt("Lv1") > 0) || PlayerPrefs.GetInt("Lv" + (levelIndex - 1).ToString()) > 0) {
             unlocked = true;
         }
     }
