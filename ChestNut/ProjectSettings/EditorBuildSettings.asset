@@ -60,21 +60,24 @@ EditorBuildSettings:
     path: Assets/Scenes/WIND/B.unity
     guid: dcd5df4bc24e447fabda765580259caf
   - enabled: 1
-    path: Assets/Scenes/Ramp_Level.unity
-    guid: 84ac05f67168a894ea1d8312192a3c44
-  - enabled: 1
-    path: Assets/Scenes/Robin_Map.unity
-    guid: 1de19b464595e6c4081f27b1025cfd7d
-  - enabled: 1
-    path: Assets/Scenes/Level_4_4.unity
-    guid: 7bfc986a5180e434498c49e0976290b1
-  - enabled: 1
-    path: Assets/Scenes/Yuhang_Map_!.unity
+    path: Assets/Scenes/RAIL/1.unity
     guid: 7f7c2eb7c92e344c8ab7e55164ad5ef3
   - enabled: 1
-    path: Assets/Scenes/Jerry_Map_!.unity
+    path: Assets/Scenes/RAIL/2.unity
     guid: a937d888c0f87485e8d42db9114c11a5
   - enabled: 1
-    path: Assets/Scenes/Level_4_new.unity
+    path: Assets/Scenes/RAIL/3.unity
+    guid: 1de19b464595e6c4081f27b1025cfd7d
+  - enabled: 1
+    path: Assets/Scenes/RAIL/4.unity
+    guid: 7bfc986a5180e434498c49e0976290b1
+  - enabled: 1
+    path: Assets/Scenes/RAIL/5.unity
+    guid: 84ac05f67168a894ea1d8312192a3c44
+  - enabled: 1
+    path: Assets/Scenes/RAIL/6.unity
+    guid: 6820a92b0feabfa46b8b747d574ef610
+  - enabled: 1
+    path: Assets/Scenes/RAIL/B.unity
     guid: 84c0036a24e79bd4192228abe8404dea
   m_configObjects: {}
