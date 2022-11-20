@@ -10123,7 +10123,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7470859318733651255, guid: 22b8795b1047bc94c9b5b8157022444b, type: 3}
       propertyPath: target_portal_name
-      value: in1
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22b8795b1047bc94c9b5b8157022444b, type: 3}

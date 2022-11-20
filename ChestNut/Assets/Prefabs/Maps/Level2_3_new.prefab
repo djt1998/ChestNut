@@ -27930,6 +27930,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4411839250487567486}
     m_Modifications:
+    - target: {fileID: 1171499519003632849, guid: 9836fc124983b6f4bb6e0803c7567454, type: 3}
+      propertyPath: updates_per_freq
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1171499519003632849, guid: 9836fc124983b6f4bb6e0803c7567454, type: 3}
+      propertyPath: updates_per_flash
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3341210027420132117, guid: 9836fc124983b6f4bb6e0803c7567454, type: 3}
       propertyPath: m_RootOrder
       value: 1
