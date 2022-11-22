@@ -131,6 +131,7 @@ public class GameMenu : MonoBehaviour
     private void PlayGame_Level(int level) {
         if (transition != null) {
             StartCoroutine(LoadLevel(level));
+            StartCoroutine(AsyncLoadLevel(level));
         }
         else {
             SceneManager.LoadScene(level);
@@ -140,7 +141,36 @@ public class GameMenu : MonoBehaviour
     IEnumerator LoadLevel(int level) {
         transition.SetTrigger("Start");
         yield return new WaitForSeconds(transitionTime);
-        SceneManager.LoadScene(level);
+        // SceneManager.LoadScene(level);
+    }
+
+    IEnumerator AsyncLoadLevel(int level) {
+        yield return null;
+
+        //Begin to load the Scene you specify
+        AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(level);
+        //Don't let the Scene activate until you allow it to
+        asyncOperation.allowSceneActivation = false;
+        Debug.Log("Pro :" + asyncOperation.progress);
+        //When the load is still in progress, output the Text and progress bar
+        while (!asyncOperation.isDone)
+        {
+            //Output the current progress
+            // m_Text.text = "Loading progress: " + (asyncOperation.progress * 100) + "%";
+
+            // Check if the load has finished
+            if (asyncOperation.progress >= 0.9f)
+            {
+                //Change the Text to show the Scene is ready
+                // m_Text.text = "Press the space bar to continue";
+                // //Wait to you press the space key to activate the Scene
+                // if (Input.GetKeyDown(KeyCode.Space))
+                    //Activate the Scene
+                    asyncOperation.allowSceneActivation = true;
+            }
+
+            yield return null;
+        }
     }
     
     public static void sendData(String tag) {
