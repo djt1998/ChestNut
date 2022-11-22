@@ -30,6 +30,7 @@ public class LevelButton : MonoBehaviour
         if (levelIndex == 1 || (levelIndex > 1 && levelIndex <= 4 && PlayerPrefs.GetInt("Lv1") > 0) || PlayerPrefs.GetInt("Lv" + (levelIndex - 1).ToString()) > 0) {
             unlocked = true;
         }
+        unlocked = true;
     }
 
     private void UpdateLevelImage()
