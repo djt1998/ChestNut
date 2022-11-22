@@ -3504,7 +3504,7 @@ MonoBehaviour:
   x_speed: 0
   x_range_pos: 0
   x_range_neg: 0
-  y_speed: 60
+  y_speed: 40
   y_range_pos: 3600
   y_range_neg: 0
   z_speed: 0
@@ -20473,7 +20473,7 @@ MonoBehaviour:
   x_speed: 0
   x_range_pos: 0
   x_range_neg: 0
-  y_speed: 60
+  y_speed: 40
   y_range_pos: 3600
   y_range_neg: 0
   z_speed: 0
