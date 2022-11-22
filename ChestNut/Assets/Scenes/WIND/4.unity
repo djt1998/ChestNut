@@ -220,6 +220,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9cb9900be7d141d5af77462c949a79f, type: 3}
+--- !u!224 &383435238 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 5409879554909197899, guid: 78505be017a1b421889434294602f505, type: 3}
+  m_PrefabInstance: {fileID: 8879212485232036247}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &482185629
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -403,7 +408,7 @@ PrefabInstance:
     - target: {fileID: 7246268635901741625, guid: ab61dfdcfba494da8b02e109e83e52f8, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1886079377}
     - target: {fileID: 8543892068585941969, guid: ab61dfdcfba494da8b02e109e83e52f8, type: 3}
       propertyPath: target
       value: 
@@ -411,34 +416,13 @@ PrefabInstance:
     - target: {fileID: 8543892068585941969, guid: ab61dfdcfba494da8b02e109e83e52f8, type: 3}
       propertyPath: northLayer
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 383435238}
     - target: {fileID: 8543892068585941969, guid: ab61dfdcfba494da8b02e109e83e52f8, type: 3}
       propertyPath: targetLayer
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1720756455}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab61dfdcfba494da8b02e109e83e52f8, type: 3}
---- !u!1 &815553772 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3129235375958893905, guid: ab61dfdcfba494da8b02e109e83e52f8, type: 3}
-  m_PrefabInstance: {fileID: 815553771}
-  m_PrefabAsset: {fileID: 0}
---- !u!111 &815553773
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 815553772}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 64c0180cd7ec847c0ba49ad37e15bb51, type: 2}
-  m_Animations:
-  - {fileID: 7400000, guid: 64c0180cd7ec847c0ba49ad37e15bb51, type: 2}
-  m_WrapMode: 0
-  m_PlayAutomatically: 0
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!1 &970710822
 GameObject:
   m_ObjectHideFlags: 0
@@ -507,6 +491,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1196735127 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3129235375958893905, guid: ab61dfdcfba494da8b02e109e83e52f8, type: 3}
+  m_PrefabInstance: {fileID: 815553771}
+  m_PrefabAsset: {fileID: 0}
+--- !u!111 &1196735133
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1196735127}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: b293e0bf066da4d479220e138c592410, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: b293e0bf066da4d479220e138c592410, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &1384142659
 GameObject:
   m_ObjectHideFlags: 0
@@ -601,6 +606,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!224 &1720756455 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 6847873957622159360, guid: 78505be017a1b421889434294602f505, type: 3}
+  m_PrefabInstance: {fileID: 8879212485232036247}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1789971150
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -723,6 +733,11 @@ GameObject:
 --- !u!4 &1886079376 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5450032115960517772, guid: d89ce4caa918c284587028461c9af2ae, type: 3}
+  m_PrefabInstance: {fileID: 1886079374}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1886079377 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 800587704011798863, guid: d89ce4caa918c284587028461c9af2ae, type: 3}
   m_PrefabInstance: {fileID: 1886079374}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2140424670
