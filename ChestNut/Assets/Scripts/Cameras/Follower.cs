@@ -32,7 +32,7 @@ public class Follower : MonoBehaviour
     private HashSet<Transform> Obstructions = new HashSet<Transform>();
     private HashSet<string> nonObstructionNames = new HashSet<string>();
     private int renderingMode = 2;    // 0: no transparency; 1: shadow only; 2: semi transparent; 3: enable render
-    private float transparentRate = 4f;
+    private float transparentRate = 5f;
     private Physics physics;
     // private float myTime = 0.0f;
     // private float nextRotate = 0.4f;

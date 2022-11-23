@@ -24,38 +24,38 @@ public class GroundBlockTextureMesh : MonoBehaviour
         // front
         uvMap[2] = new Vector2(0, 1);
         uvMap[3] = new Vector2(1, 1);
-        uvMap[0] = new Vector2(0, 0);
-        uvMap[1] = new Vector2(1, 0);
+        uvMap[0] = new Vector2(0, 0.51f);
+        uvMap[1] = new Vector2(1, 0.51f);
 
         // back
-        uvMap[6] = new Vector2(0, 0);
-        uvMap[7] = new Vector2(1, 0);
+        uvMap[6] = new Vector2(0, 0.51f);
+        uvMap[7] = new Vector2(1, 0.51f);
         uvMap[10] = new Vector2(0, 1);
         uvMap[11] = new Vector2(1, 1);
 
-        // // left
-        // uvMap[19] = new Vector2(0, 1);
-        // uvMap[17] = new Vector2(1, 1);
-        // uvMap[16] = new Vector2(0, 0);
-        // uvMap[18] = new Vector2(1, 0);
+        // left
+        uvMap[19] = new Vector2(0, 0.51f);
+        uvMap[17] = new Vector2(1, 1);
+        uvMap[16] = new Vector2(1, 0.51f);
+        uvMap[18] = new Vector2(0, 1);
 
-        // // right
-        // uvMap[23] = new Vector2(0, 1);
-        // uvMap[21] = new Vector2(1, 1);
-        // uvMap[20] = new Vector2(0, 0);
-        // uvMap[22] = new Vector2(1, 0);
+        // right
+        uvMap[23] = new Vector2(0, 0.51f);
+        uvMap[21] = new Vector2(1, 1);
+        uvMap[20] = new Vector2(1, 0.51f);
+        uvMap[22] = new Vector2(0, 1);
 
         // top
-        uvMap[4] = new Vector2(0.5f, 1);
-        uvMap[5] = new Vector2(0.7f, 1);
-        uvMap[8] = new Vector2(0.5f, 0.8f);
-        uvMap[9] = new Vector2(0.7f, 0.8f);
+        uvMap[4] = new Vector2(0, 0.49f);
+        uvMap[5] = new Vector2(1, 0.49f);
+        uvMap[8] = new Vector2(0, 0);
+        uvMap[9] = new Vector2(1, 0);
 
         // bottom
-        uvMap[15] = new Vector2(0, 0.5f);
-        uvMap[13] = new Vector2(0.5f, 0.5f);
-        uvMap[12] = new Vector2(0, 0);
-        uvMap[14] = new Vector2(0.5f, 0);
+        uvMap[15] = new Vector2(0.51f, 0.51f);
+        uvMap[13] = new Vector2(0.8f, 0.8f);
+        uvMap[12] = new Vector2(0.51f, 0.8f);
+        uvMap[14] = new Vector2(0.8f, 0.51f);
 
         mesh.uv = uvMap;
     }
