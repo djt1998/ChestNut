@@ -131,7 +131,7 @@ public class GameMenu : MonoBehaviour
     private void PlayGame_Level(int level) {
         if (transition != null) {
             StartCoroutine(LoadLevel(level));
-            StartCoroutine(AsyncLoadLevel(level));
+            // StartCoroutine(AsyncLoadLevel(level));
         }
         else {
             SceneManager.LoadScene(level);
@@ -142,10 +142,12 @@ public class GameMenu : MonoBehaviour
         transition.SetTrigger("Start");
         yield return new WaitForSeconds(transitionTime);
         // SceneManager.LoadScene(level);
+        yield return StartCoroutine(AsyncLoadLevel(level));
     }
 
     IEnumerator AsyncLoadLevel(int level) {
         yield return null;
+        TextMeshProUGUI loadingProgress = transform.Find("TransitionUI/LoadingProgress").GetComponent<TextMeshProUGUI>();
 
         //Begin to load the Scene you specify
         AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(level);
@@ -156,7 +158,9 @@ public class GameMenu : MonoBehaviour
         while (!asyncOperation.isDone)
         {
             //Output the current progress
-            // m_Text.text = "Loading progress: " + (asyncOperation.progress * 100) + "%";
+            if (loadingProgress) {
+                loadingProgress.text = "Loading progress: " + (asyncOperation.progress * 100) + "%";
+            }
 
             // Check if the load has finished
             if (asyncOperation.progress >= 0.9f)

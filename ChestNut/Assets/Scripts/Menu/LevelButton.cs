@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class LevelButton : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class LevelButton : MonoBehaviour
     public Animator transition;
     public float transitionTime = 1f;
     private int levelIndex;
+    private TextMeshProUGUI loadingProgress;
 
     // Start is called before the first frame update
     void Start()
@@ -61,7 +63,7 @@ public class LevelButton : MonoBehaviour
         }
         if (transition != null) {
             StartCoroutine(LoadLevel(levelIndex));
-            StartCoroutine(AsyncLoadLevel(levelIndex));
+            // StartCoroutine(AsyncLoadLevel(levelIndex));
         }
         else {
             SceneManager.LoadScene(levelIndex);
@@ -72,10 +74,14 @@ public class LevelButton : MonoBehaviour
         transition.SetTrigger("Start");
         yield return new WaitForSeconds(transitionTime);
         // SceneManager.LoadScene(level);
+        yield return StartCoroutine(AsyncLoadLevel(level));
     }
 
     IEnumerator AsyncLoadLevel(int level) {
         yield return null;
+        if (canvas != null) {
+            loadingProgress = canvas.transform.Find("TransitionUI/LoadingProgress").GetComponent<TextMeshProUGUI>();
+        }
 
         //Begin to load the Scene you specify
         AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(level);
@@ -86,7 +92,9 @@ public class LevelButton : MonoBehaviour
         while (!asyncOperation.isDone)
         {
             //Output the current progress
-            // m_Text.text = "Loading progress: " + (asyncOperation.progress * 100) + "%";
+            if (loadingProgress) {
+                loadingProgress.text = "Loading progress: " + (asyncOperation.progress * 100) + "%";
+            }
 
             // Check if the load has finished
             if (asyncOperation.progress >= 0.9f)
