@@ -24,6 +24,7 @@ public static class MaterialMode
                 material.DisableKeyword("_ALPHATEST_ON");
                 material.DisableKeyword("_ALPHABLEND_ON");
                 material.DisableKeyword("_ALPHAPREMULTIPLY_ON");
+                material.EnableKeyword("_NORMALMAP");
                 material.renderQueue = -1;
                 break;
             case BlendMode.Cutout:
@@ -54,6 +55,7 @@ public static class MaterialMode
                 material.DisableKeyword("_ALPHATEST_ON");
                 material.DisableKeyword("_ALPHABLEND_ON");
                 material.EnableKeyword("_ALPHAPREMULTIPLY_ON");
+                material.DisableKeyword("_NORMALMAP");
                 material.renderQueue = 3000;
                 break;
         }
