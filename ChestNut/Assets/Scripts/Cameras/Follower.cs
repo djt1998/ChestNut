@@ -169,7 +169,7 @@ public class Follower : MonoBehaviour
                         renderer.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.ShadowsOnly;
                     }
                     else if (renderingMode == 2 && renderer.material != null) {
-                        if (!renderer.material.HasProperty("_Mode")) {
+                        if (!renderer.material.HasProperty("_Mode") || renderer.material.GetFloat("_Mode") != 0) {
                             continue;
                         }
                         // Material[] ms = renderer.materials;
@@ -179,9 +179,9 @@ public class Follower : MonoBehaviour
                         //     c.a /= transparentRate;
                         //     ms[i].SetColor("_Color", c);
                         // }
-                        if (renderer.material.GetFloat("_Mode") == 0) {
-                            MaterialMode.SetMaterialRenderingMode(renderer.material, MaterialMode.BlendMode.Transparent);
-                        }
+                        // if (renderer.material.GetFloat("_Mode") == 0) {
+                        MaterialMode.SetMaterialRenderingMode(renderer.material, MaterialMode.BlendMode.Transparent);
+                        // }
                         Color c = renderer.material.color;
                         c.a /= transparentRate;
                         // c.a = 0.2f;
@@ -207,9 +207,9 @@ public class Follower : MonoBehaviour
                     renderer.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On;
                 }
                 else if (renderingMode == 2 && renderer.material != null) {
-                    if (renderer.material.GetFloat("_Mode") == 0) {
-                        MaterialMode.SetMaterialRenderingMode(renderer.material, MaterialMode.BlendMode.Opaque);
-                    }
+                    // if (renderer.material.GetFloat("_Mode") == 0) {
+                    MaterialMode.SetMaterialRenderingMode(renderer.material, MaterialMode.BlendMode.Opaque);
+                    // }
                     Color c = renderer.material.color;
                     c.a *= transparentRate;
                     // c.a = 1f;
