@@ -78,7 +78,9 @@ public class GameMenu : MonoBehaviour
             stars[i].gameObject.GetComponent<Image>().sprite = star;
         }
         float totTime = FindObjectOfType<TimerManager>().getTotalTime();    // display totTime to finish this level
-        GameObject.Find("WinMenu/Score").GetComponentInChildren<TMP_Text>().text = "Scores: " + TimerManager.getFormatTime(totTime);
+        if (GameObject.Find("WinMenu/Score")) {
+            GameObject.Find("WinMenu/Score").GetComponentInChildren<TMP_Text>().text = "Scores: " + TimerManager.getFormatTime(totTime);
+        }
         // sendData
         sendData("success");
     }

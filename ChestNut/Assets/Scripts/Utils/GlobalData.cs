@@ -8,7 +8,7 @@ public static class GlobalData
     // readonly
     public static readonly string SESSION_ID;
     public static readonly string VERSION = "Chestnet_version_2_0_0";
-    public static readonly int MAX_LEVEL = 15;
+    public static readonly int MAX_LEVEL = 25;
 
     public static bool FirstTimeEnterMenu = true;
     public static bool needSwitchSnowRenderMode = false;
