@@ -75,7 +75,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1282700528634089501}
   m_Layer: 10
-  m_Name: Logo
+  m_Name: Logo 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -209,7 +209,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b6033d31c90a44ef2930a45dea7e8a72, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.2
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b6033d31c90a44ef2930a45dea7e8a72, type: 3}
       propertyPath: m_LocalPosition.z
@@ -243,14 +243,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -7511558181221131132, guid: b6033d31c90a44ef2930a45dea7e8a72, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 8c5efd0f5a1354d9bb0b689c2bfa6b0f, type: 2}
-    - target: {fileID: -5754084199372789682, guid: b6033d31c90a44ef2930a45dea7e8a72, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: -8556586547009795898, guid: 7ee63289ebc7b485b8495ff4169f3075, type: 3}
     - target: {fileID: 919132149155446097, guid: b6033d31c90a44ef2930a45dea7e8a72, type: 3}
       propertyPath: m_Name
       value: logo_chestnut
@@ -271,6 +263,20 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: b6033d31c90a44ef2930a45dea7e8a72, type: 3}
   m_PrefabInstance: {fileID: 5023080877212791213}
   m_PrefabAsset: {fileID: 0}
+--- !u!64 &8495973228306645716
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5293128828688682236}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7822804124435574998, guid: b6033d31c90a44ef2930a45dea7e8a72, type: 3}
 --- !u!114 &6855995349029662498
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -284,18 +290,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 4773578165176899142}
-  destroyEffect: {fileID: 5426475329111177840, guid: da1b9a307180e4073b59e12cce83f0fc, type: 3}
+  destroyEffect: {fileID: 5426475329111177840, guid: 2b10bc91b5345475fa4525c29e3ba6b2, type: 3}
   miniMapIcon: {fileID: 3140267745612602935}
---- !u!65 &7746520465252055737
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5293128828688682236}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.61575127, y: 0.58990633, z: 0.224}
-  m_Center: {x: 0.0016043633, y: 0.027062342, z: 0.014495645}

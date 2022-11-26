@@ -20,7 +20,7 @@ public class CollectLogo : MonoBehaviour
     {
         if(item != null)
         {
-            item.transform.Rotate(0.0f, 0.1f, 0.0f, Space.Self);
+            item.transform.Rotate(0.0f, 1f, 0.0f, Space.Self);
         }
         
     }
