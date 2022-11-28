@@ -12,6 +12,7 @@ public class CollectTrophy : MonoBehaviour
     private void OnTriggerEnter(Collider other) {
         if (other.name == "Player_model"){
             Debug.Log("Trigger Win");
+            gameObject.GetComponent<Collider>().enabled = false;
             GameMenu.IsWon = true;
             // Destroy(this.gameObject);
         }

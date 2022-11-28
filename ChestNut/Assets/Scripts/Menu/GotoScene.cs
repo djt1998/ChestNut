@@ -21,6 +21,7 @@ public class GotoScene : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) {
         if (other.name == "Player_model"){
+            gameObject.GetComponent<Collider>().enabled = false;
             PlayerPrefs.SetInt("uLevel", Math.Min(Math.Max(PlayerPrefs.GetInt("uLevel"), levelIndex + 1), GlobalData.MAX_LEVEL));
             int currentStarsNum = 1;
             currentStarsNum += Math.Min(FindObjectOfType<Player>().logoStatus, 2);
